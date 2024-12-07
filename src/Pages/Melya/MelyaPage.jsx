@@ -10,6 +10,7 @@ import {
 } from './MelyaPage.styled';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Bear from '../../image/bearHero.png'
 
 const MelyaPage = () => {
   const container = useRef();
@@ -42,9 +43,7 @@ const MelyaPage = () => {
         <Stars2 id="stars2" />
         <Stars3 id="stars3" />
         <Title id="title">
-          <span>PURE CSS</span>
-          <br />
-          <span>PARALLAX PIXEL STARS</span>
+          <img src={Bear}/>
         </Title>
         <div
           className="sideMenu"

@@ -113,16 +113,22 @@ export const Stars3 = styled.div`
 export const Title = styled.div`
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
-  color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирование по горизонтали и вертикали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: #fff;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 50px;
   letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
+
+  img {
+    width: 400px;
+    height: 400px;
+  }
 
   span {
     background: -webkit-linear-gradient(white, #38495a);
