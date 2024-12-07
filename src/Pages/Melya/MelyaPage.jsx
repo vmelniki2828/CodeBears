@@ -1,50 +1,71 @@
-import { useGSAP } from '@gsap/react';
+import { useEffect, useRef, useState } from 'react';
 import {
-  CardConatiner,
-  MainComponent,
-  MainTitle,
-  SubTitle,
+  BurgerIcon,
+  BurgerIconExit,
+  Stars,
+  Stars2,
+  Stars3,
+  StarsWrapper,
+  Title,
 } from './MelyaPage.styled';
-import card from './card.png';
-import card2 from './card2.png';
-import card3 from './card3.png';
-import { useLayoutEffect, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
 const MelyaPage = () => {
   const container = useRef();
+  const { contextSafe } = useGSAP({ scope: container });
+  const [sidebarSwitcher, setSidebarSwitcher] = useState(false);
 
-  useGSAP(
-    () => {
-      gsap.to('.card', { rotateY: 30, rotationX : 60, rotationZ: -10, x: 100});
-      gsap.to('.card2', { rotateY: 30, rotationX : 60, rotationZ: -10});
-      gsap.to('.card3', { rotateY: 30, rotationX : 60, rotationZ: -10, x: -100});
-    },
-    { scope: container }
-  ); 
+  useEffect(() => {
+    // Устанавливаем начальное состояние меню (спрятано)
+    gsap.set('.sideMenu', { x: -190 });
+  }, []);
 
-  useLayoutEffect(()=>{
-    gsap.from(".card", {
-      x:500,
-      scrollTrigger:{
-        trigger:".card",
-      }
-    })
-  },[])
+  const onClickGood = () => {
+    // Переключение состояния меню
+    if (!sidebarSwitcher) {
+      // Меню открывается
+      gsap.to('.sideMenu', { x: 0, duration: 0.5, ease: 'power2.out', opacity: 1 });
+      setSidebarSwitcher(!sidebarSwitcher);
+    } else {
+      // Меню закрывается
+      gsap.to('.sideMenu', { x: -190, duration: 0.5, ease: 'power2.in' , opacity: 0});
+      setSidebarSwitcher(!sidebarSwitcher);
+    }
+  };
 
   return (
-    <MainComponent>
-      <MainTitle>3D Animating</MainTitle>
-      <SubTitle>Credit Card</SubTitle>
-      <CardConatiner ref={container} className="app">
-        <img className="card" src={card} />
-        <img className="card2" src={card2} />
-        <img className="card3"  src={card3} />
-      </CardConatiner>
-    </MainComponent>
+    <>
+      <StarsWrapper ref={container}>
+        <BurgerIcon onClick={() => onClickGood()} className="good" />
+        <Stars id="stars" />
+        <Stars2 id="stars2" />
+        <Stars3 id="stars3" />
+        <Title id="title">
+          <span>PURE CSS</span>
+          <br />
+          <span>PARALLAX PIXEL STARS</span>
+        </Title>
+        <div
+          className="sideMenu"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '150px',
+            height: '100vh',
+            background: '#333',
+            color: '#fff',
+            padding: '20px',
+            cursor: 'pointer',
+            opacity: 0,
+          }}
+        >
+          Side Menu
+          <BurgerIconExit onClick={() => onClickGood()} />
+        </div>
+      </StarsWrapper>
+    </>
   );
 };
 
