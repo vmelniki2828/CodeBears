@@ -12,12 +12,58 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import bez_glaz from '../../image/bez_glaz.svg'
 import glaza from '../../image/gla3a.svg'
+import styled, { keyframes } from "styled-components";
+
+// Стили для контейнера body
+const Body = styled.div`
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+`;
+
+// Стили для текста
+const TextContainer = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  animation: ${rotate} 5s linear infinite;
+  
+`;
+
+// Стили для анимации вращения
+
+
+// Стили для каждого символа текста
+const Span = styled.span`
+  color:#fff;
+  position: absolute;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  transform-origin: 0 200px;
+  transform: rotate(${(props) => props.angle}deg);
+`;
+
 
 const MelyaPage = () => {
   const container = useRef();
   const { contextSafe } = useGSAP({ scope: container });
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const text = "CODEBEARS CODEBEARS ";
 
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
@@ -99,6 +145,15 @@ const MelyaPage = () => {
               transition: "transform 0.1s ease-out",
             }}
           />
+          <Body style={{ position: "absolute" }}>
+            <TextContainer >
+              {text.split("").map((char, index) => (
+                <Span key={index} angle={index * (360 / text.length)}>
+                  {char}
+                </Span>
+              ))}
+            </TextContainer>
+          </Body>
         </Title>
         <div
           className="sideMenu"
