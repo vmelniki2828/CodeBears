@@ -10,8 +10,8 @@ import {
 } from './MelyaPage.styled';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import bez_glaz from '../../image/bez_glaz.svg'
-import glaza from '../../image/gla3a.svg'
+import bez_glaz from '../../image/bez_glaz.svg';
+import glaza from '../../image/gla3a.svg';
 import styled, { keyframes } from "styled-components";
 
 // Стили для контейнера body
@@ -24,37 +24,41 @@ const Body = styled.div`
   box-sizing: border-box;
 `;
 
+// Анимация вращения для текста
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 `;
 
-// Стили для текста
+// Стили для текста (весь текст вращается)
 const TextContainer = styled.div`
-  position: relative;
-  display: inline-block;
-  width: 400px;
-  height: 400px;
-  animation: ${rotate} 5s linear infinite;
-  
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  animation: ${rotate} 15s linear infinite;
+  transform-origin: 50% 50%; /* Центр контейнера для вращения */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 `;
-
-// Стили для анимации вращения
-
 
 // Стили для каждого символа текста
 const Span = styled.span`
-  color:#fff;
+  color: #fff;
   position: absolute;
   font-size: 50px;
   width: 100%;
   text-align: center;
-  transform-origin: 0 200px;
-  transform: rotate(${(props) => props.angle}deg);
+  transform-origin: center; /* Точка вращения для каждой буквы */
+  transform: ${(props) => `
+    rotate(${props.angle}deg) 
+    translateY(-220px); /* Размещаем буквы по окружности */
+  `};
 `;
 
 
@@ -63,7 +67,7 @@ const MelyaPage = () => {
   const { contextSafe } = useGSAP({ scope: container });
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const text = "CODEBEARS CODEBEARS ";
+  const text = "CODEBEARS CODEBEARS CODEBEARS ";
 
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
@@ -174,7 +178,6 @@ const MelyaPage = () => {
           <BurgerIconExit onClick={() => onClickGood()} />
         </div>
       </StarsWrapper>
-
     </>
   );
 };
