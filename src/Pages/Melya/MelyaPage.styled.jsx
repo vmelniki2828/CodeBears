@@ -14,9 +14,11 @@ const animStar = keyframes`
 
 // Generate multiple box shadows
 const multipleBoxShadow = n => {
+  const width = window.innerWidth; 
+
   const shadows = Array.from({ length: n }, () => {
-    const x = Math.floor(Math.random() * 2000);
-    const y = Math.floor(Math.random() * 2000);
+    const x = Math.floor(Math.random() * width);
+    const y = Math.floor(Math.random() * width);
     return `${x}px ${y}px #FFF`;
   });
   return shadows.join(', ');
@@ -114,7 +116,10 @@ export const Title = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Центрирование по горизонтали и вертикали */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Центрирование по горизонтали и вертикали */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,4 +140,63 @@ export const Title = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+`;
+
+// Стили для контейнера body
+export const Body = styled.div`
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
+// Анимация вращения для текста
+export const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+// Стили для текста (весь текст вращается)
+export const TextContainer = styled.div`
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  animation: ${rotate} 15s linear infinite;
+  transform-origin: 50% 50%; /* Центр контейнера для вращения */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+`;
+
+// Стили для каждого символа текста
+export const Span = styled.span`
+  position: absolute;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  transform-origin: center; /* Точка вращения для каждой буквы */
+  transform: ${props => `
+    rotate(${props.angle}deg) 
+    translateY(-320px); /* Размещаем буквы по окружности */
+  `};
+`;
+
+export const SideBarContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  cursor: pointer;
+  opacity: 0;
 `;
