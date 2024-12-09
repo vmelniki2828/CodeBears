@@ -14,7 +14,7 @@ const animStar = keyframes`
 
 // Generate multiple box shadows
 const multipleBoxShadow = n => {
-  const width = window.innerWidth; 
+  const width = window.innerWidth;
 
   const shadows = Array.from({ length: n }, () => {
     const x = Math.floor(Math.random() * width);
@@ -36,6 +36,8 @@ export const BurgerIcon = styled(HiMenu)`
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease; /* Плавный переход для всех изменяемых свойств */
+  position: relative;
+  z-index: 11;
 
   &:hover {
     color: #949494;
@@ -199,4 +201,5 @@ export const SideBarContainer = styled.div`
   padding: 20px;
   cursor: pointer;
   opacity: 0;
+  z-index: 11;
 `;
