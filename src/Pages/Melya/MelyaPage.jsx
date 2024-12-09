@@ -17,6 +17,7 @@ import gsap from 'gsap';
 import bez_glaz from '../../image/bez_glaz.svg';
 import glaza from '../../image/gla3a.svg';
 import styled, { keyframes } from 'styled-components';
+import LoremText from './LoremText/LoremText';
 
 const MelyaPage = () => {
   const container = useRef();
@@ -24,10 +25,11 @@ const MelyaPage = () => {
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const text = 'CODEBEARS CODEBEARS CODEBEARS ';
+  const [scrollDirection, setScrollDirection] = useState(null);
 
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
-    gsap.set('.sideMenu', { x: "-100vw" });
+    gsap.set('.sideMenu', { x: '-100vw' });
   }, []);
 
   const onClickGood = () => {
@@ -36,17 +38,15 @@ const MelyaPage = () => {
       // Меню открывается
       gsap.to('.sideMenu', {
         x: 0,
-        duration: 0.5,
-        ease: 'power2.out',
+        duration: 0.4, // Уменьшаем длительность для мгновенности
         opacity: 1,
       });
       setSidebarSwitcher(!sidebarSwitcher);
     } else {
       // Меню закрывается
       gsap.to('.sideMenu', {
-        x: "-100vw",
-        duration: 0.5,
-        ease: 'power2.in',
+        x: '-100vw',
+        duration: 0.4, // Уменьшаем длительность для мгновенности
         opacity: 0,
       });
       setSidebarSwitcher(!sidebarSwitcher);
@@ -85,47 +85,99 @@ const MelyaPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = e => {
+      const scrollSpeed = e.deltaY;
+
+      // Определяем направление скроллинга
+      setScrollDirection(scrollSpeed > 0 ? 'down' : 'up');
+
+      // Анимация для логотипа и текста
+      if (scrollDirection === 'down') {
+        gsap.to('.title', {
+          y: '-100vh',
+          duration: 0.9, // Уменьшаем длительность для мгновенности
+        });
+        gsap.to('.text-block', {
+          opacity: 1,
+          y: '0',
+          duration: 0.4, // Уменьшаем длительность для мгновенности
+        });
+      } else if (scrollDirection === 'up') {
+        gsap.to('.title', {
+          y: '0',
+          duration: 0.9, // Уменьшаем длительность для мгновенности
+        });
+        gsap.to('.text-block', {
+          opacity: 0,
+          y: '100vh',
+          duration: 0.4, // Уменьшаем длительность для мгновенности
+        });
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [scrollDirection]);
+
   return (
-    <>
-      <StarsWrapper ref={container}>
-        <BurgerIcon onClick={() => onClickGood()} className="good" />
-        <Stars id="stars" />
-        <Stars2 id="stars2" />
-        <Stars3 id="stars3" />
-        <Title id="title" className="face-container">
-          <img
-            src={bez_glaz}
-            alt="Face"
-            style={{
-              display: 'block',
-            }}
-          />
-          {/* Глаза */}
-          <img
-            src={glaza}
-            alt="Eyes"
-            style={{
-              position: 'absolute',
-              transform: `translate(0, 0) translate(${offset.x}px, ${offset.y}px)`,
-              transition: 'transform 0.1s ease-out',
-            }}
-          />
-          <Body style={{ position: 'absolute' }}>
-            <TextContainer>
-              {text.split('').map((char, index) => (
-                <Span key={index} angle={index * (360 / text.length)}>
-                  {char}
-                </Span>
-              ))}
-            </TextContainer>
-          </Body>
-        </Title>
-        <SideBarContainer className="sideMenu">
-          Side Menu
-          <BurgerIconExit onClick={() => onClickGood()} />
-        </SideBarContainer>
-      </StarsWrapper>
-    </>
+    <StarsWrapper ref={container}>
+      <BurgerIcon onClick={() => onClickGood()} className="good" />
+      <Stars id="stars" />
+      <Stars2 id="stars2" />
+      <Stars3 id="stars3" />
+      <Title id="title" className="face-container title">
+        <img
+          src={bez_glaz}
+          alt="Face"
+          style={{
+            display: 'block',
+          }}
+        />
+        {/* Глаза */}
+        <img
+          src={glaza}
+          alt="Eyes"
+          style={{
+            position: 'absolute',
+            transform: `translate(0, 0) translate(${offset.x}px, ${offset.y}px)`,
+            transition: 'transform 0.15s ease-out',
+          }}
+        />
+        <Body style={{ position: 'absolute' }}>
+          <TextContainer>
+            {text.split('').map((char, index) => (
+              <Span key={index} angle={index * (360 / text.length)}>
+                {char}
+              </Span>
+            ))}
+          </TextContainer>
+        </Body>
+      </Title>
+      <div
+        className="text-block"
+        style={{
+          opacity: 0,
+          transform: 'translateY(100vh)',
+          backgroundColor: 'rgba(128, 128, 128, 0.8)',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 10,
+          transition: 'opacity 0.1s ease, transform 0.1s ease',
+        }}
+      >
+        <LoremText />
+      </div>
+      <SideBarContainer className="sideMenu">
+        Side Menu
+        <BurgerIconExit onClick={() => onClickGood()} />
+      </SideBarContainer>
+    </StarsWrapper>
   );
 };
 
