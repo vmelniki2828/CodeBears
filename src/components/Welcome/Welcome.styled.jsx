@@ -14,14 +14,14 @@ const animStar = keyframes`
 
 // Generate multiple box shadows
 const multipleBoxShadow = n => {
-  const width = window.innerWidth;
+    const width = window.innerWidth;
 
-  const shadows = Array.from({ length: n }, () => {
-    const x = Math.floor(Math.random() * width);
-    const y = Math.floor(Math.random() * width);
-    return `${x}px ${y}px #FFF`;
-  });
-  return shadows.join(', ');
+    const shadows = Array.from({ length: n }, () => {
+        const x = Math.floor(Math.random() * width);
+        const y = Math.floor(Math.random() * width);
+        return `${x}px ${y}px #FFF`;
+    });
+    return shadows.join(', ');
 };
 
 // Shadow variables
@@ -37,7 +37,7 @@ export const BurgerIcon = styled(HiMenu)`
   cursor: pointer;
   transition: all 0.3s ease; /* Плавный переход для всех изменяемых свойств */
   position: relative;
-  z-index: 11;
+  z-index: 999;
 
   &:hover {
     color: #949494;
@@ -190,16 +190,4 @@ export const Span = styled.span`
   `};
 `;
 
-export const SideBarContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 11;
-`;
+
