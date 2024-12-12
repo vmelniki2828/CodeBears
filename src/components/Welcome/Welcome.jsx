@@ -23,7 +23,7 @@ const Welcome = () => {
     const container = useRef();
     const { contextSafe } = useGSAP({ scope: container });
     const [offset, setOffset] = useState({ x: 0, y: 0 });
-    const text = 'CODEBEARS CODEBEARS CODEBEARS ';
+    const text = 'CODEBEARS CODEBEARS CODEBEARS CODEBEARS ';
 
     const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
 

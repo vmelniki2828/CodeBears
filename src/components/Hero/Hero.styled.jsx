@@ -1,10 +1,87 @@
 import styled from 'styled-components';
 
-export const LoremMainText = styled.h1`
-  color: white;
-  text-transform: uppercase;
-  padding: 20px;
-  font-size: 2rem;
-  font-weight: bold;
+export const HeroContainer = styled.div`
+  opacity: 0;
+  transform: translateY(100vh);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+`;
+
+export const HeroMainText = styled.p`
+  font-family: 'Gunterz';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 87px;
+  line-height: 100%;
+  margin: 150px 0 50px 0;
+  background: linear-gradient(123.73deg, #ffffff -44.77%, #45aeb1 302.21%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  text-shadow: 0px 0px 19.3px rgba(87, 255, 154, 0.2),
+    0px 0px 71.9px rgba(69, 174, 177, 0.42);
+`;
+
+export const HeroSubText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+  text-align: center;
+  color: #ffffff;
+  width: 600px;
+  margin: 50px 0 0 0;
+`;
+
+export const MoonImg = styled.img`
+  position: fixed;
+  z-index: -3;
+  filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.5));
+`;
+
+export const StartContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const StarImg = styled.img``;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 100px;
+  margin-top: 80px;
+`;
+
+export const ButtonItem = styled.button`
+  width: 287px;
+  height: 72px;
+  border-color: #57ff9a;
+  background: #0f1924;
+  border-radius: 58px;
+  text-align: center;
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+  color: #57ff9a;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Добавляем общую анимацию для всех свойств */
+
+  &:hover {
+    color: white; /* Меняем цвет текста при наведении */
+    box-shadow: 0px 0px 10px #57ff9a; /* Добавляем тень для эффекта свечения */
+  }
 `;
