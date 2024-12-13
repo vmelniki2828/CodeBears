@@ -16,7 +16,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import bez_glaz from '../../image/bez_glaz.svg';
 import glaza from '../../image/gla3a.svg';
-import Hero from 'components/Hero/Hero';
 import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
 
 const Welcome = () => {
