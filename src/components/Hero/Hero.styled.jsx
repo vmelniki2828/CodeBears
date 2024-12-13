@@ -16,10 +16,11 @@ export const HeroContainer = styled.div`
   text-align: center;
 `;
 
+
 export const HeroMainText = styled.p`
-  font-family: 'Gunterz';
+  font-family: 'Gunterz', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 87px;
   line-height: 100%;
   margin: 150px 0 50px 0;
@@ -34,7 +35,7 @@ export const HeroMainText = styled.p`
 `;
 
 export const HeroSubText = styled.p`
-  font-family: 'Freigeist';
+  font-family: 'Freigeist', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -71,10 +72,10 @@ export const ButtonItem = styled.button`
   background: #0f1924;
   border-radius: 58px;
   text-align: center;
-  font-family: 'Freigeist';
+  font-family: 'Freigeist', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 37px;
   color: #57ff9a;
   cursor: pointer;

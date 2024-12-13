@@ -16,14 +16,16 @@ code {
 
 @font-face {
   font-family: 'Freigeist';
-  src:url('/fonts/FreigeistXWide-Medium.woff') format('woff');
-  font-weight: normal;
+  src:url('/fonts/Freigeist-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gunterz';
-  src:url('/fonts/Gunterz-Medium.otf') format('otf');
-  font-weight: normal;
+  src:url('/fonts/GUNTERZ-MEDIUM.otf') format('otf');
+  font-weight: 500;
   font-style: normal;
 }
+
+
