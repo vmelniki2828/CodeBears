@@ -1,6 +1,6 @@
 import {
-    ButtonItem,
-    ButtonsContainer,
+  ButtonItem,
+  ButtonsContainer,
   HeroContainer,
   HeroMainText,
   HeroSubText,
@@ -18,11 +18,11 @@ const Hero = () => {
     // Устанавливаем начальное состояние меню (спрятано)
     gsap.set('.moon', { y: '65vh' });
     gsap.to('.moon', {
-        rotation: 360,
-        duration: 30, // Длительность анимации в секундах
-        repeat: -1, // Бесконечное повторение анимации
-        ease: 'linear', // Тип анимации (линейное движение)
-      });
+      rotation: 360,
+      duration: 30, // Длительность анимации в секундах
+      repeat: -1, // Бесконечное повторение анимации
+      ease: 'linear', // Тип анимации (линейное движение)
+    });
     gsap.to('.star', {
       rotation: 360,
       duration: 5, // Длительность анимации в секундах

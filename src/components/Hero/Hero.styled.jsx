@@ -1,19 +1,14 @@
 import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
-  opacity: 0;
-  transform: translateY(100vh);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 10;
-  transition: opacity 0.1s ease, transform 0.1s ease;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 `;
 
 
@@ -47,8 +42,8 @@ export const HeroSubText = styled.p`
 `;
 
 export const MoonImg = styled.img`
-  position: fixed;
-  z-index: -3;
+  position: absolute;
+  z-index: 999;
   filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.5));
 `;
 
