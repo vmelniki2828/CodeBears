@@ -2,14 +2,10 @@ import styled, { keyframes } from 'styled-components';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-
 export const WelcomeContainer = styled.div`
   display: flex;
   height: 100vh;
-`
-
-
-
+`;
 
 export const BurgerIcon = styled(HiMenu)`
   width: 30px;
@@ -18,7 +14,7 @@ export const BurgerIcon = styled(HiMenu)`
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease; /* Плавный переход для всех изменяемых свойств */
-  position: relative;
+  position: fixed;
   z-index: 999;
 
   &:hover {
@@ -109,5 +105,3 @@ export const Span = styled.span`
     translateY(-320px); /* Размещаем буквы по окружности */
   `};
 `;
-
-

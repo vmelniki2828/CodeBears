@@ -14,7 +14,7 @@ code {
     monospace; */
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Freigeist';
   src:url('/fonts/Freigeist-Regular.woff2') format('woff2');
   font-weight: 400;
@@ -26,6 +26,6 @@ code {
   src:url('/fonts/GUNTERZ-MEDIUM.otf') format('otf');
   font-weight: 500;
   font-style: normal;
-}
+} */
 
 

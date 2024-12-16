@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MdArrowOutward } from 'react-icons/md';
 
 export const AboutUsConteiner = styled.div`
   display: flex;
@@ -10,9 +11,11 @@ export const AboutUsConteiner = styled.div`
 `;
 
 export const TopContainer = styled.div`
-  width: 100vw;
-  height: 50vh;
+  width: 98.9vw;
+  height: 120vh;
   display: flex;
+
+  overflow: hidden;
 `;
 
 export const TopLeftContainer = styled.div`
@@ -37,11 +40,37 @@ export const TopRightContainer = styled.div`
 `;
 
 export const BottomContainer = styled.div`
-  width: 100vw;
+  width: 98.9vw;
   height: 50vw;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
     #50da87 100%
   );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const TextLink = styled.a`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 41px;
+  line-height: 51px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+
+  cursor: pointer;
+
+  margin-right: 9px;
+
+  color: #181818;
+`;
+
+export const ArrowLink = styled(MdArrowOutward)`
+  width: 25px;
+  height: 26px;
 `;

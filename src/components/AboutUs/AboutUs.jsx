@@ -6,6 +6,8 @@ import {
   BottomContainer,
   TopLeftContainer,
   TopRightContainer,
+  TextLink,
+  ArrowLink,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
@@ -44,9 +46,20 @@ const AboutUs = () => {
         { x: '-100vw', opacity: 0 }, // Начальные значения
         { x: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
       );
+      gsap.fromTo(
+        '.top-right',
+        { x: '100vw', opacity: 0 }, // Начальные значения
+        { x: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
+      );
     } else {
       gsap.to('.top-left', {
         x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+      });
+      gsap.to('.top-right', {
+        x: '100vw',
         opacity: 0,
         duration: 1,
         ease: 'power3.in',
@@ -58,9 +71,14 @@ const AboutUs = () => {
     <AboutUsConteiner id="about-us" ref={aboutUsRef}>
       <TopContainer>
         <TopLeftContainer className="top-left">ПРО НАС</TopLeftContainer>
-        <TopRightContainer>asdd</TopRightContainer>
+        <TopRightContainer className="top-right">asdd</TopRightContainer>
       </TopContainer>
-      <BottomContainer>dsad</BottomContainer>
+      <BottomContainer>
+        <TextLink>
+          Зв’язатись
+          <ArrowLink />
+        </TextLink>
+      </BottomContainer>
     </AboutUsConteiner>
   );
 };
