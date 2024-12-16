@@ -3,20 +3,15 @@ import styled from 'styled-components';
 export const AboutUsConteiner = styled.div`
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(100vh);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 10;
   transition: opacity 0.1s ease, transform 0.1s ease;
 `;
 
 export const TopContainer = styled.div`
   width: 100vw;
-  height: 50vw;
+  height: 50vh;
   display: flex;
 `;
 

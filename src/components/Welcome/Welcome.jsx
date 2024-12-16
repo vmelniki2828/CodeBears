@@ -11,6 +11,7 @@ import {
     StarsWrapper,
     TextContainer,
     Title,
+    WelcomeContainer,
 } from './Welcome.styled';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -19,8 +20,6 @@ import glaza from '../../image/gla3a.svg';
 import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
 
 const Welcome = () => {
-    const container = useRef();
-    const { contextSafe } = useGSAP({ scope: container });
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const text = 'CODEBEARS CODEBEARS CODEBEARS CODEBEARS ';
 
@@ -71,13 +70,11 @@ const Welcome = () => {
 
 
     return (
-        <StarsWrapper ref={container}>
+        <WelcomeContainer>
             <BurgerIcon onClick={onClickGood} className="good" />
             <SideBarMenu isOpen={sidebarSwitcher} />
 
-            <Stars id="stars" />
-            <Stars2 id="stars2" />
-            <Stars3 id="stars3" />
+
             <Title id="title" className="face-container title">
                 <img
                     src={bez_glaz}
@@ -108,7 +105,7 @@ const Welcome = () => {
             </Title>
 
 
-        </StarsWrapper>
+        </ WelcomeContainer>
     );
 };
 
