@@ -1,8 +1,9 @@
-import { WhyWeContainer } from "./WhyWe.styled";
+import { WhyWeContainer, WhyWeMainTitle, WhyWeSubTitle } from "./WhyWe.styled";
 
 const WhyWe = () => {
     return (<WhyWeContainer>
-        dsdsfds
+        <WhyWeMainTitle>ЧОМУ?</WhyWeMainTitle>
+        <WhyWeSubTitle>ВАРТО вибрати CODEBEARS!</WhyWeSubTitle>
     </WhyWeContainer>)
 }
 
