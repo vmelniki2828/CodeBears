@@ -51,6 +51,11 @@ const AboutUs = () => {
         { x: '100vw', opacity: 0 }, // Начальные значения
         { x: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
       );
+      gsap.fromTo(
+        '.bottom',
+        { y: '100vw', opacity: 0 }, // Начальные значения
+        { y: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
+      );
     } else {
       gsap.to('.top-left', {
         x: '-100vw',
@@ -64,6 +69,12 @@ const AboutUs = () => {
         duration: 1,
         ease: 'power3.in',
       });
+      gsap.to('.bottom', {
+        y: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+      });
     }
   }, [isVisible]); // Запускаем анимацию каждый раз, когда компонент виден
 
@@ -73,7 +84,7 @@ const AboutUs = () => {
         <TopLeftContainer className="top-left">ПРО НАС</TopLeftContainer>
         <TopRightContainer className="top-right">asdd</TopRightContainer>
       </TopContainer>
-      <BottomContainer>
+      <BottomContainer className="bottom">
         <TextLink>
           Зв’язатись
           <ArrowLink />
