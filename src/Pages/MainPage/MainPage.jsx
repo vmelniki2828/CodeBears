@@ -5,6 +5,7 @@ import Hero from 'components/Hero/Hero';
 import Welcome from 'components/Welcome/Welcome';
 import { Stars, Stars2, Stars3, StarsWrapper } from './MainPage.styled';
 import { useGSAP } from '@gsap/react';
+import WhyWe from 'components/WhyWe/WhyWe';
 
 const MainPage = () => {
     const container = useRef();
@@ -17,6 +18,7 @@ const MainPage = () => {
             <Welcome />
             <Hero />
             <AboutUs />
+            <WhyWe />
         </StarsWrapper>
     );
 };
