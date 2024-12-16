@@ -16,7 +16,7 @@ import gsap from 'gsap';
 const Hero = () => {
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
-    gsap.set('.moon', { y: '65vh' });
+    gsap.set('.moon', { y: '0' });
     gsap.to('.moon', {
       rotation: 360,
       duration: 30, // Длительность анимации в секундах

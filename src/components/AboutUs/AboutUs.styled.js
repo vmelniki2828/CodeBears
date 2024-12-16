@@ -2,20 +2,18 @@ import styled from 'styled-components';
 import { MdArrowOutward } from 'react-icons/md';
 
 export const AboutUsConteiner = styled.div`
+  margin-top:-100%;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  z-index: 10;
+  height: 100%;
+  overflow:hidden;
   transition: opacity 0.1s ease, transform 0.1s ease;
 `;
 
 export const TopContainer = styled.div`
   width: 98.9vw;
-  height: 120vh;
   display: flex;
-
-  overflow: hidden;
 `;
 
 export const TopLeftContainer = styled.div`
@@ -29,9 +27,10 @@ export const TopLeftContainer = styled.div`
   font-family: 'Gunterz', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 226px;
+  font-size: 206px;
   line-height: 100%;
   color: #50da87;
+  height:50vh;
 `;
 
 export const TopRightContainer = styled.div`
@@ -41,7 +40,7 @@ export const TopRightContainer = styled.div`
 
 export const BottomContainer = styled.div`
   width: 98.9vw;
-  height: 50vw;
+  height: 50vh;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
@@ -51,6 +50,7 @@ export const BottomContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate(0px, 0px);
 `;
 
 export const TextLink = styled.a`
