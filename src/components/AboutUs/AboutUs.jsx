@@ -8,11 +8,15 @@ import {
   TopRightContainer,
   TextLink,
   ArrowLink,
+  MainTextAboutUs,
+  TextAboutUs,
 } from './AboutUs.styled';
+import ContactUsModal from 'components/ContactUsModal/ContactUsModal';
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false); // Состояние видимости
   const aboutUsRef = useRef(null); // Ссылка на контейнер AboutUs
+  const [modalVisible, setModalVisible] = useState(false);
 
   // Используем Intersection Observer для отслеживания видимости компонента
   useEffect(() => {
@@ -76,20 +80,32 @@ const AboutUs = () => {
         ease: 'power3.in',
       });
     }
-  }, [isVisible]); // Запускаем анимацию каждый раз, когда компонент виден
-
+  }, [isVisible]);
   return (
     <AboutUsConteiner id="about-us" ref={aboutUsRef}>
       <TopContainer>
         <TopLeftContainer className="top-left">ПРО НАС</TopLeftContainer>
-        <TopRightContainer className="top-right">asdd</TopRightContainer>
+        <TopRightContainer className="top-right">
+          <MainTextAboutUs>CODEBEARS</MainTextAboutUs>
+          <TextAboutUs>
+            Тут трошки про команію, коли буде точний текст, додамо конкретніший
+            візуал. Тут трошки про команію, коли буде точний текст,додамо
+            конкретніший візуал. Тут трошки про команію, коли буде текст
+            текст.Тут трошки про команію, коли буде точний текст.
+          </TextAboutUs>
+        </TopRightContainer>
       </TopContainer>
       <BottomContainer className="bottom">
-        <TextLink>
+        <TextLink onClick={() => setModalVisible(!modalVisible)}>
           Зв’язатись
           <ArrowLink />
         </TextLink>
       </BottomContainer>
+      {modalVisible ? (
+        <ContactUsModal setModalVisible={setModalVisible} />
+      ) : (
+        <></>
+      )}
     </AboutUsConteiner>
   );
 };
