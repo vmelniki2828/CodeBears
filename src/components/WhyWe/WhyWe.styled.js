@@ -34,6 +34,51 @@ font-size: 66.7397px;
 line-height: 87px;
 
 color: #FFFFFF;
+`;
+
+export const WhyWeList = styled.ul`
+list-style: none;
+margin: 0;
+padding: 0;
+gap:133px;
+display: flex;
+`;
+
+export const WhyWeItem = styled.li`
+width:338px;
+border-top: 1px solid #fff;
+`;
+
+export const WhyWeItemTitle = styled.h2`
+width: 338px;
+height: 25px;
+font-family: 'Freigeist';
+font-style: normal;
+font-weight: 400;
+font-size: 28.4904px;
+line-height: 86.5%;
+/* identical to box height, or 25px */
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
 
 
-`
+`;
+
+export const WhyWeItemSubTitle = styled.p`
+
+width: 338px;
+height: 259px;
+font-family: 'Freigeist';
+font-style: normal;
+font-weight: 400;
+font-size: 28.4904px;
+line-height: 104%;
+/* or 30px */
+letter-spacing: -0.02em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 5.18008px 20.7203px rgba(0, 0, 0, 0.68);
+
+`;
