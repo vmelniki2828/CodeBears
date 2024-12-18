@@ -24,8 +24,6 @@ const AboutUs = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true); // Когда компонент виден
-        } else {
-          setIsVisible(false); // Когда компонент выходит из области видимости
         }
       },
       { threshold: 0.5 } // Срабатывает, когда 50% компонента видны
@@ -60,25 +58,6 @@ const AboutUs = () => {
         { y: '100vw', opacity: 0 }, // Начальные значения
         { y: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
       );
-    } else {
-      gsap.to('.top-left', {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-      });
-      gsap.to('.top-right', {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-      });
-      gsap.to('.bottom', {
-        y: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-      });
     }
   }, [isVisible]);
 

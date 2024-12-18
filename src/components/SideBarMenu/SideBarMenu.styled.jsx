@@ -94,10 +94,12 @@ export const SideBarListLeftItem = styled.p`
   }
 `;
 
+
 export const FixedBottomBlock = styled.div`
   width: 100vw;
   height: 150px;
-  background: linear-gradient(to right, red 42vw, blue 42vw);
+background: 
+  linear-gradient(to right, #3ADF7C 42vw, #162C3B 42vw);
   color: white;
   font-size: 24px;
   border: none;
@@ -106,9 +108,9 @@ export const FixedBottomBlock = styled.div`
   font-weight: bold;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
-  font-family: 'Freigeist';
+  font-family: 'Freigeist', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 60px;
   line-height: 76px;
   text-transform: uppercase;
@@ -123,5 +125,9 @@ export const FixedBottomBlockText = styled.p`
   text-align: center;
   background-clip: text;
   -webkit-background-clip: text; /* For older WebKit browsers */
-  background-image: linear-gradient(to right, blue 42vw, red 42vw);
+  background-image: linear-gradient(to right, #0B1323 42vw, #3ADF7C 42vw);
 `;
+
+
+
+
