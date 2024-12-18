@@ -7,9 +7,12 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, ${({ isAnimating }) => (isAnimating ? 0 : 0.5)});
+  opacity: ${({ isAnimating }) => (isAnimating ? 0 : 1)};
+  transition: opacity 0.3s ease;
   z-index: 999;
 `;
+
 
 export const TextModalConteiner = styled.div`
   width: 700px;
@@ -17,24 +20,39 @@ export const TextModalConteiner = styled.div`
 
 export const ContactUsModalConteiner = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 600px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
     #50da87 100%
   );
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 20px;
-  z-index: 1000;
-
+  opacity: ${({ isAnimating }) => (isAnimating ? 0 : 1)};
+  transform: ${({ isAnimating }) => (isAnimating ? 'scale(0.95)' : 'scale(1)')};
+  transition: opacity 0.3s ease, transform 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+
+  &:hover {
+    color: #ff6b6b;
+  }
 `;
 
 export const MainModalText = styled.h1`

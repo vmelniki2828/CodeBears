@@ -81,6 +81,7 @@ const AboutUs = () => {
       });
     }
   }, [isVisible]);
+
   return (
     <AboutUsConteiner id="about-us" ref={aboutUsRef}>
       <TopContainer>
