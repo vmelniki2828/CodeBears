@@ -6,6 +6,8 @@ import Welcome from 'components/Welcome/Welcome';
 import { Stars, Stars2, Stars3, StarsWrapper } from './MainPage.styled';
 import { useGSAP } from '@gsap/react';
 import WhyWe from 'components/WhyWe/WhyWe';
+import Gallery from 'components/Gallery/Gallery';
+import MainForm from 'components/MainForm/MainForm';
 
 const MainPage = () => {
     const container = useRef();
@@ -19,6 +21,8 @@ const MainPage = () => {
             <Hero />
             <AboutUs />
             <WhyWe />
+            <Gallery/>
+            <MainForm/>
         </StarsWrapper>
     );
 };
