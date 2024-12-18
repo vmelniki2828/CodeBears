@@ -10,6 +10,8 @@ export const WhyWeContainer = styled.div`
 `
 
 export const WhyWeMainTitle = styled.h1`
+  opacity: 0; /* Скрываем изначально */
+
 font-family: 'Gunterz', sans-serif;
 font-style: normal;
 font-weight: 500;
@@ -27,6 +29,8 @@ margin:0 0 60px 0;
 `
 
 export const WhyWeSubTitle = styled.p`
+  opacity: 0; /* Скрываем изначально */
+
 font-family: 'Freigeist';
 font-style: normal;
 font-weight: 400;
@@ -37,6 +41,8 @@ color: #FFFFFF;
 `;
 
 export const WhyWeList = styled.ul`
+  opacity: 0; /* Скрываем изначально */
+
 list-style: none;
 margin: 0;
 padding: 0;

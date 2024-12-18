@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { MdArrowOutward } from 'react-icons/md';
 
 export const AboutUsConteiner = styled.div`
-  margin-top: -100%;
+  margin-top: -1500px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,7 +12,7 @@ export const AboutUsConteiner = styled.div`
 `;
 
 export const TopContainer = styled.div`
-  width: 98.9vw;
+  width: 100%;
   display: flex;
 `;
 
@@ -30,7 +30,6 @@ export const TopLeftContainer = styled.div`
   font-size: 206px;
   line-height: 100%;
   color: #50da87;
-  height: 85vh;
 `;
 
 export const TopRightContainer = styled.div`
@@ -44,8 +43,8 @@ export const TopRightContainer = styled.div`
 `;
 
 export const BottomContainer = styled.div`
-  width: 98.9vw;
-  height: 75vh;
+  width: 100%;
+  height: 300px;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
