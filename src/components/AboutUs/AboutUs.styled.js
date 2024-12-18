@@ -35,6 +35,7 @@ export const TopLeftContainer = styled.div`
 export const TopRightContainer = styled.div`
   width: 50%;
   background-color: #121d33;
+  opacity: 0;
 
   display: flex;
   flex-direction: column;
