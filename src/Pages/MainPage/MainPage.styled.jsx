@@ -28,12 +28,19 @@ const shadowsMedium = multipleBoxShadow(200);
 const shadowsBig = multipleBoxShadow(100);
 
 export const StarsWrapper = styled.div`
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
   background: radial-gradient(ellipse at bottom, #0f1a26 0%, #050608 100%);
 `;
 
 // Stars layers
 export const Stars = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 1px;
   height: 1px;
   background: transparent;
@@ -52,6 +59,9 @@ export const Stars = styled.div`
 `;
 
 export const Stars2 = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 2px;
   height: 2px;
   background: transparent;
@@ -70,6 +80,9 @@ export const Stars2 = styled.div`
 `;
 
 export const Stars3 = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 3px;
   height: 3px;
   background: transparent;
@@ -86,3 +99,4 @@ export const Stars3 = styled.div`
     box-shadow: ${shadowsBig};
   }
 `;
+

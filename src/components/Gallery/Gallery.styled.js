@@ -6,7 +6,7 @@ import group from '../../image/Group76.png';
 export const GalleryContainer = styled.div`
 height:845px;
 width: 100%;
-z-index: 999;
+z-index: 9;
   background-image: url(${group});
   background-repeat: no-repeat;
   background-size: cover; 
