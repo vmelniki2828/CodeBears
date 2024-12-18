@@ -14,38 +14,37 @@ import {
   ButtonsContainer,
   FormConteiner,
   FileIcon,
+  CloseButton,
 } from './ContactUsModal.styled';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
 
 const ContactUsModal = ({ setModalVisible }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    file: null,
-  });
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const closeModal = () => {
+    setIsAnimating(true); // Запускаем анимацию закрытия
+    setTimeout(() => {
+      setModalVisible(false); // Скрываем модалку после завершения анимации
+      document.body.style.overflow = 'auto'; // Возвращаем скролл
+    }, 300); // Длительность анимации (в миллисекундах)
   };
 
-  const handleFileChange = e => {
-    const { files } = e.target;
-    setFormData({ ...formData, file: files[0] });
+  const stopScroll = () => {
+    document.body.style.overflow = 'hidden'; // Отключаем скролл при открытии
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log('Submitted Data:', formData);
-
-    setModalVisible(false);
-  };
+  useState(() => {
+    stopScroll();
+  }, []);
 
   return (
     <>
-      <ModalOverlay onClick={() => setModalVisible(false)} />
-      <ContactUsModalConteiner>
+      <ModalOverlay
+        onClick={closeModal}
+        isAnimating={isAnimating} // Для анимации затемнения
+      />
+      <ContactUsModalConteiner isAnimating={isAnimating}>
+        <CloseButton onClick={closeModal}>Закрыть ✕</CloseButton>
         <TextModalConteiner>
           <MainModalText>ЗВ’ЯЖІТЬСЯ З НАМИ!</MainModalText>
           <TitleModalText>
@@ -53,32 +52,24 @@ const ContactUsModal = ({ setModalVisible }) => {
           </TitleModalText>
           <ModalText>
             Наша команда оперативно опрацює запит, щоб надати відповідь або
-            запропонувати рішення. Ми зв’яжемося з клієнтом у найкоротші терміни
-            через зазначений спосіб зв’язку для уточнення деталей або подальшої
-            співпраці.
+            запропонувати рішення.
           </ModalText>
         </TextModalConteiner>
         <FormConteiner>
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <InputField
               type="text"
               name="name"
               placeholder="Ваше ім’я"
-              value={formData.name}
-              onChange={handleChange}
             />
             <InputField
               type="email"
               name="email"
               placeholder="Ваш email"
-              value={formData.email}
-              onChange={handleChange}
             />
             <TextAreaField
               name="message"
               placeholder="Ваше повідомлення"
-              value={formData.message}
-              onChange={handleChange}
             />
           </Form>
           <ButtonsContainer>
@@ -90,11 +81,10 @@ const ContactUsModal = ({ setModalVisible }) => {
                 type="file"
                 id="file"
                 name="file"
-                onChange={handleFileChange}
               />
             </FileInputButton>
 
-            <SubmitButton type="submit" onClick={handleSubmit}>
+            <SubmitButton type="submit">
               Надіслати
               <ArrowLink />
             </SubmitButton>
