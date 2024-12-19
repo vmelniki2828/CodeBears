@@ -1,42 +1,47 @@
 import styled from 'styled-components';
 import { MdOutlineAttachFile } from 'react-icons/md';
 
-export const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, ${({ isAnimating }) => (isAnimating ? 0 : 0.5)});
-  opacity: ${({ isAnimating }) => (isAnimating ? 0 : 1)};
-  transition: opacity 0.3s ease;
-  z-index: 999;
-`;
-
-
-export const TextModalConteiner = styled.div`
-  width: 700px;
-`;
-
 export const ContactUsModalConteiner = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: ${({ isAnimating, isVisible }) =>
+    isAnimating
+      ? 'translate(-50%, -50%) scale(0)'
+      : isVisible
+      ? 'translate(-50%, -50%) scale(1)'
+      : 'translate(-50%, -50%) scale(0)'};
+  opacity: ${({ isAnimating, isVisible }) =>
+    isAnimating || !isVisible ? 0 : 1};
+  width: 100%;
+  height: 100%;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
     #50da87 100%
   );
-  opacity: ${({ isAnimating }) => (isAnimating ? 0 : 1)};
-  transform: ${({ isAnimating }) => (isAnimating ? 'scale(0.95)' : 'scale(1)')};
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: transform 1s ease, opacity 1s ease;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  z-index: 1000;
+`;
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: ${({ isAnimating, isVisible }) =>
+    isAnimating || !isVisible ? 0 : 1};
+  transition: opacity 0.3s ease;
+  z-index: 999;
+`;
+
+export const TextModalConteiner = styled.div`
+  width: 700px;
 `;
 
 export const CloseButton = styled.button`

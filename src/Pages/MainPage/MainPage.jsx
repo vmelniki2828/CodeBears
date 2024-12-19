@@ -8,23 +8,25 @@ import { useGSAP } from '@gsap/react';
 import WhyWe from 'components/WhyWe/WhyWe';
 import Gallery from 'components/Gallery/Gallery';
 import MainForm from 'components/MainForm/MainForm';
+import Footer from 'components/Footer/Footer';
 
 const MainPage = () => {
-    const container = useRef();
-    const { contextSafe } = useGSAP({ scope: container });
-    return (
-        <StarsWrapper>
-            <Stars id="stars" />
-            <Stars2 id="stars2" />
-            <Stars3 id="stars3" />
-            <Welcome />
-            <Hero />
-            <AboutUs />
-            <WhyWe />
-            <Gallery/>
-            <MainForm/>
-        </StarsWrapper>
-    );
+  const container = useRef();
+  const { contextSafe } = useGSAP({ scope: container });
+  return (
+    <StarsWrapper>
+      <Stars id="stars" />
+      <Stars2 id="stars2" />
+      <Stars3 id="stars3" />
+      <Welcome />
+      <Hero />
+      <AboutUs />
+      <WhyWe />
+      <Gallery />
+      <MainForm />
+      <Footer />
+    </StarsWrapper>
+  );
 };
 
 export default MainPage;

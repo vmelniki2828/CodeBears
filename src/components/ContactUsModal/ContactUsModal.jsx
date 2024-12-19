@@ -1,49 +1,53 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ContactUsModalConteiner,
-  FileInputButton,
+  ModalOverlay,
+  CloseButton,
+  TextModalConteiner,
+  MainModalText,
+  TitleModalText,
+  ModalText,
+  FormConteiner,
   Form,
   InputField,
-  MainModalText,
-  ModalOverlay,
-  ModalText,
-  SubmitButton,
   TextAreaField,
-  TextModalConteiner,
-  TitleModalText,
   ButtonsContainer,
-  FormConteiner,
+  FileInputButton,
+  SubmitButton,
   FileIcon,
-  CloseButton,
 } from './ContactUsModal.styled';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
 
 const ContactUsModal = ({ setModalVisible }) => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIsVisible(true);
+    }, 0);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   const closeModal = () => {
-    setIsAnimating(true); // Запускаем анимацию закрытия
+    setIsAnimating(true); // Начало анимации уменьшения
     setTimeout(() => {
-      setModalVisible(false); // Скрываем модалку после завершения анимации
-      document.body.style.overflow = 'auto'; // Возвращаем скролл
-    }, 300); // Длительность анимации (в миллисекундах)
+      setModalVisible(false); // Скрытие модалки после завершения анимации
+    }, 300); // Длительность анимации
   };
-
-  const stopScroll = () => {
-    document.body.style.overflow = 'hidden'; // Отключаем скролл при открытии
-  };
-
-  useState(() => {
-    stopScroll();
-  }, []);
 
   return (
     <>
       <ModalOverlay
         onClick={closeModal}
-        isAnimating={isAnimating} // Для анимации затемнения
+        isVisible={isVisible}
+        isAnimating={isAnimating}
       />
-      <ContactUsModalConteiner isAnimating={isAnimating}>
+      <ContactUsModalConteiner isVisible={isVisible} isAnimating={isAnimating}>
         <CloseButton onClick={closeModal}>Закрыть ✕</CloseButton>
         <TextModalConteiner>
           <MainModalText>ЗВ’ЯЖІТЬСЯ З НАМИ!</MainModalText>
@@ -57,31 +61,16 @@ const ContactUsModal = ({ setModalVisible }) => {
         </TextModalConteiner>
         <FormConteiner>
           <Form>
-            <InputField
-              type="text"
-              name="name"
-              placeholder="Ваше ім’я"
-            />
-            <InputField
-              type="email"
-              name="email"
-              placeholder="Ваш email"
-            />
-            <TextAreaField
-              name="message"
-              placeholder="Ваше повідомлення"
-            />
+            <InputField type="text" name="name" placeholder="Ваше ім’я" />
+            <InputField type="email" name="email" placeholder="Ваш email" />
+            <TextAreaField name="message" placeholder="Ваше повідомлення" />
           </Form>
           <ButtonsContainer>
             <FileInputButton>
               <label htmlFor="file">
                 <FileIcon />
               </label>
-              <input
-                type="file"
-                id="file"
-                name="file"
-              />
+              <input type="file" id="file" name="file" />
             </FileInputButton>
 
             <SubmitButton type="submit">
