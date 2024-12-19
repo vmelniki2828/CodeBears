@@ -30,10 +30,12 @@ export const TopLeftContainer = styled.div`
   font-size: 206px;
   line-height: 100%;
   color: #50da87;
+  height: 593px;
 `;
 
 export const TopRightContainer = styled.div`
   width: 50%;
+  height: 593px;
   background-color: #121d33;
   opacity: 0;
 
@@ -45,17 +47,46 @@ export const TopRightContainer = styled.div`
 
 export const BottomContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 593px;
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
     #50da87 100%
   );
-
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(0px, 0px);
+  cursor: pointer; /* Курсор для кликабельности */
+  position: relative; /* Чтобы абсолютное позиционирование оверлея было относительно этого блока */
+  transition: transform 0.3s ease;
+  opacity: 0;
+`;
+
+export const BottomOverlayContainer = styled.div`
+  position: absolute; /* Позиционируем относительно BottomContainer */
+  bottom: 0; /* Начинаем с низа BottomContainer */
+  left: 0;
+  width: 100%;
+  height: ${props =>
+    props.expanded ? '100vh' : '0'}; /* Растягиваем высоту при expanded */
+  background: radial-gradient(
+    90.59% 80.21% at 100% 100%,
+    #5c9dff 0%,
+    #50da87 100%
+  );
+  opacity: ${props =>
+    props.expanded ? '1' : '0'}; /* Плавно показываем оверлей */
+  visibility: ${props =>
+    props.expanded ? 'visible' : 'hidden'}; /* Оверлей скрыт до клика */
+  transition: height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Плавные анимации */
+  cursor: pointer;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 `;
 
 export const TextLink = styled.a`

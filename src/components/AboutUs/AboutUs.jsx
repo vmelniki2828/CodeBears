@@ -10,6 +10,7 @@ import {
   ArrowLink,
   MainTextAboutUs,
   TextAboutUs,
+  BottomOverlayContainer,
 } from './AboutUs.styled';
 import ContactUsModal from 'components/ContactUsModal/ContactUsModal';
 
@@ -61,6 +62,19 @@ const AboutUs = () => {
     }
   }, [isVisible]);
 
+  const [expanded, setExpanded] = useState(false);
+
+  // Функция для переключения состояния expanded
+  const toggleExpand = () => {
+    setExpanded(prev => !prev);
+  };
+
+  // Функция для остановки распространения события при клике на кнопку
+  const handleButtonClick = event => {
+    event.stopPropagation(); // Это предотвратит передачу клика вверх к родительскому элементу
+    toggleExpand(); // Закроет оверлей
+  };
+
   return (
     <AboutUsConteiner id="about-us" ref={aboutUsRef}>
       <TopContainer>
@@ -75,12 +89,18 @@ const AboutUs = () => {
           </TextAboutUs>
         </TopRightContainer>
       </TopContainer>
-      <BottomContainer className="bottom">
-        <TextLink onClick={() => setModalVisible(!modalVisible)}>
+      <BottomContainer expanded={expanded} onClick={toggleExpand} className="bottom">
+        <TextLink>
           Зв’язатись
           <ArrowLink />
         </TextLink>
+        {/* BottomOverlayContainer теперь будет абсолютно позиционирован */}
+        <BottomOverlayContainer expanded={expanded}>
+          <button onClick={handleButtonClick}>Закрыть</button>{' '}
+          {/* При клике на кнопку оверлей будет закрыт */}
+        </BottomOverlayContainer>
       </BottomContainer>
+
       {modalVisible ? (
         <ContactUsModal setModalVisible={setModalVisible} />
       ) : (
