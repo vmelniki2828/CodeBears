@@ -13,12 +13,14 @@ import star from '../../image/Star.svg';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 const Hero = () => {
   useEffect(() => {
 
     // Регистрация плагина ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
 
     // Анимация луны и звезд (не зависит от прокрутки)
     gsap.set('.moon', { y: '0' });

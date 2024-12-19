@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   FormContainer,
   FormTitle,
@@ -15,16 +18,70 @@ import {
   SendButton,
   Attach,
 } from './MainForm.styled';
-import AttachIcon from '../../image/Vector66.svg'
+import AttachIcon from '../../image/Vector66.svg';
+
+// Регистрируем ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
 const MainForm = () => {
+  useEffect(() => {
+    // Анимация для FormTitle (запускается сверху)
+    gsap.fromTo(
+      '.form-title',
+      { y: -100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.form-title',
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+
+    // Анимация для текста
+    gsap.fromTo(
+      '.form-text',
+      { x: -200, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.form-text',
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+
+    // Анимация для формы
+    gsap.fromTo(
+      '.form',
+      { x: 200, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.form',
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  }, []);
+
   return (
     <FormContainer>
-      <FormTitle>
+      <FormTitle className="form-title">
         ДАВАЙТЕ <br /> СТВОРИМО <br />
         ЩОСЬ ПРЕКРАСНЕ.
       </FormTitle>
       <FormWrap>
-        <FormWrapText>
+        <FormWrapText className="form-text">
           <FormText>
             ВСЕ З ЧОГОСЬ ПОЧИНАЄТЬСЯ <br />
           </FormText>
@@ -39,7 +96,7 @@ const MainForm = () => {
             співпраці.
           </FormPar>
         </FormWrapText>
-        <Form>
+        <Form className="form">
           <Con>
             <InputLine type="text" />
             <InputLine type="text" />
