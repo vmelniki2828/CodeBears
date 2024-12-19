@@ -16,6 +16,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Hero = () => {
   useEffect(() => {
+
     // Регистрация плагина ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 

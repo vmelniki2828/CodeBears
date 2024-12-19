@@ -46,7 +46,7 @@ const MainForm = () => {
             <TextArea type="text" />
           </Con>
           <ButtonGroup>
-            <AttachButton><Attach alt='AttachIcon'src={AttachIcon}/></AttachButton>
+            <AttachButton><Attach alt='AttachIcon' src={AttachIcon} /></AttachButton>
             <SendButton>Надіслати</SendButton>
           </ButtonGroup>
         </Form>

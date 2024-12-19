@@ -68,7 +68,7 @@ export const BottomOverlayContainer = styled.div`
   left: 0;
   width: 100%;
   height: ${props =>
-    props.expanded ? '100vh' : '0'}; /* Растягиваем высоту при expanded */
+    props.expanded ? '1186px' : '0'}; /* Растягиваем высоту при expanded */
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
