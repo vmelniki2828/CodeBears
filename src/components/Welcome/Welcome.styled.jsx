@@ -8,8 +8,8 @@ export const WelcomeContainer = styled.div`
 `;
 
 export const BurgerIcon = styled(HiMenu)`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin: 30px 0 0 30px;
   color: #fff;
   cursor: pointer;

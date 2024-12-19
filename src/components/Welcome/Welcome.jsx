@@ -13,7 +13,6 @@ import {
     Title,
     WelcomeContainer,
 } from './Welcome.styled';
-import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import bez_glaz from '../../image/bez_glaz.svg';
 import glaza from '../../image/gla3a.svg';

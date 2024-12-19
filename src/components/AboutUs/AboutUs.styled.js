@@ -58,8 +58,7 @@ export const BottomContainer = styled.div`
   justify-content: center;
   cursor: pointer; /* Курсор для кликабельности */
   position: relative; /* Чтобы абсолютное позиционирование оверлея было относительно этого блока */
-  transition: transform 0.3s ease;
-  opacity: 0;
+  opacity: 1; /* Блок всегда видим */
 `;
 
 export const BottomOverlayContainer = styled.div`
@@ -67,17 +66,14 @@ export const BottomOverlayContainer = styled.div`
   bottom: 0; /* Начинаем с низа BottomContainer */
   left: 0;
   width: 100%;
-  height: ${props =>
-    props.expanded ? '1186px' : '0'}; /* Растягиваем высоту при expanded */
+  height: ${props => (props.expanded ? '1186px' : '0')}; /* Растягиваем высоту при expanded */
   background: radial-gradient(
     90.59% 80.21% at 100% 100%,
     #5c9dff 0%,
     #50da87 100%
   );
-  opacity: ${props =>
-    props.expanded ? '1' : '0'}; /* Плавно показываем оверлей */
-  visibility: ${props =>
-    props.expanded ? 'visible' : 'hidden'}; /* Оверлей скрыт до клика */
+  opacity: ${props => (props.expanded ? '1' : '0')}; /* Плавно показываем оверлей */
+  visibility: ${props => (props.expanded ? 'visible' : 'hidden')}; /* Оверлей скрыт до клика */
   transition: height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Плавные анимации */
   cursor: pointer;
   padding: 20px;

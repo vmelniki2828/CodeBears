@@ -1,4 +1,5 @@
 import MainPage from 'Pages/MainPage/MainPage';
+import ServicesPage from 'Pages/ServicesPage/ServicesPage';
 import { Link, Route, Router, Routes } from 'react-router-dom';
 
 export const App = () => {
@@ -6,6 +7,7 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path='/services' element={<ServicesPage />} />
       </Routes>
     </div>
   );
