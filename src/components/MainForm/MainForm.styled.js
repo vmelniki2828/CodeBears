@@ -40,7 +40,7 @@ export const FormWrap = styled.div`
 
 export const FormWrapText = styled.div``;
 
-export const Form = styled.div``;
+export const Form = styled.form``;
 
 export const FormText = styled.h2`
   width: 811px;
