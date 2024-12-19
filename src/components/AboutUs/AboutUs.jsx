@@ -89,7 +89,7 @@ const AboutUs = () => {
           </TextAboutUs>
         </TopRightContainer>
       </TopContainer>
-      <BottomContainer expanded={expanded} onClick={toggleExpand} className="bottom">
+      <BottomContainer $expanded={expanded} onClick={toggleExpand} className="bottom">
         <TextLink>
           Зв’язатись
           <ArrowLink />

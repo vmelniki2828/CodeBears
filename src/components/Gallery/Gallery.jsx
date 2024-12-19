@@ -3,6 +3,9 @@ import gsap from 'gsap';
 import { GalleryContainer, GalleryMoon } from "./Gallery.styled";
 import moon from "../../image/moonWithBear.png";
 
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 const Gallery = () => {
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
@@ -13,6 +16,7 @@ const Gallery = () => {
         toggleActions: 'play none none none',
       },
     });
+
     gsap.to('.moon2', {
       rotation: '+=360',
       duration: 30, // Длительность анимации в секундах
@@ -21,11 +25,11 @@ const Gallery = () => {
     });
   }, []);
 
-
-  return (<GalleryContainer>
-    <GalleryMoon src={moon} alt="moon" className="moon2" />
-
-  </GalleryContainer>)
-}
+  return (
+    <GalleryContainer>
+      <GalleryMoon src={moon} alt="moon" className="moon2" />
+    </GalleryContainer>
+  );
+};
 
 export default Gallery;
