@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-
 export const FooterConteiner = styled.div`
   width: 100%;
   height: 300px;
-  background-color: #000000;
+  background: linear-gradient(280.55deg, #031013 -3.51%, #0a0a0a 92.5%);
+  box-shadow: 0px -6px 40px rgba(0, 0, 0, 0.11);
   display: flex;
   align-items: center;
   justify-content: space-around;
