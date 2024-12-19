@@ -57,6 +57,8 @@ export const ButtonsContainer = styled.div`
     display: flex;
     gap: 100px;
     margin-top: 80px;
+    position:relative;
+z-index:2;
   `;
 
 export const ButtonItem = styled.button`

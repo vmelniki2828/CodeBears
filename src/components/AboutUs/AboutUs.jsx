@@ -12,12 +12,11 @@ import {
   TextAboutUs,
   BottomOverlayContainer,
 } from './AboutUs.styled';
-import ContactUsModal from 'components/ContactUsModal/ContactUsModal';
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false); // Состояние видимости
   const aboutUsRef = useRef(null); // Ссылка на контейнер AboutUs
-  const [modalVisible, setModalVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false); // Состояние оверлея
 
   // Используем Intersection Observer для отслеживания видимости компонента
   useEffect(() => {
@@ -56,23 +55,26 @@ const AboutUs = () => {
       );
       gsap.fromTo(
         '.bottom',
-        { y: '100vw', opacity: 0 }, // Начальные значения
-        { y: '0', opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
+        { opacity: 0 }, // Начальные значения
+        { opacity: 1, duration: 1, ease: 'power3.out' } // Конечные значения
       );
     }
   }, [isVisible]);
 
-  const [expanded, setExpanded] = useState(false);
-
-  // Функция для переключения состояния expanded
+  // Функция для открытия/закрытия оверлея
   const toggleExpand = () => {
     setExpanded(prev => !prev);
   };
 
-  // Функция для остановки распространения события при клике на кнопку
-  const handleButtonClick = event => {
-    event.stopPropagation(); // Это предотвратит передачу клика вверх к родительскому элементу
-    toggleExpand(); // Закроет оверлей
+  // Открытие оверлея по клику на блок "Зв’язатись"
+  const handleClickLink = () => {
+    setExpanded(true); // Открываем оверлей
+  };
+
+  // Закрытие оверлея по клику на кнопку "Закрыть"
+  const handleButtonClick = (event) => {
+    event.stopPropagation(); // Останавливаем всплытие события
+    setExpanded(false); // Закрываем оверлей
   };
 
   return (
@@ -89,7 +91,7 @@ const AboutUs = () => {
           </TextAboutUs>
         </TopRightContainer>
       </TopContainer>
-      <BottomContainer $expanded={expanded} onClick={toggleExpand} className="bottom">
+      <BottomContainer onClick={handleClickLink} className="bottom">
         <TextLink>
           Зв’язатись
           <ArrowLink />
@@ -100,12 +102,6 @@ const AboutUs = () => {
           {/* При клике на кнопку оверлей будет закрыт */}
         </BottomOverlayContainer>
       </BottomContainer>
-
-      {modalVisible ? (
-        <ContactUsModal setModalVisible={setModalVisible} />
-      ) : (
-        <></>
-      )}
     </AboutUsConteiner>
   );
 };

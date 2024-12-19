@@ -13,6 +13,7 @@ import star from '../../image/Star.svg';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { NavLink } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -145,7 +146,9 @@ const Hero = () => {
       <ButtonsContainer className="buttons-container">
         <ButtonItem>ПОРТФОЛІО</ButtonItem>
         <ButtonItem>КОНСУЛЬТАЦІЯ</ButtonItem>
-        <ButtonItem>ПОСЛУГИ</ButtonItem>
+        <NavLink to="/services" style={{ textDecoration: 'none' }}>
+          <ButtonItem>ПОСЛУГИ</ButtonItem>
+        </NavLink>
       </ButtonsContainer>
       <MoonImg src={moon} className="moon" />
     </HeroContainer>

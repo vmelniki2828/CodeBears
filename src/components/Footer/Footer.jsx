@@ -19,19 +19,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   useEffect(() => {
-    // Анимация для футера (выезжает снизу)
+    // Анимация для элементов футера
     gsap.fromTo(
-      '.footer-container',
-      { y: 100, opacity: 0 },
+      '.footer-link, .footer-cont-card-svg, .logo-text', // Выбираем все элементы, которые хотим анимировать
+      { opacity: 0, y: 50 }, // Начальные значения (скрыты и смещены)
       {
+        opacity: 1, // Конечное состояние (видимые и на месте)
         y: 0,
-        opacity: 1,
         duration: 1,
+        stagger: 0.2, // Задержка между анимациями для каждого элемента
         scrollTrigger: {
-          trigger: '.footer-container',
-          start: 'top 80%', // Анимация начинается, когда футер будет на 80% экрана
-          toggleActions: 'play none none none',
-        }
+          trigger: '.footer-container', // Прокручиваемый контейнер футера
+          start: 'top 80%', // Когда футер достигнет 80% высоты экрана
+          toggleActions: 'play none none none', // Действия на триггер
+        },
       }
     );
   }, []);
@@ -40,28 +41,28 @@ const Footer = () => {
     <FooterConteiner className="footer-container">
       <LinkList>
         <LinkItem>
-          <FooterContCardSvg src={gmail} />
-          <FooterLink>codebear@gmail.com</FooterLink>
+          <FooterContCardSvg src={gmail} className="footer-cont-card-svg" />
+          <FooterLink className="footer-link">codebear@gmail.com</FooterLink>
         </LinkItem>
         <LinkItem>
-          <FooterContCardSvg src={inst} />
-          <FooterLink>@codebearit</FooterLink>
+          <FooterContCardSvg src={inst} className="footer-cont-card-svg" />
+          <FooterLink className="footer-link">@codebearit</FooterLink>
         </LinkItem>
         <LinkItem>
-          <FooterContCardSvg src={contact} />
-          <FooterLink>@codebearmanager</FooterLink>
+          <FooterContCardSvg src={contact} className="footer-cont-card-svg" />
+          <FooterLink className="footer-link">@codebearmanager</FooterLink>
         </LinkItem>
       </LinkList>
-      <LogoText>CODEBEAR.</LogoText>
+      <LogoText className="logo-text">CODEBEAR.</LogoText>
       <LinkList>
         <LinkLegalInformationItem>
-          <FooterLink>Terms&Condition</FooterLink>
+          <FooterLink className="footer-link">Terms&Condition</FooterLink>
         </LinkLegalInformationItem>
         <LinkLegalInformationItem>
-          <FooterLink>Data security</FooterLink>
+          <FooterLink className="footer-link">Data security</FooterLink>
         </LinkLegalInformationItem>
         <LinkLegalInformationItem>
-          <FooterLink>Privacy policy</FooterLink>
+          <FooterLink className="footer-link">Privacy policy</FooterLink>
         </LinkLegalInformationItem>
       </LinkList>
     </FooterConteiner>
