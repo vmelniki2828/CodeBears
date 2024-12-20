@@ -32,10 +32,10 @@ const MainForm = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 2,
         scrollTrigger: {
           trigger: '.form-title',
-          start: 'top 80%',
+          start: 'top 50%',
           toggleActions: 'play none none none',
         }
       }
