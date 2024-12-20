@@ -12,11 +12,14 @@ import {
   TextAboutUs,
   BottomOverlayContainer,
 } from './AboutUs.styled';
+import ContactUsModal from 'components/ContactUsModal/ContactUsModal';
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false); // Состояние видимости
   const aboutUsRef = useRef(null); // Ссылка на контейнер AboutUs
   const [expanded, setExpanded] = useState(false); // Состояние оверлея
+
+  console.log(expanded);
 
   // Используем Intersection Observer для отслеживания видимости компонента
   useEffect(() => {
@@ -72,7 +75,7 @@ const AboutUs = () => {
   };
 
   // Закрытие оверлея по клику на кнопку "Закрыть"
-  const handleButtonClick = (event) => {
+  const handleButtonClick = event => {
     event.stopPropagation(); // Останавливаем всплытие события
     setExpanded(false); // Закрываем оверлей
   };
@@ -96,10 +99,8 @@ const AboutUs = () => {
           Зв’язатись
           <ArrowLink />
         </TextLink>
-        {/* BottomOverlayContainer теперь будет абсолютно позиционирован */}
         <BottomOverlayContainer expanded={expanded}>
-          <button onClick={handleButtonClick}>Закрыть</button>{' '}
-          {/* При клике на кнопку оверлей будет закрыт */}
+          <ContactUsModal handleButtonClick={handleButtonClick} />
         </BottomOverlayContainer>
       </BottomContainer>
     </AboutUsConteiner>
