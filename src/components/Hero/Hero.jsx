@@ -144,7 +144,9 @@ const Hero = () => {
         <StarImg src={star} className="star2" />
       </StartContainer>
       <ButtonsContainer className="buttons-container">
-        <ButtonItem>ПОРТФОЛІО</ButtonItem>
+        <NavLink to="/portfolio" style={{ textDecoration: 'none' }}>
+          <ButtonItem>ПОРТФОЛІО</ButtonItem>
+        </NavLink>
         <ButtonItem>КОНСУЛЬТАЦІЯ</ButtonItem>
         <NavLink to="/services" style={{ textDecoration: 'none' }}>
           <ButtonItem>ПОСЛУГИ</ButtonItem>
