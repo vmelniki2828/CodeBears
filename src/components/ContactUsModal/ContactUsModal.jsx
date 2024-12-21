@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   ContactUsModalConteiner,
-  ModalOverlay,
   CloseButton,
   TextModalConteiner,
   MainModalText,
@@ -18,37 +17,45 @@ import {
 } from './ContactUsModal.styled';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
 
-const ContactUsModal = ({ setModalVisible }) => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+const ContactUsModal = ({ handleButtonClick }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    file: null,
+  });
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsAnimating(false);
-      setIsVisible(true);
-    }, 0);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-  const closeModal = () => {
-    setIsAnimating(true); // Начало анимации уменьшения
-    setTimeout(() => {
-      setModalVisible(false); // Скрытие модалки после завершения анимации
-    }, 300); // Длительность анимации
+  const handleFileChange = e => {
+    const file = e.target.files[0];
+    setFormData(prevData => ({
+      ...prevData,
+      file,
+    }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('Форма отправлена:', formData);
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+    handleButtonClick(e);
   };
 
   return (
     <>
-      <ModalOverlay
-        onClick={closeModal}
-        isVisible={isVisible}
-        isAnimating={isAnimating}
-      />
-      <ContactUsModalConteiner isVisible={isVisible} isAnimating={isAnimating}>
-        <CloseButton onClick={closeModal}>Закрыть ✕</CloseButton>
+      <ContactUsModalConteiner>
+        <CloseButton onClick={handleButtonClick}>Закрити ✕</CloseButton>
         <TextModalConteiner>
           <MainModalText>ЗВ’ЯЖІТЬСЯ З НАМИ!</MainModalText>
           <TitleModalText>
@@ -61,19 +68,40 @@ const ContactUsModal = ({ setModalVisible }) => {
         </TextModalConteiner>
         <FormConteiner>
           <Form>
-            <InputField type="text" name="name" placeholder="Ваше ім’я" />
-            <InputField type="email" name="email" placeholder="Ваш email" />
-            <TextAreaField name="message" placeholder="Ваше повідомлення" />
+            <InputField
+              type="text"
+              name="name"
+              placeholder="Ваше ім’я"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
+            <InputField
+              type="email"
+              name="email"
+              placeholder="Ваш email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            <TextAreaField
+              name="message"
+              placeholder="Ваше повідомлення"
+              value={formData.message}
+              onChange={handleInputChange}
+            />
           </Form>
           <ButtonsContainer>
             <FileInputButton>
               <label htmlFor="file">
                 <FileIcon />
               </label>
-              <input type="file" id="file" name="file" />
+              <input
+                type="file"
+                id="file"
+                name="file"
+                onChange={handleFileChange}
+              />
             </FileInputButton>
-
-            <SubmitButton type="submit">
+            <SubmitButton onClick={handleSubmit}>
               Надіслати
               <ArrowLink />
             </SubmitButton>

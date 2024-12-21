@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -73,7 +74,34 @@ const MainForm = () => {
       }
     );
   }, []);
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+  });
 
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/send', formData);
+      alert("Дякуюємо за заявку! Скоро з вами зв`яжуться наші менеджери!");
+    } catch (error) {
+      console.log(error);
+      alert('Упс! Щось пішло не так! 😢');
+    }
+
+    setFormData({
+      name: '',
+      contact: '',
+    });
+  };
   return (
     <FormContainer>
       <FormTitle className="form-title">
@@ -96,15 +124,15 @@ const MainForm = () => {
             співпраці.
           </FormPar>
         </FormWrapText>
-        <Form className="form">
+        <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine type="text" />
-            <InputLine type="text" />
+            <InputLine type="text"   name="name" value={formData.name}onChange={handleChange}/>
+            <InputLine type="text" name="contact" value={formData.contact}onChange={handleChange}/>
             <TextArea type="text" />
           </Con>
           <ButtonGroup>
             <AttachButton><Attach alt='AttachIcon' src={AttachIcon} /></AttachButton>
-            <SendButton>Надіслати</SendButton>
+            <SendButton type="submit">Надіслати</SendButton>
           </ButtonGroup>
         </Form>
       </FormWrap>
