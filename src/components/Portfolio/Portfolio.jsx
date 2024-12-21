@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { BackArrow } from "components/Services/Services.styled";
 import screen_one from '../../image/screen_one.png'
 import screen_two from '../../image/screen_two.png'
+import SideBarMenu from "components/SideBarMenu/SideBarMenu";
 
 const Portfolio = () => {
     const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
@@ -25,6 +26,7 @@ const Portfolio = () => {
         <NavLink to="/" style={{ textDecoration: 'none' }}>
             <BackArrow />
         </NavLink>
+        <SideBarMenu isOpen={sidebarSwitcher} />
 
         <PortfolioMainTitle>ПОРТФОЛІО</PortfolioMainTitle>
 

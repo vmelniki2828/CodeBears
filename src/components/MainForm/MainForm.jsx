@@ -103,7 +103,7 @@ const MainForm = () => {
     });
   };
   return (
-    <FormContainer>
+    <FormContainer id='contact'>
       <FormTitle className="form-title">
         ДАВАЙТЕ <br /> СТВОРИМО <br />
         ЩОСЬ ПРЕКРАСНЕ.
@@ -126,8 +126,8 @@ const MainForm = () => {
         </FormWrapText>
         <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine type="text"   name="name" value={formData.name}onChange={handleChange}/>
-            <InputLine type="text" name="contact" value={formData.contact}onChange={handleChange}/>
+            <InputLine type="text" name="name" value={formData.name} onChange={handleChange} />
+            <InputLine type="text" name="contact" value={formData.contact} onChange={handleChange} />
             <TextArea type="text" />
           </Con>
           <ButtonGroup>

@@ -10,13 +10,13 @@ export const HeroContainer = styled.div`
     position: relative;
     overflow: hidden;
     padding-bottom: 300px;
-  `;
-
+  `;   
+  
 
 export const HeroMainText = styled.p`
     font-family: 'Gunterz', sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 87px;
     line-height: 100%;
     margin: 150px 0 50px 0;
