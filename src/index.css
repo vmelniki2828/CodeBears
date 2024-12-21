@@ -2,11 +2,27 @@
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  scrollbar-width: thin; /* Firefox: тонкая полоса прокрутки */
+  scrollbar-color: #3ADF7C #000000; /* Ползунок: #3ADF7C, Фон: черный */
+}
+
+/* Для браузеров на основе WebKit/Chromium (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикальной полосы */
+  height: 12px; /* Высота горизонтальной полосы */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Черный фон трека */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3ADF7C; /* Ползунок цвета #3ADF7C */
+  border-radius: 10px; /* Скругленные края ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #35C96C; /* Немного более темный цвет при наведении */
 }
 
 code {
@@ -14,7 +30,7 @@ code {
     monospace; */
 }
 
-/* @font-face {
+@font-face {
   font-family: 'Freigeist';
   src:url('/fonts/Freigeist-Regular.woff2') format('woff2');
   font-weight: 400;
@@ -23,9 +39,9 @@ code {
 
 @font-face {
   font-family: 'Gunterz';
-  src:url('/fonts/GUNTERZ-MEDIUM.otf') format('otf');
+  src:url('/fonts/Freigeist-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-} */
+}
 
 

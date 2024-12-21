@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import {
     Body,
     BurgerIcon,
-    BurgerIconExit,
     SideBarContainer,
     Span,
     Stars,
@@ -23,6 +22,7 @@ const Welcome = () => {
     const text = 'CODEBEARS CODEBEARS CODEBEARS CODEBEARS ';
 
     const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
+    const titleRef = useRef(null); // Создаем реф для контейнера Title
 
     const onClickGood = () => {
         setSidebarSwitcher(prevState => !prevState); // Переключение состояния меню
@@ -33,6 +33,20 @@ const Welcome = () => {
         gsap.set('.sideMenu', { x: '-100vw' });
     }, []);
 
+    useEffect(() => {
+        // Анимация для контейнера Title
+        gsap.fromTo(
+            titleRef.current, // Таргетируем контейнер через реф
+            { opacity: 0, scale: 0.5 }, // Начальное состояние
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1.5,
+                ease: 'power3.out', // Плавная кривая
+                delay: 0.5, // Задержка перед анимацией
+            }
+        );
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = e => {
@@ -66,15 +80,16 @@ const Welcome = () => {
         };
     }, []);
 
-
-
     return (
         <WelcomeContainer>
             <BurgerIcon onClick={onClickGood} className="good" />
-            <SideBarMenu isOpen={sidebarSwitcher} />
+            <SideBarMenu isOpen={sidebarSwitcher} onClickGood={onClickGood} />
 
-
-            <Title id="title" className="face-container title">
+            <Title
+                id="title"
+                className="face-container title"
+                ref={titleRef} // Привязываем реф к контейнеру
+            >
                 <img
                     src={bez_glaz}
                     alt="Face"
@@ -102,9 +117,7 @@ const Welcome = () => {
                     </TextContainer>
                 </Body>
             </Title>
-
-
-        </ WelcomeContainer>
+        </WelcomeContainer>
     );
 };
 

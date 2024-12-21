@@ -68,17 +68,23 @@ export const ListContainer = styled.div`
 
 export const MainListItem = styled.p`
   font-family: 'Freigeist', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 104%;
-letter-spacing: -0.02em;
-cursor: pointer;
-color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 104%;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  color: #FFFFFF;
 
-text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.68);
-margin: 0;
-`
+  text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.68);
+  margin: 0;
+
+  /* Добавляем стиль при наведении */
+  &:hover {
+    color: #3ADF7C; /* Например, золотой цвет */
+    text-shadow: 0px 4px 16px #3ADF7C; /* Увеличиваем яркость тени */
+  }
+`;
 
 export const ServicesLeftBottomContainer = styled.div`
   border-top: 1px solid white; /* белая верхняя граница */

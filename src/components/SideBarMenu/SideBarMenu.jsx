@@ -13,8 +13,9 @@ import {
   FixedBottomBlock,
   FixedBottomBlockText,
 } from './SideBarMenu.styled'; // Ваш стиль для сайдбара
+import { Link, NavLink } from 'react-router-dom';
 
-const SideBarMenu = ({ isOpen }) => {
+const SideBarMenu = ({ isOpen, onClickGood }) => {
   useEffect(() => {
     if (isOpen) {
       gsap.to('.sideMenu', {
@@ -31,19 +32,32 @@ const SideBarMenu = ({ isOpen }) => {
     }
   }, [isOpen]); // Перезапускаем анимацию, если `isOpen` изменяется
 
+  const scrollToAnchor = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <SideBarContainer className="sideMenu">
         <SideBarMenuList>
           <SideBarListLeft>
-            <SideBarListLeftItem>Головна</SideBarListLeftItem>
-            <SideBarListLeftItem>Про нас</SideBarListLeftItem>
-            <SideBarListLeftItem>Наші проєкти</SideBarListLeftItem>
-            <SideBarListLeftItem>Контактна інформація</SideBarListLeftItem>
+            <NavLink to="/" style={{ textDecoration: 'none' }}>
+              <SideBarListLeftItem>Головна</SideBarListLeftItem>
+            </NavLink>
+            <SideBarListLeftItem onClick={() => { scrollToAnchor('about-us'); onClickGood(!isOpen); }}>Про нас</SideBarListLeftItem>
+            <NavLink to="/portfolio" style={{ textDecoration: 'none' }}>
+              <SideBarListLeftItem>Наші проєкти</SideBarListLeftItem>
+            </NavLink>
+            <SideBarListLeftItem onClick={() => { scrollToAnchor('contact'); onClickGood(!isOpen); }}>Контактна інформація</SideBarListLeftItem>
           </SideBarListLeft>
           <SideBarListRight>
             <SideBarListRightLeft>
-              <SideBarListRightLeftItems>Послуги</SideBarListRightLeftItems>
+              <NavLink to="/services" style={{ textDecoration: 'none' }}>
+                <SideBarListRightLeftItems>Послуги</SideBarListRightLeftItems>
+              </NavLink>
               <SideBarListRightLeftItems>Брендинг</SideBarListRightLeftItems>
               <SideBarListRightLeftItems>Промо-сайти</SideBarListRightLeftItems>
               <SideBarListRightLeftItems>e-Commerce</SideBarListRightLeftItems>
@@ -73,7 +87,7 @@ const SideBarMenu = ({ isOpen }) => {
         <FixedBottomBlock>
           <FixedBottomBlockText>Давайте поговоримо про ваш проєкт</FixedBottomBlockText>
         </FixedBottomBlock>
-      </SideBarContainer>
+      </SideBarContainer >
     </>
   );
 };
