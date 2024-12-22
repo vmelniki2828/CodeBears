@@ -126,6 +126,7 @@ export const TextArea = styled.textarea`
   background: linear-gradient(99.81deg, #090a0c -15.86%, #131518 147.26%);
   border-radius: 20px;
   margin-top: 60px;
+  color: #fff;
   outline: none;
   padding: 10px;
 `;
@@ -138,12 +139,12 @@ export const ButtonGroup = styled.div`
 `;
 
 export const AttachButton = styled.button`
-  background: none;
+
   border: 1px solid grey;
   border-radius: 50%;
   width: 99px;
   height: 99px;
-
+  background: rgba(10, 10, 10, 0.69);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -165,29 +166,27 @@ export const SendButton = styled.button`
   gap: 10px;
   cursor: pointer;
   backdrop-filter: blur(10.55px);
-
+  
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
   font-family: 'Freigeist';
   font-style: normal;
   font-weight: 400;
   font-size: 33px;
   line-height: 41px;
-  display: flex;
-  align-items: center;
-  text-decoration-line: underline;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.69);
 
-  background: linear-gradient(92.08deg, #57ff9a 0.95%, #57ffdd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-
+  transition: all 0.3s ease;
   &:hover {
-    background-color: #00f5b3;
-    color: #000;
-  }
-`;
+    border-color: #57ff9a;
+      color: white; 
+      box-shadow: 0px 0px 10px #57ff9a; 
+  }`;
 
 export const Attach = styled.img`
   width: 19px;
   height: 36px;
 `;
+

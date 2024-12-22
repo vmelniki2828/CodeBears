@@ -18,9 +18,10 @@ import {
   AttachButton,
   SendButton,
   Attach,
+
 } from './MainForm.styled';
 import AttachIcon from '../../image/Vector66.svg';
-
+import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
 // Регистрируем ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,16 @@ const MainForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
+    message: '',
   });
+
+  const handleFileChange = e => {
+    const file = e.target.files[0];
+    setFormData(prevData => ({
+      ...prevData,
+      file,
+    }));
+  };
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -100,6 +110,7 @@ const MainForm = () => {
     setFormData({
       name: '',
       contact: '',
+      message: '',
     });
   };
   return (
@@ -126,13 +137,13 @@ const MainForm = () => {
         </FormWrapText>
         <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine type="text" name="name" value={formData.name} onChange={handleChange} />
-            <InputLine type="text" name="contact" value={formData.contact} onChange={handleChange} />
-            <TextArea type="text" />
+            <InputLine type="text" placeholder="Ваше ім’я" name="name" value={formData.name} onChange={handleChange} />
+            <InputLine type="text" placeholder="Ваш email" name="contact" value={formData.contact} onChange={handleChange} />
+            <TextArea type="text" placeholder="Ваше повідомлення" name="message" value={formData.message} onChange={handleChange}/>
           </Con>
           <ButtonGroup>
             <AttachButton><Attach alt='AttachIcon' src={AttachIcon} /></AttachButton>
-            <SendButton type="submit">Надіслати</SendButton>
+            <SendButton type="submit">Надіслати <ArrowLink /></SendButton>
           </ButtonGroup>
         </Form>
       </FormWrap>
