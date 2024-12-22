@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PortfolioContainer = styled.div`
+export const PWAContainer = styled.div`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -11,7 +11,7 @@ export const PortfolioContainer = styled.div`
   height: 100%;
 `;
 
-export const PortfolioMainTitle = styled.h2`
+export const PWAMainTitle = styled.h1`
   font-family: 'Freigeist', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -28,7 +28,7 @@ export const PortfolioMainTitle = styled.h2`
   padding: 120px 65px 0 65px;
 `;
 
-export const PortfolioSubTitle = styled.p`
+export const PWASubTItle = styled.p`
   font-family: 'Freigeist', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -41,15 +41,13 @@ export const PortfolioSubTitle = styled.p`
   padding: 0 65px 60px 65px;
 `;
 
-export const PortfolioImagesContainer = styled.div`
+export const PWAImagesContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 0; /* Remove margin-bottom */
-  padding-bottom: 80px; /* Add padding instead to space out the content */
+  flex-direction: row;
+  margin: 0 66px;
 `;
 
-export const GreenOverlay = styled.div`
+export const PWAGreenOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -61,7 +59,7 @@ export const GreenOverlay = styled.div`
   opacity: 1; /* Делаем видимым по умолчанию */
 `;
 
-export const TextOverlay = styled.div`
+export const PWATextOverlay = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -83,30 +81,38 @@ export const TextOverlay = styled.div`
   color: #ffffff;
 `;
 
-export const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const PortfolioImageContainer = styled.div`
+export const PWAImageContainer = styled.div`
   position: relative; /* Обязательно для позиционирования текста */
   color: #fff;
   flex: ${({ isLeft }) =>
     isLeft ? '4' : '6'}; /* 40% для левого, 60% для правого */
   height: auto; /* Чтобы сохранить пропорции изображений */
 
-  &:hover ${TextOverlay}, &:hover ${GreenOverlay} {
+  &:hover ${PWATextOverlay}, &:hover ${PWAGreenOverlay} {
     opacity: 0; /* Прячем текст и оверлей при наведении */
     pointer-events: none; /* Отключаем интерактивность для исчезнувших элементов */
   }
 `;
 
-export const PortfolioLeftImage = styled.img`
+export const PWALeftImage = styled.img`
   width: 100%;
   height: 100%;
 `;
 
-export const PortfolioRightImage = styled.img`
+export const PWARightImage = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+export const PWAText = styled.p`
+  font-family: 'Freigeist', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 86.5%;
+  /* or 33px */
+  letter-spacing: -0.02em;
+  padding: 85px 66px 75px 66px;
+  margin: 0;
+  color: #ffffff;
 `;
