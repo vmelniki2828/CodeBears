@@ -43,34 +43,6 @@ const PWA = () => {
     });
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    contact: '',
-  });
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      await axios.post('http://localhost:5000/send', formData);
-      alert("Дякуюємо за заявку! Скоро з вами зв`яжуться наші менеджери!");
-    } catch (error) {
-      console.log(error);
-      alert('Упс! Щось пішло не так! 😢');
-    }
-
-    setFormData({
-      name: '',
-      contact: '',
-    });
-  };
 
   return (
     <PWAContainer>
@@ -113,46 +85,7 @@ const PWA = () => {
       <PWAStarContainer>
         <PWAStarImg src={star} className="star" />
       </PWAStarContainer>
-      <FormWrap>
-        <FormWrapText className="form-text">
-          <FormText>
-            ВСЕ З ЧОГОСЬ ПОЧИНАЄТЬСЯ <br />
-          </FormText>
-          <FormText2>
-            Залиште ваші данні та коментарі до проекту у формі зворотнього
-            зв’язку
-          </FormText2>
-          <FormPar>
-            Наша команда оперативно опрацює запит, щоб надати відповідь або
-            запропонувати рішення. Ми зв’яжемося з вами у найкоротші терміни
-            через зазначений спосіб зв’язку для уточнення деталей або подальшої
-            співпраці.
-          </FormPar>
-        </FormWrapText>
-        <Form className="form" onSubmit={handleSubmit}>
-          <Con>
-            <InputLine
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <InputLine
-              type="text"
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-            />
-            <TextArea type="text" />
-          </Con>
-          <ButtonGroup>
-            <AttachButton>
-              <Attach alt="AttachIcon" src={AttachIcon} />
-            </AttachButton>
-            <SendButton type="submit">Надіслати</SendButton>
-          </ButtonGroup>
-        </Form>
-      </FormWrap>
+
     </PWAContainer>
   );
 };
