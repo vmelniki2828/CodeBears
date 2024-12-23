@@ -7,17 +7,23 @@ import {
   PWALeftImage,
   PWAMainTitle,
   PWARightImage,
+  PWAStarContainer,
+  PWAStarImg,
   PWASubTItle,
   PWAText,
   PWATextOverlay,
 } from './PWA.styled';
-import { NavLink } from 'react-router-dom';
+import { Form, NavLink } from 'react-router-dom';
 import { BackArrow } from '../Services.styled';
 import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import screen_one from '../../../image/screen_one.png';
 import screen_two from '../../../image/screen_two.png';
+import star from '../../../image/Star.svg';
+import { Attach, AttachButton, ButtonGroup, Con, FormPar, FormText, FormText2, FormWrap, FormWrapText, InputLine, SendButton, TextArea } from 'components/MainForm/MainForm.styled';
+import AttachIcon from '../../../image/Vector66.svg';
+import axios from 'axios';
 
 const PWA = () => {
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
@@ -29,7 +35,14 @@ const PWA = () => {
   useEffect(() => {
     // Устанавливаем начальное состояние меню (спрятано)
     gsap.set('.sideMenu', { x: '-100vw' });
+    gsap.to('.star', {
+      rotation: '+=360', // Постоянное увеличение угла вращения
+      duration: 5,
+      repeat: -1, // Бесконечное повторение
+      ease: 'linear', // Линейное движение
+    });
   }, []);
+
 
   return (
     <PWAContainer>
@@ -69,6 +82,10 @@ const PWA = () => {
         користувачів і покращать їхній досвід. Ми знаємо, як використовувати
         інноваційні технології, щоб ваш бізнес отримав конкурентні переваги.
       </PWAText>
+      <PWAStarContainer>
+        <PWAStarImg src={star} className="star" />
+      </PWAStarContainer>
+
     </PWAContainer>
   );
 };
