@@ -9,6 +9,8 @@ export const ContactUsModalConteiner = styled.div`
 
 export const TextModalConteiner = styled.div`
   width: 700px;
+
+  margin-right: 100px;
 `;
 
 export const CloseButton = styled.button`
