@@ -116,3 +116,12 @@ export const PWAText = styled.p`
   margin: 0;
   color: #ffffff;
 `;
+
+export const PWAStarContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const PWAStarImg = styled.img`
+
+`;
