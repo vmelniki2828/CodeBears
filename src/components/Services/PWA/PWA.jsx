@@ -73,7 +73,6 @@ const PWA = () => {
       email: '',
       message: '',
     });
-    handleButtonClick(e);
   };
 
   const onClickGood = () => {

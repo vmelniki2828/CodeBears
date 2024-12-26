@@ -13,6 +13,7 @@ import {
   BottomOverlayContainer,
 } from './AboutUs.styled';
 import ContactUsModal from 'components/ContactUsModal/ContactUsModal';
+import Arrow from '../../image/Vector64.svg'
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false); // Состояние видимости
@@ -97,7 +98,7 @@ const AboutUs = () => {
       <BottomContainer onClick={handleClickLink} className="bottom">
         <TextLink>
           Зв’язатись
-          <ArrowLink />
+          <ArrowLink src={Arrow} />
         </TextLink>
         <BottomOverlayContainer expanded={expanded}>
           <ContactUsModal handleButtonClick={handleButtonClick} />

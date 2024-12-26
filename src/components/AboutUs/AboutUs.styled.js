@@ -56,7 +56,6 @@ export const BottomContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Курсор для кликабельности */
   position: relative; /* Чтобы абсолютное позиционирование оверлея было относительно этого блока */
   opacity: 1; /* Блок всегда видим */
 `;
@@ -75,14 +74,13 @@ export const BottomOverlayContainer = styled.div`
   opacity: ${props => (props.expanded ? '1' : '0')}; /* Плавно показываем оверлей */
   visibility: ${props => (props.expanded ? 'visible' : 'hidden')}; /* Оверлей скрыт до клика */
   transition: height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Плавные анимации */
-  cursor: pointer;
   padding: 20px;
   box-sizing: border-box;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 2;
 `;
 
 export const TextLink = styled.a`
@@ -96,15 +94,14 @@ export const TextLink = styled.a`
   text-decoration-line: underline;
 
   cursor: pointer;
-
-  margin-right: 9px;
-
   color: #181818;
 `;
 
-export const ArrowLink = styled(MdArrowOutward)`
+export const ArrowLink = styled.img`
   width: 25px;
   height: 26px;
+  margin-left: 9px;
+  margin-top: 13px;
 `;
 
 export const MainTextAboutUs = styled.h1`
