@@ -22,6 +22,9 @@ import {
 } from './MainForm.styled';
 import AttachIcon from '../../image/Vector66.svg';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
+import Arrow from '../../image/Vector65.svg'
+import { SendText } from 'components/ContactUsModal/ContactUsModal.styled';
+
 // Регистрируем ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,7 +128,7 @@ const MainForm = () => {
             ВСЕ З ЧОГОСЬ ПОЧИНАЄТЬСЯ <br />
           </FormText>
           <FormText2>
-            Залиште ваші данні та коментарі до проекту у формі зворотнього
+            Залиште ваші данні та коментарі до <br /> проекту у формі зворотнього
             зв’язку
           </FormText2>
           <FormPar>
@@ -137,13 +140,14 @@ const MainForm = () => {
         </FormWrapText>
         <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine type="text" placeholder="Ваше ім’я" name="name" value={formData.name} onChange={handleChange} />
-            <InputLine type="text" placeholder="Ваш email" name="contact" value={formData.contact} onChange={handleChange} />
-            <TextArea type="text" placeholder="Ваше повідомлення" name="message" value={formData.message} onChange={handleChange}/>
+            <InputLine type="text" name="name" value={formData.name} onChange={handleChange} />
+            <InputLine type="text" name="contact" value={formData.contact} onChange={handleChange} />
+            <TextArea type="text" name="message" value={formData.message} onChange={handleChange} />
           </Con>
           <ButtonGroup>
             <AttachButton><Attach alt='AttachIcon' src={AttachIcon} /></AttachButton>
-            <SendButton type="submit">Надіслати <ArrowLink /></SendButton>
+            <SendButton type="submit">
+              <SendText>Надіслати</SendText> <ArrowLink src={Arrow} /></SendButton>
           </ButtonGroup>
         </Form>
       </FormWrap>

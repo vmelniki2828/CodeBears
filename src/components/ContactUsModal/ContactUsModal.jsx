@@ -14,8 +14,13 @@ import {
   FileInputButton,
   SubmitButton,
   FileIcon,
+  SendText,
+  ArrowContLink,
 } from './ContactUsModal.styled';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
+import AttachIcon from '../../image/Vector66.svg';
+import Arrow from '../../image/Vector65.svg'
+
 
 const ContactUsModal = ({ handleButtonClick }) => {
   const [formData, setFormData] = useState({
@@ -55,15 +60,14 @@ const ContactUsModal = ({ handleButtonClick }) => {
   return (
     <>
       <ContactUsModalConteiner>
-        <CloseButton onClick={handleButtonClick}>Закрити ✕</CloseButton>
+        <CloseButton onClick={handleButtonClick}>✕</CloseButton>
         <TextModalConteiner>
           <MainModalText>ЗВ’ЯЖІТЬСЯ З НАМИ!</MainModalText>
           <TitleModalText>
             Залиште ваші данні та питання у формі зворотнього зв’язку
           </TitleModalText>
           <ModalText>
-            Наша команда оперативно опрацює запит, щоб надати відповідь або
-            запропонувати рішення.
+            Наша команда оперативно опрацює запит, щоб надати відповідь або запропонувати рішення. Ми зв’яжемося з клієнтом у найкоротші терміни через зазначений спосіб зв’язку для уточнення деталей або подальшої співпраці.
           </ModalText>
         </TextModalConteiner>
         <FormConteiner>
@@ -71,20 +75,20 @@ const ContactUsModal = ({ handleButtonClick }) => {
             <InputField
               type="text"
               name="name"
-              placeholder="Ваше ім’я"
+              // placeholder="Ваше ім’я"
               value={formData.name}
               onChange={handleInputChange}
             />
             <InputField
               type="email"
               name="email"
-              placeholder="Ваш email"
+              // placeholder="Ваш email"
               value={formData.email}
               onChange={handleInputChange}
             />
             <TextAreaField
               name="message"
-              placeholder="Ваше повідомлення"
+              // placeholder="Ваше повідомлення"
               value={formData.message}
               onChange={handleInputChange}
             />
@@ -92,7 +96,7 @@ const ContactUsModal = ({ handleButtonClick }) => {
           <ButtonsContainer>
             <FileInputButton>
               <label htmlFor="file">
-                <FileIcon />
+                <FileIcon src={AttachIcon} />
               </label>
               <input
                 type="file"
@@ -102,8 +106,8 @@ const ContactUsModal = ({ handleButtonClick }) => {
               />
             </FileInputButton>
             <SubmitButton onClick={handleSubmit}>
-              Надіслати
-              <ArrowLink />
+              <SendText>Надіслати </SendText>
+              <ArrowContLink src={Arrow} />
             </SubmitButton>
           </ButtonsContainer>
         </FormConteiner>

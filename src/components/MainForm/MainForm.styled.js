@@ -38,17 +38,18 @@ export const FormWrap = styled.div`
   padding-top: 150px;
 `;
 
-export const FormWrapText = styled.div``;
+export const FormWrapText = styled.div`
+  margin-right: 20px;
+`;
 
 export const Form = styled.form``;
 
 export const FormText = styled.h2`
   width: 811px;
-  height: 173px;
   margin: 0;
-  font-family: 'Freigeist';
+  font-family: 'Freigeist', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 103px;
   line-height: 85%;
   /* or 88px */
@@ -64,9 +65,9 @@ export const FormText2 = styled.h3`
   width: 808px;
   height: 66px;
   margin: 0;
-  font-family: 'Freigeist';
+  font-family: 'Freigeist',sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 38px;
   line-height: 86.5%;
   /* or 33px */
@@ -83,7 +84,7 @@ export const FormPar = styled.p`
   height: 184px;
   font-family: 'Freigeist';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 32px;
   line-height: 86.5%;
   /* or 28px */
@@ -102,13 +103,34 @@ export const Con = styled.div`
   border-radius: 20px;
   flex-direction: column;
   align-items: center;
-  border: 1px solid grey;
+
+    /* Градиентная рамка */
+  position: relative;
+  padding: 2px; /* Толщина рамки */
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px; /* Скругление совпадает с контейнером */
+    padding: 0.5px; /* Толщина рамки */
+    background: linear-gradient(135deg, white, #000); /* Градиент рамки */
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
 `;
 
 export const InputLine = styled.input`
   background: none;
   border: none;
-  border-bottom: 1px solid #52525b;
+  border-bottom: 1px solid #D9D9D9;
   outline: none;
   color: #fff;
   font-size: 16px;
@@ -129,6 +151,7 @@ export const TextArea = styled.textarea`
   color: #fff;
   outline: none;
   padding: 10px;
+  resize: none;
 `;
 
 export const ButtonGroup = styled.div`
@@ -179,6 +202,9 @@ export const SendButton = styled.button`
   background: rgba(10, 10, 10, 0.69);
 
   transition: all 0.3s ease;
+   text-decoration: underline;
+  text-decoration-thickness: 2px; /* Толщина линии подчеркивания */
+  text-underline-offset: 7px; /* Отступ линии от текста */
   &:hover {
     border-color: #57ff9a;
       color: white; 
