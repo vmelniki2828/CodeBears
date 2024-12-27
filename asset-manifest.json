@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CodeBears/static/css/main.d939064c.css",
-    "main.js": "/CodeBears/static/js/main.bc42d58a.js",
+    "main.js": "/CodeBears/static/js/main.4ff88188.js",
     "static/media/moon.png": "/CodeBears/static/media/moon.41427e02fa68e7b901a0.png",
     "static/media/moonWithBear.png": "/CodeBears/static/media/moonWithBear.e3346e8b3665995a7445.png",
     "static/media/Group76.png": "/CodeBears/static/media/Group76.ee2bb5c2e35f98c57cff.png",
@@ -21,10 +21,10 @@
     "static/media/Vector64.svg": "/CodeBears/static/media/Vector64.ce3db364bea31c7af93953ff12171e3b.svg",
     "static/media/VectorWhite.svg": "/CodeBears/static/media/VectorWhite.7987f76b90356cc8ae24265bd36fc871.svg",
     "main.d939064c.css.map": "/CodeBears/static/css/main.d939064c.css.map",
-    "main.bc42d58a.js.map": "/CodeBears/static/js/main.bc42d58a.js.map"
+    "main.4ff88188.js.map": "/CodeBears/static/js/main.4ff88188.js.map"
   },
   "entrypoints": [
     "static/css/main.d939064c.css",
-    "static/js/main.bc42d58a.js"
+    "static/js/main.4ff88188.js"
   ]
 }
