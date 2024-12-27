@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/CodeBears/static/css/main.d939064c.css",
+    "main.js": "/CodeBears/static/js/main.60dbc7cf.js",
+    "static/media/moon.png": "/CodeBears/static/media/moon.41427e02fa68e7b901a0.png",
+    "static/media/moonWithBear.png": "/CodeBears/static/media/moonWithBear.e3346e8b3665995a7445.png",
+    "static/media/Group76.png": "/CodeBears/static/media/Group76.ee2bb5c2e35f98c57cff.png",
+    "static/media/screen_two.png": "/CodeBears/static/media/screen_two.b7dbf28a19c14e479222.png",
+    "static/media/screen_one.png": "/CodeBears/static/media/screen_one.5e300bbbda75124f52dc.png",
+    "static/media/Freigeist-Regular.woff2": "/CodeBears/static/media/Freigeist-Regular.dcc2c8a05531137618fb.woff2",
+    "static/media/Freigeist-Light.woff2": "/CodeBears/static/media/Freigeist-Light.6e4835b706ffa490c317.woff2",
+    "static/media/bez_glaz.svg": "/CodeBears/static/media/bez_glaz.edadab8df1a68aa2b290cdad25415310.svg",
+    "static/media/Star.svg": "/CodeBears/static/media/Star.2caf3b883d19395b1dec3f8a923c1dfa.svg",
+    "static/media/svgGmail.svg": "/CodeBears/static/media/svgGmail.b5975cf449c4b3e367b24a1245ddcf71.svg",
+    "index.html": "/CodeBears/index.html",
+    "static/media/gla3a.svg": "/CodeBears/static/media/gla3a.99e5efc77a871af7368634e229d0f26f.svg",
+    "static/media/Vector66.svg": "/CodeBears/static/media/Vector66.804c05afc7e323f24fb82358848d5368.svg",
+    "static/media/svgInst.svg": "/CodeBears/static/media/svgInst.da78ed77914453a15b815537e842d2c1.svg",
+    "static/media/svgCotact.svg": "/CodeBears/static/media/svgCotact.4dc6bd3c9a923c3ca00b70193a52f106.svg",
+    "static/media/Vector65.svg": "/CodeBears/static/media/Vector65.2180e3db860b699482cef14ad8f32808.svg",
+    "static/media/Vector64.svg": "/CodeBears/static/media/Vector64.ce3db364bea31c7af93953ff12171e3b.svg",
+    "static/media/VectorWhite.svg": "/CodeBears/static/media/VectorWhite.841ca388d8215fab075720b60d0bf722.svg",
+    "main.d939064c.css.map": "/CodeBears/static/css/main.d939064c.css.map",
+    "main.60dbc7cf.js.map": "/CodeBears/static/js/main.60dbc7cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d939064c.css",
+    "static/js/main.60dbc7cf.js"
+  ]
+}
