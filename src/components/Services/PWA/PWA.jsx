@@ -1,5 +1,7 @@
 import { BurgerIcon } from 'components/Welcome/Welcome.styled';
 import {
+  ArrowContLinkPWA,
+  ArrowLinkPWA,
   ButtonsContainer,
   FileIcon,
   FileInputButton,
@@ -7,9 +9,7 @@ import {
   FormBlock,
   FormConteiner,
   InputField,
-  MainModalText,
   MainPwaText,
-  ModalText,
   PWAContainer,
   PWAGreenOverlay,
   PWAImageContainer,
@@ -20,14 +20,12 @@ import {
   PWAStarContainer,
   PWAStarImg,
   PWASubTItle,
-  PwaText,
   PWAText,
+  PwaTextForm,
   PWATextOverlay,
   SubmitButton,
   TextAreaField,
-  TextModalConteiner,
   TextPwaConteiner,
-  TitleModalText,
   TitlePwaText,
 } from './PWA.styled';
 import { BackArrow } from '../Services.styled';
@@ -37,8 +35,12 @@ import gsap from 'gsap';
 import screen_one from '../../../image/screen_one.png';
 import screen_two from '../../../image/screen_two.png';
 import star from '../../../image/Star.svg';
-import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
 import { NavLink } from 'react-router-dom';
+import Arrow from '../../../image/Vector65.svg'
+import AttachIcon from '../../../image/Vector66.svg';
+import WhiteArrow from '../../../image/VectorWhite.svg'
+
+
 
 const PWA = () => {
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
@@ -107,14 +109,14 @@ const PWA = () => {
             <PWALeftImage src={screen_one} />
             <PWAGreenOverlay />
           </>
-          <PWATextOverlay>CODEBEARS</PWATextOverlay>
+          <PWATextOverlay>CODEBEARS <ArrowLinkPWA src={WhiteArrow}/></PWATextOverlay>
         </PWAImageContainer>
         <PWAImageContainer>
           <>
             <PWARightImage src={screen_two} />
             <PWAGreenOverlay />
           </>
-          <PWATextOverlay>KN.MYSTRN</PWATextOverlay>
+          <PWATextOverlay>KN.MYSTRN <ArrowLinkPWA src={WhiteArrow}/></PWATextOverlay>
         </PWAImageContainer>
       </PWAImagesContainer>
 
@@ -133,34 +135,36 @@ const PWA = () => {
       </PWAStarContainer>
       <FormBlock>
         <TextPwaConteiner>
-          <MainPwaText>ЗВ’ЯЖІТЬСЯ З НАМИ!</MainPwaText>
+          <MainPwaText>ЗАЛИШИЛИСЬ ЗАПИТАННЯ?</MainPwaText>
           <TitlePwaText>
             Залиште ваші данні та питання у формі зворотнього зв’язку
           </TitlePwaText>
-          <PwaText>
+          <PwaTextForm>
             Наша команда оперативно опрацює запит, щоб надати відповідь або
-            запропонувати рішення.
-          </PwaText>
+            запропонувати рішення. Ми зв’яжемося з клієнтом у найкоротші терміни
+            через зазначений спосіб зв’язку для уточнення деталей або подальшої
+            співпраці.
+          </PwaTextForm>
         </TextPwaConteiner>
         <FormConteiner>
           <Form>
             <InputField
               type="text"
               name="name"
-              placeholder="Ваше ім’я"
+              // placeholder="Ваше ім’я"
               value={formData.name}
               onChange={handleInputChange}
             />
             <InputField
               type="email"
               name="email"
-              placeholder="Ваш email"
+              // placeholder="Ваш email"
               value={formData.email}
               onChange={handleInputChange}
             />
             <TextAreaField
               name="message"
-              placeholder="Ваше повідомлення"
+              // placeholder="Ваше повідомлення"
               value={formData.message}
               onChange={handleInputChange}
             />
@@ -168,7 +172,7 @@ const PWA = () => {
           <ButtonsContainer>
             <FileInputButton>
               <label htmlFor="file">
-                <FileIcon />
+                <FileIcon src={AttachIcon}/>
               </label>
               <input
                 type="file"
@@ -179,7 +183,7 @@ const PWA = () => {
             </FileInputButton>
             <SubmitButton onClick={handleSubmit}>
               Надіслати
-              <ArrowLink />
+              <ArrowContLinkPWA src={Arrow}/>
             </SubmitButton>
           </ButtonsContainer>
         </FormConteiner>

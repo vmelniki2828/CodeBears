@@ -26,7 +26,7 @@ export const CloseButton = styled.button`
   color: #000;
 
   &:hover {
-  color: #57ff9a;
+    color: #57ff9a;
   }
 `;
 
@@ -36,8 +36,8 @@ export const MainModalText = styled.h1`
   font-weight: 400;
   font-size: 108px;
   line-height: 85%;
-  color:#000;
-  margin-top:0;
+  color: #000;
+  margin-top: 0;
   margin-bottom: 70px;
 
   width: 700px;
@@ -50,20 +50,20 @@ export const TitleModalText = styled.h2`
   font-size: 38px;
   line-height: 86.5%;
   letter-spacing: -0.02em;
-  color:#000;
+  color: #000;
   margin-bottom: 40px;
 
   width: 785px;
 `;
 
 export const ModalText = styled.p`
-font-family: 'Freigeist', sans-serif;
-font-style: normal;
-font-weight: 100;
-font-size: 32px;
-line-height: 86.5%;
-letter-spacing: -0.02em;
-color: #000000;
+  font-family: 'Freigeist', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 86.5%;
+  letter-spacing: -0.02em;
+  color: #000000;
   width: 663px;
   margin: 0;
 `;
@@ -78,7 +78,13 @@ export const Form = styled.form`
 
   border-radius: 20px;
   width: 469px;
-  height:405px; 
+  height: 405px;
+
+  &:hover {
+    border-color: #57ff9a;
+    color: white;
+    box-shadow: 0px 0px 10px #57ff9a;
+  }
 `;
 
 export const InputField = styled.input`
@@ -95,7 +101,7 @@ export const InputField = styled.input`
   outline: none;
   transition: border-bottom-color 0.3s ease;
   border-color: rgba(87, 255, 154, 0.5);
-  margin-top:40px;
+  margin-top: 40px;
   &:nth-of-type(2) {
     margin-top: 15px;
   }
@@ -103,6 +109,8 @@ export const InputField = styled.input`
   &:focus {
     border-bottom-color: #50da87; /* Цвет нижней границы при фокусе */
   }
+
+  transition: all 0.3s ease;
 `;
 
 export const TextAreaField = styled.textarea`
@@ -111,9 +119,9 @@ export const TextAreaField = styled.textarea`
   resize: none;
   height: 115px;
   width: 366px;
-  padding : 20px;
-  margin-top:50px;
-  margin-bottom:0;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 0;
 
   color: #57ff9a;
 
@@ -124,7 +132,7 @@ export const TextAreaField = styled.textarea`
   );
   border-radius: 20px;
 
-    &:focus {
+  &:focus {
     outline: none; /* Убирает белую рамку при фокусе */
   }
 `;
@@ -144,9 +152,7 @@ export const SubmitButton = styled.a`
 
   width: 346px;
   height: 99px;
-
-  
-  `;
+`;
 
 export const SendText = styled.p`
   font-family: 'Freigeist';
@@ -176,11 +182,11 @@ export const FileInputButton = styled.div`
     cursor: pointer;
     font-size: 16px;
     margin-right: 24px;
-      color: #57ff9a;
+    color: #57ff9a;
 
-      &:hover{
-      color:#fff;
-      }
+    &:hover {
+      color: #fff;
+    }
   }
 `;
 
@@ -193,7 +199,6 @@ export const ButtonsContainer = styled.div`
 export const FileIcon = styled.img`
   width: 34px;
   height: 36px;
-
 `;
 
 export const ArrowContLink = styled.img`
@@ -202,4 +207,4 @@ export const ArrowContLink = styled.img`
   margin-left: 18px;
   margin-top: 8px;
   fill: #57ff9a;
-`
+`;

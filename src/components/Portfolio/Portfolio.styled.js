@@ -110,3 +110,11 @@ export const PortfolioRightImage = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+export const ArrowLinkPortfolio = styled.img`
+  width: 25px;
+  height: 26px;
+  margin-left: 18px;
+  margin-top: 8px;
+  fill: #FFF;
+`;

@@ -108,13 +108,25 @@ export const PWARightImage = styled.img`
 export const PWAText = styled.p`
   font-family: 'Freigeist', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 38px;
   line-height: 86.5%;
   /* or 33px */
   letter-spacing: -0.02em;
   padding: 85px 66px 75px 66px;
   margin: 0;
+  color: #ffffff;
+`;
+
+export const PwaTextForm = styled.p`
+  width: 663px;
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 86.5%;
+  letter-spacing: -0.02em;
+
   color: #ffffff;
 `;
 
@@ -134,9 +146,8 @@ export const FormBlock = styled.div`
 `;
 
 export const TextPwaConteiner = styled.div`
-  width: 700px;
-
-  margin-right: 100px;
+  width: 811px;
+  margin-right: 20px;
 `;
 
 export const MainPwaText = styled.h1`
@@ -145,12 +156,10 @@ export const MainPwaText = styled.h1`
   font-weight: 400;
   font-size: 108px;
   line-height: 85%;
-
+  margin: 0;
   color: #fff;
 
   margin-bottom: 70px;
-
-  width: 700px;
 `;
 
 export const TitlePwaText = styled.h2`
@@ -184,79 +193,102 @@ export const FormConteiner = styled.div``;
 
 export const Form = styled.form`
   display: flex;
+  box-sizing: border-box;
+  width: 469px;
+  height: 404px;
+  background: rgba(10, 10, 10, 0.69);
+  backdrop-filter: blur(10.55px);
+  border-radius: 20px;
   flex-direction: column;
   align-items: center;
-  max-width: 400px;
 
-  background-color: rgba(10, 10, 10, 0.69);
+  /* Градиентная рамка */
+  position: relative;
+  padding: 2px; /* Толщина рамки */
 
-  border-radius: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px; /* Скругление совпадает с контейнером */
+    padding: 0.5px; /* Толщина рамки */
+    background: linear-gradient(135deg, white, #000); /* Градиент рамки */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
 
-  width: 400px;
-  padding: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #57ff9a;
+    color: white;
+    box-shadow: 0px 0px 10px #57ff9a;
+  }
 `;
 
 export const InputField = styled.input`
-  padding: 10px;
-  margin-bottom: 15px;
+  background: none;
   border: none;
-  border-bottom: 2px solid #ccc;
-  background: transparent;
-  font-size: 16px;
-
-  color: white;
-
-  width: 350px;
+  border-bottom: 1px solid #d9d9d9;
   outline: none;
-  transition: border-bottom-color 0.3s ease;
-
+  color: #fff;
+  font-size: 16px;
+  margin-top: 50px;
+  width: 360px;
+  height: 20px;
   &:focus {
-    border-bottom-color: #50da87; 
+    border-bottom: 1px solid #00f5b3;
   }
 `;
 
 export const TextAreaField = styled.textarea`
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(8, 40, 44, 0.7);
-  font-size: 16px;
-  resize: none;
+  width: 396px;
   height: 155px;
-  width: 350px;
-
-  color: white;
-
-  background: linear-gradient(
-    99.81deg,
-    rgba(3, 16, 19, 0.7) -15.86%,
-    rgba(8, 40, 44, 0.7) 147.26%
-  );
+  background: linear-gradient(99.81deg, #090a0c -15.86%, #131518 147.26%);
   border-radius: 20px;
-  
+  margin-top: 60px;
+  color: #fff;
+  outline: none;
+  padding: 10px;
+  resize: none;
 `;
 
 export const SubmitButton = styled.a`
-  background: rgba(10, 10, 10, 0.69);
-  backdrop-filter: blur(10.55px);
+  width: 344px;
+  height: 97px;
+  border: 1px solid grey;
   border-radius: 53px;
+  color: #00f5b3;
 
+  gap: 10px;
   cursor: pointer;
+  backdrop-filter: blur(10.55px);
 
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
   font-family: 'Freigeist';
   font-style: normal;
   font-weight: 400;
   font-size: 33px;
   line-height: 41px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  background: rgba(10, 10, 10, 0.69);
 
-  color: #57ff9a;
-
-  width: 330px;
-  height: 99px;
-
+  transition: all 0.3s ease;
   text-decoration: underline;
+  text-decoration-thickness: 2px; /* Толщина линии подчеркивания */
+  text-underline-offset: 7px; /* Отступ линии от текста */
+  &:hover {
+    border-color: #57ff9a;
+    box-shadow: 0px 0px 10px #57ff9a;
+  }
 `;
 
 export const FileInputButton = styled.div`
@@ -274,7 +306,14 @@ export const FileInputButton = styled.div`
     padding: 30px 33px;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 10px;
+    margin-right: 24px;
+    transition: all 0.3s ease;
+    border: 1px solid grey;
+
+    &:hover {
+      border-color: #57ff9a;
+      box-shadow: 0px 0px 10px #57ff9a;
+    }
   }
 `;
 
@@ -284,9 +323,25 @@ export const ButtonsContainer = styled.div`
   margin-top: 20px;
 `;
 
-export const FileIcon = styled(MdOutlineAttachFile)`
-  width: 30px;
-  height: 30px;
+export const FileIcon = styled.img`
+  width: 34px;
+  height: 36px;
 
   color: #57ff9a;
+`;
+
+export const ArrowContLinkPWA = styled.img`
+  width: 25px;
+  height: 26px;
+  margin-left: 18px;
+  margin-top: 8px;
+  fill: #57ff9a;
+`;
+
+export const ArrowLinkPWA = styled.img`
+  width: 25px;
+  height: 26px;
+  margin-left: 18px;
+  margin-top: 8px;
+  fill: #FFF;
 `;
