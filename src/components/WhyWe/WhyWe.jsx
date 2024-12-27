@@ -26,14 +26,16 @@ const WhyWe = () => {
       },
       { threshold: 0.5 } // Срабатывает, когда 50% компонента видны
     );
-
-    if (whyWeRef.current) {
-      observer.observe(whyWeRef.current); // Начинаем наблюдение
+  
+    const currentRef = whyWeRef.current; // Фиксируем текущее значение рефа
+  
+    if (currentRef) {
+      observer.observe(currentRef); // Начинаем наблюдение
     }
-
+  
     return () => {
-      if (whyWeRef.current) {
-        observer.unobserve(whyWeRef.current); // Останавливаем наблюдение
+      if (currentRef) {
+        observer.unobserve(currentRef); // Останавливаем наблюдение
       }
     };
   }, [hasAnimated]); // Следим за hasAnimated
