@@ -18,11 +18,10 @@ import {
   AttachButton,
   SendButton,
   Attach,
-
 } from './MainForm.styled';
 import AttachIcon from '../../image/Vector66.svg';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
-import Arrow from '../../image/Vector65.svg'
+import Arrow from '../../image/Vector65.svg';
 import { SendText } from 'components/ContactUsModal/ContactUsModal.styled';
 
 // Регистрируем ScrollTrigger
@@ -42,7 +41,7 @@ const MainForm = () => {
           trigger: '.form-title',
           start: 'top 50%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
@@ -58,7 +57,7 @@ const MainForm = () => {
           trigger: '.form-text',
           start: 'top 80%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
@@ -74,7 +73,7 @@ const MainForm = () => {
           trigger: '.form',
           start: 'top 80%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
   }, []);
@@ -104,7 +103,7 @@ const MainForm = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/send', formData);
-      alert("Дякуюємо за заявку! Скоро з вами зв`яжуться наші менеджери!");
+      alert('Дякуюємо за заявку! Скоро з вами зв`яжуться наші менеджери!');
     } catch (error) {
       console.log(error);
       alert('Упс! Щось пішло не так! 😢');
@@ -117,7 +116,7 @@ const MainForm = () => {
     });
   };
   return (
-    <FormContainer id='contact'>
+    <FormContainer id="contact">
       <FormTitle className="form-title">
         ДАВАЙТЕ <br /> СТВОРИМО <br />
         ЩОСЬ ПРЕКРАСНЕ.
@@ -128,8 +127,8 @@ const MainForm = () => {
             ВСЕ З ЧОГОСЬ ПОЧИНАЄТЬСЯ <br />
           </FormText>
           <FormText2>
-            Залиште ваші данні та коментарі до <br /> проекту у формі зворотнього
-            зв’язку
+            Залиште ваші данні та коментарі до <br /> проекту у формі
+            зворотнього зв’язку
           </FormText2>
           <FormPar>
             Наша команда оперативно опрацює запит, щоб надати відповідь або
@@ -140,14 +139,32 @@ const MainForm = () => {
         </FormWrapText>
         <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine type="text" name="name" value={formData.name} onChange={handleChange} />
-            <InputLine type="text" name="contact" value={formData.contact} onChange={handleChange} />
-            <TextArea type="text" name="message" value={formData.message} onChange={handleChange} />
+            <InputLine
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <InputLine
+              type="text"
+              name="contact"
+              value={formData.contact}
+              onChange={handleChange}
+            />
+            <TextArea
+              type="text"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
           </Con>
           <ButtonGroup>
-            <AttachButton><Attach alt='AttachIcon' src={AttachIcon} /></AttachButton>
+            <AttachButton>
+              <Attach alt="AttachIcon" src={AttachIcon} />
+            </AttachButton>
             <SendButton type="submit">
-              <SendText>Надіслати</SendText> <ArrowLink src={Arrow} /></SendButton>
+              <SendText>Надіслати</SendText> <ArrowLink src={Arrow} />
+            </SendButton>
           </ButtonGroup>
         </Form>
       </FormWrap>
