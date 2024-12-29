@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ParallaxProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='CodeBears'>
         <App />
       </BrowserRouter>
     </ParallaxProvider>
