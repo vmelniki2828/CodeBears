@@ -1,7 +1,14 @@
 import { BurgerIcon } from 'components/Welcome/Welcome.styled';
 import {
+  AdvantagesList,
+  AdvantagesListItem,
   ArrowLinkBaners,
   BanersDefaultText,
+  BanersFormatsContainer,
+  BanersFormatsContainerItem,
+  BanersFormatsContainerItemImg,
+  BanersFormatsContainerItemSubText,
+  BanersFormatsContainerItemText,
   BanersFormatsText,
   BanersGreenOverlay,
   BanersImage,
@@ -18,6 +25,8 @@ import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
 import { useState } from 'react';
 import screen_one from '../../../image/screen_one.png';
 import screen_two from '../../../image/screen_two.png';
+import banner_one from '../../../image/banner_one.png';
+import banner_two from '../../../image/banner_two.png';
 import WhiteArrow from '../../../image/VectorWhite.svg';
 
 const Baners = () => {
@@ -65,6 +74,43 @@ const Baners = () => {
         продажів, формування позитивного іміджу та залучення нових клієнтів.
       </BanersDefaultText>
       <BanersFormatsText>Основні формати:</BanersFormatsText>
+      <BanersFormatsContainer>
+        <BanersFormatsContainerItem>
+          <BanersFormatsContainerItemText>
+            Онлайн банери
+          </BanersFormatsContainerItemText>
+          <BanersFormatsContainerItemImg src={banner_one} alt="banner_one" />
+          <BanersFormatsContainerItemSubText>
+            для сайтів / соцмереж / додатків.
+          </BanersFormatsContainerItemSubText>
+        </BanersFormatsContainerItem>
+        <BanersFormatsContainerItem>
+          <BanersFormatsContainerItemText>
+            Офлайн банери
+          </BanersFormatsContainerItemText>
+          <BanersFormatsContainerItemImg src={banner_two} alt="banner_two" />
+          <BanersFormatsContainerItemSubText>
+            зовнішня реклама (білборди, брендмауери).
+          </BanersFormatsContainerItemSubText>
+        </BanersFormatsContainerItem>
+      </BanersFormatsContainer>
+      <BanersSubTitle>Переваги використання рекламних банерів </BanersSubTitle>
+      <AdvantagesList>
+        <AdvantagesListItem>
+          Привертання уваги та підвищення впізнаваності бренду.
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Точний таргетинг: застосування банерів для онлайн реклами дозволяє
+          досягти саме вашої цільової аудиторії.
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Гнучкий дизайн: призначення для різних цілей (акції, події, продажі).
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Ефективність: рекламні банери для реклами товарів швидко доносять
+          інформацію до користувачів.
+        </AdvantagesListItem>
+      </AdvantagesList>
     </BanersPageContainer>
   );
 };

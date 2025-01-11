@@ -133,3 +133,66 @@ export const ArrowLinkBaners = styled.img`
   margin-top: 8px;
   fill: #fff;
 `;
+
+export const BanersFormatsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 66px 60px;
+  color: #fff;
+`;
+
+export const BanersFormatsContainerItem = styled.div`
+  width: 560px;
+  background: url(.png),
+    linear-gradient(
+      100.71deg,
+      rgba(30, 40, 66, 0.28) -5.17%,
+      rgba(18, 22, 33, 0.28) 147.95%
+    );
+  background-blend-mode: lighten, plus-lighter;
+  padding: 40px;
+`;
+
+export const BanersFormatsContainerItemText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 49px;
+  line-height: 61px;
+  color: #57ff9a;
+  margin: 0 0 40px 0;
+`;
+
+export const BanersFormatsContainerItemImg = styled.img`
+  width: 536px;
+  height: 228px;
+  margin: 0 0 30px 0;
+`;
+
+export const BanersFormatsContainerItemSubText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 86.5%;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+`;
+
+export const AdvantagesList = styled.ul`
+  margin: 0 0 0 66px;
+`;
+
+export const AdvantagesListItem = styled.li`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 86.5%;
+  letter-spacing: -0.02em;
+  width: 1182px;
+  color: #ffffff;
+  margin-top: 40px;
+`;
