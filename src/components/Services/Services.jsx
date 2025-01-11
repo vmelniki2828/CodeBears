@@ -99,7 +99,12 @@ const Services = () => {
             <ServicesLeftTopTitle>ДИЗАЙН.</ServicesLeftTopTitle>
             <MainListContainer>
               <ListContainer>
-                <MainListItem>Рекламні банери</MainListItem>
+                <NavLink
+                  to="/services/baners"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <MainListItem>Рекламні банери</MainListItem>
+                </NavLink>
                 <MainListItem>Моушн дизайн</MainListItem>
                 <MainListItem>Бренд Бук</MainListItem>
                 <MainListItem>Веб дизайн</MainListItem>
