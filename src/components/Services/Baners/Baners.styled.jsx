@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import green_play from '../../../image/green_play.png';
 
 export const BanersPageContainer = styled.div`
   background: radial-gradient(
@@ -7,8 +8,8 @@ export const BanersPageContainer = styled.div`
       #0f1924 100%
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  width: 100%;
   height: 100%;
+  padding: 0 66px;
 `;
 
 export const BanersMainTitle = styled.h1`
@@ -19,7 +20,7 @@ export const BanersMainTitle = styled.h1`
   line-height: 164px;
   display: flex;
   text-transform: uppercase;
-  margin: 0 0 20px 66px;
+  margin: 0 0 20px 0;
   padding-top: 127px;
 
   background: linear-gradient(123.73deg, #ffffff -44.77%, #45aeb1 302.21%);
@@ -30,7 +31,7 @@ export const BanersMainTitle = styled.h1`
 `;
 
 export const BanersSubTitle = styled.h2`
-  margin: 60px 0 30px 66px;
+  margin: 60px 0 30px 0;
   font-family: 'Freigeist';
   font-style: normal;
   font-weight: 400;
@@ -53,7 +54,7 @@ export const BanersFormatsText = styled.h3`
   line-height: 86.5%;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin: 40px 0 40px 66px;
+  margin: 40px 0;
 `;
 
 export const BanersDefaultText = styled.p`
@@ -64,14 +65,12 @@ export const BanersDefaultText = styled.p`
   line-height: 86.5%;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin: 0 66px;
   width: 1310px;
 `;
 
 export const BanersImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 66px;
 `;
 
 export const BanersGreenOverlay = styled.div`
@@ -121,9 +120,14 @@ export const BanersImageContainer = styled.div`
   }
 `;
 
-export const BanersImage = styled.img`
-  width: 100%;
-  height: 100%;
+export const LeftBanersImage = styled.img`
+  width: 512px;
+  height: 304px;
+`;
+
+export const RightBanersImage = styled.img`
+  width: 798px;
+  height: 304px;
 `;
 
 export const ArrowLinkBaners = styled.img`
@@ -138,7 +142,7 @@ export const BanersFormatsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 66px 60px;
+  margin: 0 0 60px;
   color: #fff;
 `;
 
@@ -182,7 +186,7 @@ export const BanersFormatsContainerItemSubText = styled.p`
 `;
 
 export const AdvantagesList = styled.ul`
-  margin: 0 0 0 66px;
+  margin: 0 0 95px 0;
 `;
 
 export const AdvantagesListItem = styled.li`
@@ -195,4 +199,95 @@ export const AdvantagesListItem = styled.li`
   width: 1182px;
   color: #ffffff;
   margin-top: 40px;
+`;
+
+export const TypeMainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 60px;
+`;
+
+export const TypeSubContainer = styled.div`
+  background: url(.png),
+    linear-gradient(
+      100.71deg,
+      rgba(30, 40, 66, 0.28) -5.17%,
+      rgba(18, 22, 33, 0.28) 147.95%
+    );
+  background-blend-mode: lighten, plus-lighter;
+  padding: 27px 27px 54px 27px;
+`;
+
+export const TypeSubContainerText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 0 15px 0;
+  color: #57ff9a;
+  width: 344px;
+`;
+
+export const TypeSubContainerSubText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 86.5%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  width: 290px;
+  margin: 0 auto 18px;
+`;
+
+export const TypeSubContainerImage = styled.div`
+  position: relative; /* Устанавливаем контейнер относительно */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 290px;
+  width: 290px;
+  cursor: pointer;
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Псевдоэлемент для дополнительной картинки */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Размер дополнительной картинки */
+    height: 150px;
+    background: url(${green_play}) no-repeat center center;
+    background-size: contain;
+    opacity: 0; /* Скрываем картинку по умолчанию */
+    transition: opacity 0.3s ease; /* Плавный переход */
+  }
+
+  &:hover::after {
+    opacity: 1; /* Показываем картинку при наведении */
+  }
+`;
+
+export const ExapmlesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+`;
+
+export const AdaptContainer = styled.div`
+  margin: 40px 0 60px;
 `;
