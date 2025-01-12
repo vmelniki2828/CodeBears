@@ -1,5 +1,6 @@
 import { BurgerIcon } from 'components/Welcome/Welcome.styled';
 import {
+  AdaptContainer,
   AdvantagesList,
   AdvantagesListItem,
   ArrowLinkBaners,
@@ -18,6 +19,14 @@ import {
   BanersPageContainer,
   BanersSubTitle,
   BanersTextOverlay,
+  ExapmlesContainer,
+  LeftBanersImage,
+  RightBanersImage,
+  TypeMainContainer,
+  TypeSubContainer,
+  TypeSubContainerImage,
+  TypeSubContainerSubText,
+  TypeSubContainerText,
 } from './Baners.styled';
 import { NavLink } from 'react-router-dom';
 import { BackArrow } from '../Services.styled';
@@ -27,6 +36,7 @@ import screen_one from '../../../image/screen_one.png';
 import screen_two from '../../../image/screen_two.png';
 import banner_one from '../../../image/banner_one.png';
 import banner_two from '../../../image/banner_two.png';
+import banner_tree from '../../../image/banner_tree.png';
 import WhiteArrow from '../../../image/VectorWhite.svg';
 
 const Baners = () => {
@@ -47,7 +57,7 @@ const Baners = () => {
       <BanersImagesContainer>
         <BanersImageContainer isLeft>
           <>
-            <BanersImage src={screen_one} />
+            <LeftBanersImage src={screen_one} />
             <BanersGreenOverlay />
           </>
           <BanersTextOverlay>
@@ -56,7 +66,7 @@ const Baners = () => {
         </BanersImageContainer>
         <BanersImageContainer>
           <>
-            <BanersImage src={screen_two} />
+            <RightBanersImage src={screen_two} />
             <BanersGreenOverlay />
           </>
           <BanersTextOverlay>
@@ -110,6 +120,122 @@ const Baners = () => {
           Ефективність: рекламні банери для реклами товарів швидко доносять
           інформацію до користувачів.
         </AdvantagesListItem>
+      </AdvantagesList>
+      <BanersSubTitle>Види рекламних банерів</BanersSubTitle>
+      <TypeMainContainer>
+        <TypeSubContainer>
+          <TypeSubContainerText>Статичні</TypeSubContainerText>
+          <TypeSubContainerSubText>
+            зображення з текстом.
+          </TypeSubContainerSubText>
+          <TypeSubContainerImage>
+            <img src={banner_tree} alt="banner_tree" />
+          </TypeSubContainerImage>
+        </TypeSubContainer>
+        <TypeSubContainer>
+          <TypeSubContainerText>Анімовані</TypeSubContainerText>
+          <TypeSubContainerSubText>GIF, HTML5. </TypeSubContainerSubText>
+          <TypeSubContainerImage>
+            <img src={banner_tree} alt="banner_tree" />
+          </TypeSubContainerImage>{' '}
+        </TypeSubContainer>
+        <TypeSubContainer>
+          <TypeSubContainerText>Відео-банери</TypeSubContainerText>
+          <TypeSubContainerSubText>
+            привертають більше уваги завдяки динаміці.
+          </TypeSubContainerSubText>
+          <TypeSubContainerImage>
+            <img src={banner_tree} alt="banner_tree" />
+          </TypeSubContainerImage>{' '}
+        </TypeSubContainer>
+      </TypeMainContainer>
+      <BanersSubTitle>Наші послуги</BanersSubTitle>
+      <AdvantagesList>
+        <AdvantagesListItem>
+          Розробка унікального дизайну банерів "під ключ".
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Адаптація банерів для різних платформ (соцмережі, сайти, Google Ads).
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Верстка та підготовка до публікації чи друку.
+        </AdvantagesListItem>
+        <AdvantagesListItem>
+          Консультації зі вибору форматів, розмірів та ефективного розміщення.
+        </AdvantagesListItem>
+      </AdvantagesList>
+      <BanersSubTitle>Наші послуги</BanersSubTitle>
+      <AdvantagesList>
+        <AdvantagesListItem>
+          Розробка унікального дизайну банерів "під ключ".
+        </AdvantagesListItem>
+        <ExapmlesContainer>
+          <BanersImagesContainer>
+            <BanersImageContainer isLeft>
+              <>
+                <LeftBanersImage src={screen_one} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                CODEBEARS <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+            <BanersImageContainer>
+              <>
+                <RightBanersImage src={screen_two} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                KN.MYSTRN <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+          </BanersImagesContainer>
+          <BanersImagesContainer>
+            <BanersImageContainer isLeft>
+              <>
+                <LeftBanersImage src={screen_one} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                CODEBEARS <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+            <BanersImageContainer>
+              <>
+                <RightBanersImage src={screen_two} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                KN.MYSTRN <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+          </BanersImagesContainer>
+        </ExapmlesContainer>
+        <AdvantagesListItem>
+          Адаптація банерів для різних платформ (соцмережі, сайти, Google Ads).
+        </AdvantagesListItem>
+        <AdaptContainer>
+          <BanersImagesContainer>
+            <BanersImageContainer isLeft>
+              <>
+                <LeftBanersImage src={screen_one} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                CODEBEARS <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+            <BanersImageContainer>
+              <>
+                <RightBanersImage src={screen_two} />
+                <BanersGreenOverlay />
+              </>
+              <BanersTextOverlay>
+                KN.MYSTRN <ArrowLinkBaners src={WhiteArrow} />
+              </BanersTextOverlay>
+            </BanersImageContainer>
+          </BanersImagesContainer>
+        </AdaptContainer>
       </AdvantagesList>
     </BanersPageContainer>
   );
