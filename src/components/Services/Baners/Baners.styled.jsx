@@ -2,14 +2,18 @@ import styled from 'styled-components';
 import green_play from '../../../image/green_play.png';
 
 export const BanersPageContainer = styled.div`
+  width: 1310px;
+  height: 100%;
+  margin: 0 auto;
+`;
+
+export const MainBannerContainer = styled.div`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
       #0f1924 100%
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  height: 100%;
-  padding: 0 66px;
 `;
 
 export const BanersMainTitle = styled.h1`
@@ -120,14 +124,9 @@ export const BanersImageContainer = styled.div`
   }
 `;
 
-export const LeftBanersImage = styled.img`
-  width: 512px;
-  height: 304px;
-`;
-
-export const RightBanersImage = styled.img`
-  width: 798px;
-  height: 304px;
+export const BanersImage = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 export const ArrowLinkBaners = styled.img`
