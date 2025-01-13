@@ -9,7 +9,7 @@ export const HeroContainer = styled.div`
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding-bottom: 300px;
+    padding-bottom: 140px;
   `;   
   
 

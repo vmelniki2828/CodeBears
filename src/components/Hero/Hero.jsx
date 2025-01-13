@@ -152,7 +152,7 @@ const Hero = () => {
           <ButtonItem>ПОСЛУГИ</ButtonItem>
         </NavLink>
       </ButtonsContainer>
-      <MoonImg src={moon} className="moon" />
+      {/* <MoonImg src={moon} className="moon" /> */}
     </HeroContainer>
   );
 };
