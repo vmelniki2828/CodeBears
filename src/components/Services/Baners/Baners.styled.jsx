@@ -5,6 +5,7 @@ export const BanersPageContainer = styled.div`
   width: 1310px;
   height: 100%;
   margin: 0 auto;
+  padding-bottom: 150px;
 `;
 
 export const MainBannerContainer = styled.div`
@@ -185,7 +186,7 @@ export const BanersFormatsContainerItemSubText = styled.p`
 `;
 
 export const AdvantagesList = styled.ul`
-  margin: 0 0 95px 0;
+  margin: 0;
 `;
 
 export const AdvantagesListItem = styled.li`
@@ -289,4 +290,33 @@ export const ExapmlesContainer = styled.div`
 
 export const AdaptContainer = styled.div`
   margin: 40px 0 60px;
+`;
+
+export const WhyWeMainText = styled.h2`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 93px;
+  line-height: 116px;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(123.73deg, #ffffff -44.77%, #45aeb1 302.21%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 100px 0 40px;
+`;
+
+export const WhyWeSubText = styled.p`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 86.5%;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: -0.02em;
+  width: 1310px;
+  color: #ffffff;
 `;
