@@ -1,16 +1,47 @@
 import {
   AboutUsBigContainer,
+  AboutUsGreenText,
+  AboutUsLinearText,
   AboutUsMainContainer,
   AboutUsSmallContainer,
+  AboutUsSmallerContainer,
+  AboutUsSmallGreyText,
   AboutUsSubContainer,
+  AboutUsTransparentText,
+  BearImg,
 } from './AboutUs.styled';
+import first_bear from '../../image/first_bear.png';
 
 const AboutUs = () => {
   return (
     <AboutUsMainContainer>
       <AboutUsSubContainer>
-        <AboutUsBigContainer>dsada</AboutUsBigContainer>
-        <AboutUsSmallContainer>dsada</AboutUsSmallContainer>
+        <AboutUsBigContainer>
+          {/* <BearImg src={first_bear} alt="first_bear" /> */}
+        </AboutUsBigContainer>
+        <AboutUsSmallContainer>
+          <AboutUsSmallerContainer>
+            <AboutUsGreenText>ШІ як інструмент</AboutUsGreenText>
+            <AboutUsSmallGreyText>
+              ШІ у веброзробці: швидкість, точність і сайт, що працює ТА ДУМАЄ
+              не замість, а для вас.
+            </AboutUsSmallGreyText>
+          </AboutUsSmallerContainer>
+          <AboutUsSmallerContainer>
+            <>
+              <AboutUsTransparentText>
+                СВІ
+                <br />
+                ЖИЙ
+              </AboutUsTransparentText>
+              <AboutUsLinearText>
+                ПОГ
+                <br />
+                ЛЯД
+              </AboutUsLinearText>
+            </>
+          </AboutUsSmallerContainer>
+        </AboutUsSmallContainer>
       </AboutUsSubContainer>
       <AboutUsSubContainer>
         <AboutUsSmallContainer>dsada</AboutUsSmallContainer>

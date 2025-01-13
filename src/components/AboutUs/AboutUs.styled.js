@@ -4,13 +4,13 @@ export const AboutUsMainContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-    gap: 36px;
-
+  gap: 36px;
 `;
 
 export const AboutUsSubContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: start;
   gap: 36px;
 `;
 
@@ -27,8 +27,7 @@ export const AboutUsBigContainer = styled.div`
 `;
 
 export const AboutUsSmallContainer = styled.div`
-  width: 595px;
-  height: 333px;
+  padding: 57px;
 
   background: linear-gradient(
     41.66deg,
@@ -37,6 +36,8 @@ export const AboutUsSmallContainer = styled.div`
   );
   mix-blend-mode: plus-lighter;
   border-radius: 25px;
+  display: flex;
+  gap: 40px;
 `;
 
 export const ArrowLink = styled.img`
@@ -46,6 +47,66 @@ export const ArrowLink = styled.img`
   margin-top: 13px;
 `;
 
+export const BearImg = styled.img`
+  width: 595px;
+  height: 900px;
+`;
+export const AboutUsGreenText = styled.p`
+  margin: 0 0 30px 0;
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: #57ff9a;
+  width: 232px;
+`;
+
+export const AboutUsSmallGreyText = styled.p`
+  margin: 0;
+  width: 232px;
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #ffffff;
+`;
+
+export const AboutUsTransparentText = styled.span`
+  margin: 0;
+  width: 209px;
+  font-family: 'Gunterz', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 59px;
+  line-height: 100%;
+  text-align: right;
+  color: transparent; /* Делаем текст прозрачным */
+  -webkit-text-stroke: 2px black; /* Устанавливаем границы текста */
+`;
+
+export const AboutUsLinearText = styled.p`
+  margin: 0;
+font-family: 'Gunterz', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 59px;
+line-height: 100%;
+text-align: right;
+background: linear-gradient(133.09deg, #FFFFFF -85.54%, rgba(255, 255, 255, 0) 104.49%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+`
+
+export const AboutUsSmallerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 // import { MdArrowOutward } from 'react-icons/md';
 
 // export const AboutUsConteiner = styled.div`
