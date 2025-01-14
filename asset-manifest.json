@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/CodeBears/static/css/main.d939064c.css",
-    "main.js": "/CodeBears/static/js/main.12383110.js",
-    "static/js/576.8152aff9.chunk.js": "/CodeBears/static/js/576.8152aff9.chunk.js",
+    "main.css": "/CodeBears/static/css/main.ee324931.css",
+    "main.js": "/CodeBears/static/js/main.1d64d960.js",
+    "static/js/1.af3b5ec5.chunk.js": "/CodeBears/static/js/1.af3b5ec5.chunk.js",
     "static/js/709.9fbcf8e4.chunk.js": "/CodeBears/static/js/709.9fbcf8e4.chunk.js",
     "static/js/913.f7c57709.chunk.js": "/CodeBears/static/js/913.f7c57709.chunk.js",
     "static/js/526.5ad6122a.chunk.js": "/CodeBears/static/js/526.5ad6122a.chunk.js",
-    "static/js/680.e99fbdcb.chunk.js": "/CodeBears/static/js/680.e99fbdcb.chunk.js",
+    "static/js/680.9098a832.chunk.js": "/CodeBears/static/js/680.9098a832.chunk.js",
     "static/js/674.fe2f1665.chunk.js": "/CodeBears/static/js/674.fe2f1665.chunk.js",
     "static/js/974.2c8441ab.chunk.js": "/CodeBears/static/js/974.2c8441ab.chunk.js",
     "static/js/270.ee720d5b.chunk.js": "/CodeBears/static/js/270.ee720d5b.chunk.js",
@@ -15,6 +15,8 @@
     "static/media/moon.png": "/CodeBears/static/media/moon.41427e02fa68e7b901a0.png",
     "static/media/moonWithBear.png": "/CodeBears/static/media/moonWithBear.e3346e8b3665995a7445.png",
     "static/media/Group76.png": "/CodeBears/static/media/Group76.ee2bb5c2e35f98c57cff.png",
+    "static/media/second_bear.png": "/CodeBears/static/media/second_bear.0a65c07f0bc3cafa4b72.png",
+    "static/media/first_bear.png": "/CodeBears/static/media/first_bear.b37e79d07d4bcc91dd2b.png",
     "static/media/banner_two.png": "/CodeBears/static/media/banner_two.b5c154ddd2f9ba2f4d2c.png",
     "static/media/screen_two.png": "/CodeBears/static/media/screen_two.b7dbf28a19c14e479222.png",
     "static/media/banner_one.png": "/CodeBears/static/media/banner_one.a4e18b07cef77f3f5bae.png",
@@ -22,6 +24,7 @@
     "static/media/banner_tree.png": "/CodeBears/static/media/banner_tree.7ac388ba2897db6a68b3.png",
     "static/media/Freigeist-Regular.woff2": "/CodeBears/static/media/Freigeist-Regular.dcc2c8a05531137618fb.woff2",
     "static/media/Freigeist-Light.woff2": "/CodeBears/static/media/Freigeist-Light.6e4835b706ffa490c317.woff2",
+    "static/media/Gunterz-Medium.otf": "/CodeBears/static/media/Gunterz-Medium.b7dc2f8d5c7040cfb7bc.otf",
     "static/media/bez_glaz.svg": "/CodeBears/static/media/bez_glaz.edadab8df1a68aa2b290cdad25415310.svg",
     "static/media/Star.svg": "/CodeBears/static/media/Star.13743584cac95e9e3cd201f9592b7eb5.svg",
     "static/media/svgGmail.svg": "/CodeBears/static/media/svgGmail.b5975cf449c4b3e367b24a1245ddcf71.svg",
@@ -31,15 +34,14 @@
     "static/media/svgInst.svg": "/CodeBears/static/media/svgInst.da78ed77914453a15b815537e842d2c1.svg",
     "static/media/svgCotact.svg": "/CodeBears/static/media/svgCotact.4dc6bd3c9a923c3ca00b70193a52f106.svg",
     "static/media/Vector65.svg": "/CodeBears/static/media/Vector65.2180e3db860b699482cef14ad8f32808.svg",
-    "static/media/Vector64.svg": "/CodeBears/static/media/Vector64.ce3db364bea31c7af93953ff12171e3b.svg",
     "static/media/VectorWhite.svg": "/CodeBears/static/media/VectorWhite.7987f76b90356cc8ae24265bd36fc871.svg",
-    "main.d939064c.css.map": "/CodeBears/static/css/main.d939064c.css.map",
-    "main.12383110.js.map": "/CodeBears/static/js/main.12383110.js.map",
-    "576.8152aff9.chunk.js.map": "/CodeBears/static/js/576.8152aff9.chunk.js.map",
+    "main.ee324931.css.map": "/CodeBears/static/css/main.ee324931.css.map",
+    "main.1d64d960.js.map": "/CodeBears/static/js/main.1d64d960.js.map",
+    "1.af3b5ec5.chunk.js.map": "/CodeBears/static/js/1.af3b5ec5.chunk.js.map",
     "709.9fbcf8e4.chunk.js.map": "/CodeBears/static/js/709.9fbcf8e4.chunk.js.map",
     "913.f7c57709.chunk.js.map": "/CodeBears/static/js/913.f7c57709.chunk.js.map",
     "526.5ad6122a.chunk.js.map": "/CodeBears/static/js/526.5ad6122a.chunk.js.map",
-    "680.e99fbdcb.chunk.js.map": "/CodeBears/static/js/680.e99fbdcb.chunk.js.map",
+    "680.9098a832.chunk.js.map": "/CodeBears/static/js/680.9098a832.chunk.js.map",
     "674.fe2f1665.chunk.js.map": "/CodeBears/static/js/674.fe2f1665.chunk.js.map",
     "974.2c8441ab.chunk.js.map": "/CodeBears/static/js/974.2c8441ab.chunk.js.map",
     "270.ee720d5b.chunk.js.map": "/CodeBears/static/js/270.ee720d5b.chunk.js.map",
@@ -47,7 +49,7 @@
     "934.eff12d12.chunk.js.map": "/CodeBears/static/js/934.eff12d12.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d939064c.css",
-    "static/js/main.12383110.js"
+    "static/css/main.ee324931.css",
+    "static/js/main.1d64d960.js"
   ]
 }
