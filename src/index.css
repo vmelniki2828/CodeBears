@@ -31,6 +31,13 @@ code {
 }
 
 @font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/Gunterz-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Freigeist';
   src: url('/fonts/Freigeist-Regular.woff2') format('woff2');
   font-weight: 400;
@@ -44,9 +51,3 @@ code {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Gunterz';
-  src: url('/fonts/Gunterz-Medium.otf') format('otf');
-  font-weight: 500;
-  font-style: normal;
-}

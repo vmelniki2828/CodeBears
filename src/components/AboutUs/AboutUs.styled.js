@@ -15,16 +15,20 @@ export const AboutUsSubContainer = styled.div`
 `;
 
 export const AboutUsBigContainer = styled.div`
-  position: relative;
   width: 595px;
   height: 900px;
-  border-radius: 25px;
+  display: flex; /* Включение Flexbox */
+  justify-content: center; /* Центровка по горизонтали (опционально) */
+  align-items: flex-end;
+  position: relative;
+  z-index: 1; /* Чтобы содержимое отображалось поверх */
   background: linear-gradient(
     150.1deg,
     rgba(17, 9, 24, 0.4) 8.38%,
     rgba(50, 67, 87, 0.4) 91.62%
   );
-  z-index: 1; /* Чтобы содержимое отображалось поверх */
+  border-radius: 25px;
+  overflow: hidden;
 
   /* Псевдоэлемент для градиентной рамки */
   &::before {
@@ -36,11 +40,23 @@ export const AboutUsBigContainer = styled.div`
     bottom: 0;
     border-radius: 25px;
     padding: 1px; /* Толщина градиентной рамки */
-    background: linear-gradient(30deg, #57ff9a 30%, #2fe0f3 100%);
+    background: linear-gradient(
+      30deg,
+      rgba(87, 255, 154, 0.5) 30%,
+      rgba(47, 224, 243, 0.5) 100%
+    );
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     mask-composite: exclude;
     z-index: -1; /* Убираем псевдоэлемент за контент */
+  }
+
+  > * {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover > * {
+    transform: scale(1.1); /* Увеличение содержимого */
   }
 `;
 
@@ -67,8 +83,7 @@ export const ArrowLink = styled.img`
 
 export const BearImg = styled.img`
   width: 595px;
-  height: 900px;
-  margin: 0 0 1px 0;
+  height: 855px;
 `;
 export const AboutUsGreenText = styled.p`
   margin: 0 0 30px 0;
