@@ -15,15 +15,33 @@ export const AboutUsSubContainer = styled.div`
 `;
 
 export const AboutUsBigContainer = styled.div`
+  position: relative;
   width: 595px;
   height: 900px;
-
+  border-radius: 25px;
   background: linear-gradient(
     150.1deg,
     rgba(17, 9, 24, 0.4) 8.38%,
     rgba(50, 67, 87, 0.4) 91.62%
   );
-  border-radius: 25px;
+  z-index: 1; /* Чтобы содержимое отображалось поверх */
+
+  /* Псевдоэлемент для градиентной рамки */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    padding: 1px; /* Толщина градиентной рамки */
+    background: linear-gradient(30deg, #57ff9a 30%, #2fe0f3 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1; /* Убираем псевдоэлемент за контент */
+  }
 `;
 
 export const AboutUsSmallContainer = styled.div`
@@ -50,6 +68,7 @@ export const ArrowLink = styled.img`
 export const BearImg = styled.img`
   width: 595px;
   height: 900px;
+  margin: 0 0 1px 0;
 `;
 export const AboutUsGreenText = styled.p`
   margin: 0 0 30px 0;
@@ -86,22 +105,27 @@ export const AboutUsTransparentText = styled.span`
   text-align: right;
   color: transparent; /* Делаем текст прозрачным */
   -webkit-text-stroke: 2px black; /* Устанавливаем границы текста */
+  font-stretch: 150%;
 `;
 
 export const AboutUsLinearText = styled.p`
   margin: 0;
-font-family: 'Gunterz', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 59px;
-line-height: 100%;
-text-align: right;
-background: linear-gradient(133.09deg, #FFFFFF -85.54%, rgba(255, 255, 255, 0) 104.49%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-`
+  font-family: 'Gunterz', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 59px;
+  line-height: 100%;
+  text-align: right;
+  background: linear-gradient(
+    133.09deg,
+    #ffffff -85.54%,
+    rgba(255, 255, 255, 0) 104.49%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+`;
 
 export const AboutUsSmallerContainer = styled.div`
   display: flex;
