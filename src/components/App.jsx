@@ -4,8 +4,7 @@ import { Link, Route, Router, Routes } from 'react-router-dom';
 import { Load, CustomLoader } from './App.styled';
 
 import ScrollToTop from 'addition/ScrollToTop/ScrollToTop';
-import MotionDesignPage from 'Pages/ServicesPage/MotionDesignPage/MotionDesignPage';
-import WebAnaliticsPage from 'Pages/ServicesPage/WebAnaliticsPage/WebAnaliticsPage';
+
 
 const MainPage = lazy(() => import('Pages/MainPage/MainPage'));
 const PortfolioPage = lazy(() => import('Pages/PortfolioPage/PortfolioPage'));
@@ -14,6 +13,9 @@ const ServicesPage = lazy(() => import('Pages/ServicesPage/ServicesPage'));
 const BanersPage = lazy(() =>
   import('Pages/ServicesPage/BanersPage/BanersPage')
 );
+const MotionDesignPage = lazy(()=>import('Pages/ServicesPage/MotionDesignPage/MotionDesignPage'))
+const WebAnaliticsPage = lazy(()=>import('Pages/ServicesPage/WebAnaliticsPage/WebAnaliticsPage'))
+const BrandBookPage = lazy(()=>import('Pages/ServicesPage/BrandBookPage/BrandBookPage'))
 
 export const App = () => {
   return (
@@ -33,6 +35,7 @@ export const App = () => {
           <Route path="/services/baners" element={<BanersPage />} />
           <Route path="/services/motion" element={<MotionDesignPage />} />
           <Route path="/services/webAnalitics" element={<WebAnaliticsPage />} />
+          <Route path="/services/brandBook" element={<BrandBookPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
       </Suspense>
