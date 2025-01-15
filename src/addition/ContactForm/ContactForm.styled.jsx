@@ -185,6 +185,7 @@ export const SubmitButton = styled.a`
     border-color: #57ff9a;
     box-shadow: 0px 0px 10px #57ff9a;
   }
+
 `;
 
 export const ArrowContLink = styled.img`

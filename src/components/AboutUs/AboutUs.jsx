@@ -11,13 +11,14 @@ import {
   BearImg,
 } from './AboutUs.styled';
 import first_bear from '../../image/first_bear.png';
+import second_bear from '../../image/second_bear.png';
 
 const AboutUs = () => {
   return (
     <AboutUsMainContainer>
       <AboutUsSubContainer>
         <AboutUsBigContainer>
-          {/* <BearImg src={first_bear} alt="first_bear" /> */}
+          <BearImg src={first_bear} alt="first_bear" />
         </AboutUsBigContainer>
         <AboutUsSmallContainer>
           <AboutUsSmallerContainer>
@@ -44,8 +45,32 @@ const AboutUs = () => {
         </AboutUsSmallContainer>
       </AboutUsSubContainer>
       <AboutUsSubContainer>
-        <AboutUsSmallContainer>dsada</AboutUsSmallContainer>
-        <AboutUsBigContainer>dsada</AboutUsBigContainer>
+        <AboutUsSmallContainer>
+          <AboutUsSmallerContainer>
+            <AboutUsGreenText>ШІ як інструмент</AboutUsGreenText>
+            <AboutUsSmallGreyText>
+              ШІ у веброзробці: швидкість, точність і сайт, що працює ТА ДУМАЄ
+              не замість, а для вас.
+            </AboutUsSmallGreyText>
+          </AboutUsSmallerContainer>
+          <AboutUsSmallerContainer>
+            <>
+              <AboutUsTransparentText>
+                СВІ
+                <br />
+                ЖИЙ
+              </AboutUsTransparentText>
+              <AboutUsLinearText>
+                ПОГ
+                <br />
+                ЛЯД
+              </AboutUsLinearText>
+            </>
+          </AboutUsSmallerContainer>
+        </AboutUsSmallContainer>
+        <AboutUsBigContainer>
+          <BearImg src={second_bear} alt="first_bear" />
+        </AboutUsBigContainer>
       </AboutUsSubContainer>
     </AboutUsMainContainer>
   );
