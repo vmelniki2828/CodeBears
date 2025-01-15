@@ -65,89 +65,6 @@ const Baners = () => {
     'Не гайте часу — замовте рекламний банер вже сьогодні!',
   ];
 
-  const mainTitleRef = useRef(null);
-  const subTitleRefs = useRef([]);
-  const formatItemRefs = useRef([]);
-  const examplesBannersRef = useRef(null);
-  const textBlockRefs = useRef([]);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Анимация главного заголовка
-    gsap.fromTo(
-      mainTitleRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
-    );
-
-    // Анимация подзаголовков
-    subTitleRefs.current.forEach((el, index) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-          },
-        }
-      );
-    });
-
-    // Анимация текстовых блоков
-    textBlockRefs.current.forEach(el => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-          },
-        }
-      );
-    });
-
-    // Анимация элементов форматов
-    formatItemRefs.current.forEach(el => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, scale: 0.8 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-          },
-        }
-      );
-    });
-
-    // Анимация блока TwoExamplesBanners
-    gsap.fromTo(
-      examplesBannersRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: examplesBannersRef.current,
-          start: 'top 80%',
-        },
-      }
-    );
-  }, []);
-
   return (
     <MainBannerContainer>
       <BurgerIcon onClick={onClickGood} className="good" />
@@ -156,50 +73,38 @@ const Baners = () => {
       </NavLink>
       <SideBarMenu isOpen={sidebarSwitcher} />
       <BanersPageContainer>
-        <BanersMainTitle ref={mainTitleRef}>Рекламні банери</BanersMainTitle>
-        <div ref={examplesBannersRef}>
-          <TwoExamplesBanners />
-        </div>
-        <BanersSubTitle ref={el => (subTitleRefs.current[0] = el)}>
+        <BanersMainTitle>Рекламні банери</BanersMainTitle>
+        <TwoExamplesBanners />
+        <BanersSubTitle>
           Що таке рекламні банери та їх призначення.
         </BanersSubTitle>
-        <BanersDefaultText ref={el => textBlockRefs.current.push(el)}>
+        <BanersDefaultText>
           Рекламні банери — це графічні об’єкти, що використовуються для
           привертання уваги клієнтів та просування брендів, товарів або послуг.
           Вони спрямовані на виконання певних завдань, таких як збільшення
           продажів, формування позитивного іміджу та залучення нових клієнтів.
         </BanersDefaultText>
-        <BanersFormatsText ref={el => (subTitleRefs.current[1] = el)}>
-          Основні формати:
-        </BanersFormatsText>
-        <div ref={examplesBannersRef}>
-          <BanersFormatsContainer>
-            <BanersFormatsContainerItem>
-              <BanersFormatsContainerItemText>
-                Онлайн банери
-              </BanersFormatsContainerItemText>
-              <BanersFormatsContainerItemImg
-                src={banner_one}
-                alt="banner_one"
-              />
-              <BanersFormatsContainerItemSubText>
-                для сайтів / соцмереж / додатків.
-              </BanersFormatsContainerItemSubText>
-            </BanersFormatsContainerItem>
-            <BanersFormatsContainerItem>
-              <BanersFormatsContainerItemText>
-                Офлайн банери
-              </BanersFormatsContainerItemText>
-              <BanersFormatsContainerItemImg
-                src={banner_two}
-                alt="banner_two"
-              />
-              <BanersFormatsContainerItemSubText>
-                зовнішня реклама (білборди, брендмауери).
-              </BanersFormatsContainerItemSubText>
-            </BanersFormatsContainerItem>
-          </BanersFormatsContainer>
-        </div>
+        <BanersFormatsText>Основні формати:</BanersFormatsText>
+        <BanersFormatsContainer>
+          <BanersFormatsContainerItem>
+            <BanersFormatsContainerItemText>
+              Онлайн банери
+            </BanersFormatsContainerItemText>
+            <BanersFormatsContainerItemImg src={banner_one} alt="banner_one" />
+            <BanersFormatsContainerItemSubText>
+              для сайтів / соцмереж / додатків.
+            </BanersFormatsContainerItemSubText>
+          </BanersFormatsContainerItem>
+          <BanersFormatsContainerItem>
+            <BanersFormatsContainerItemText>
+              Офлайн банери
+            </BanersFormatsContainerItemText>
+            <BanersFormatsContainerItemImg src={banner_two} alt="banner_two" />
+            <BanersFormatsContainerItemSubText>
+              зовнішня реклама (білборди, брендмауери).
+            </BanersFormatsContainerItemSubText>
+          </BanersFormatsContainerItem>
+        </BanersFormatsContainer>
         <ServicesList
           title={'Переваги використання рекламних банерів'}
           data={firstList}

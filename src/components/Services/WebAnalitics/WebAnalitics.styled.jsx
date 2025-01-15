@@ -60,3 +60,19 @@ export const WebAnaliticsDefaultText = styled.p`
   color: #ffffff;
   width: 1310px;
 `;
+
+export const WhyWeMainText = styled.h2`
+  font-family: 'Freigeist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 93px;
+  line-height: 116px;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(123.73deg, #ffffff -44.77%, #45aeb1 302.21%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 100px 0 40px;
+`;
