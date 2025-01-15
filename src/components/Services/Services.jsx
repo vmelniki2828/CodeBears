@@ -83,7 +83,10 @@ const Services = () => {
                 <MainListItem>Аналіз конкурентів</MainListItem>
               </ListContainer>
               <ListContainer>
-                <NavLink to="/services/webAnalitics" style={{ textDecoration: 'none' }}>
+                <NavLink
+                  to="/services/webAnalitics"
+                  style={{ textDecoration: 'none' }}
+                >
                   <MainListItem>Веб аналітика</MainListItem>
                 </NavLink>
                 <MainListItem>Контент план</MainListItem>
@@ -113,7 +116,12 @@ const Services = () => {
                 >
                   <MainListItem>Моушн дизайн</MainListItem>
                 </NavLink>
-                <MainListItem>Бренд Бук</MainListItem>
+                <NavLink
+                  to="/services/brandBook"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <MainListItem>Бренд Бук</MainListItem>
+                </NavLink>
                 <MainListItem>Веб дизайн</MainListItem>
                 <MainListItem>UX/UI дизайн </MainListItem>
                 <MainListItem>Іллюстрації та іконографіка</MainListItem>
