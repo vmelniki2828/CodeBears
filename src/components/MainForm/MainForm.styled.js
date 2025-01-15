@@ -117,7 +117,7 @@ export const Con = styled.div`
     bottom: 0;
     border-radius: 20px; /* Скругление совпадает с контейнером */
     padding: 0.5px; /* Толщина рамки */
-    background: linear-gradient(135deg, white, #000); /* Градиент рамки */
+    background: linear-gradient(135deg, #666666, #000); /* Градиент рамки */
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -169,7 +169,6 @@ export const ButtonGroup = styled.div`
 `;
 
 export const AttachButton = styled.button`
-  border: 1px solid grey;
   border-radius: 50%;
   width: 99px;
   height: 99px;
@@ -179,18 +178,39 @@ export const AttachButton = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(102, 102, 102, 0.5), rgba(0, 0, 0, 0.5)); /* Тусклый градиент */
+    padding: 0.5px; /* Толщина рамки */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: background 0.3s ease; /* Плавный переход для градиента */
+  }
 
   &:hover {
-    border-color: #57ff9a;
+    box-shadow: 0px 0px 15px rgba(87, 255, 154, 0.8); /* Менее яркая тень */
     color: white;
-    box-shadow: 0px 0px 10px #57ff9a;
+
+    &::before {
+      background: linear-gradient(135deg, rgba(87, 255, 154, 0.7), rgba(57, 200, 134, 0.7)); /* Плавный яркий градиент */
+    }
   }
 `;
 
 export const SendButton = styled.button`
   width: 346px;
   height: 99px;
-  border: 1px solid grey;
+  // border: 1px solid grey;
   border-radius: 53px;
   color: #00f5b3;
 
@@ -218,6 +238,24 @@ export const SendButton = styled.button`
   &:hover {
     border-color: #57ff9a;
     box-shadow: 0px 0px 10px #57ff9a;
+  }
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius:  53px;
+    background: linear-gradient(135deg, rgba(102, 102, 102, 0.5), rgba(0, 0, 0, 0.5)); /* Тусклый градиент */
+    padding: 0.5px; /* Толщина рамки */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: background 0.3s ease; /* Плавный переход для градиента */
   }
 `;
 

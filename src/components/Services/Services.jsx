@@ -83,7 +83,9 @@ const Services = () => {
                 <MainListItem>Аналіз конкурентів</MainListItem>
               </ListContainer>
               <ListContainer>
-                <MainListItem>Веб аналітика</MainListItem>
+                <NavLink to="/services/webAnalitics" style={{ textDecoration: 'none' }}>
+                  <MainListItem>Веб аналітика</MainListItem>
+                </NavLink>
                 <MainListItem>Контент план</MainListItem>
                 <MainListItem>Таргетована реклама</MainListItem>
                 <MainListItem>Маркетингова стратегія</MainListItem>
@@ -105,7 +107,12 @@ const Services = () => {
                 >
                   <MainListItem>Рекламні банери</MainListItem>
                 </NavLink>
-                <MainListItem>Моушн дизайн</MainListItem>
+                <NavLink
+                  to="/services/motion"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <MainListItem>Моушн дизайн</MainListItem>
+                </NavLink>
                 <MainListItem>Бренд Бук</MainListItem>
                 <MainListItem>Веб дизайн</MainListItem>
                 <MainListItem>UX/UI дизайн </MainListItem>
