@@ -6,6 +6,7 @@ export const BanersPageContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   padding-bottom: 150px;
+  overflow: hidden;
 `;
 
 export const MainBannerContainer = styled.div`
@@ -319,4 +320,26 @@ export const WhyWeSubText = styled.p`
   letter-spacing: -0.02em;
   width: 1310px;
   color: #ffffff;
+`;
+
+export const WhyWeWrapper = styled.div`
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const ListWrapper = styled.div`
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
