@@ -14,6 +14,7 @@ import {
   BanersPageContainer,
   BanersSubTitle,
   ExapmlesContainer,
+  ListWrapper,
   MainBannerContainer,
   TypeMainContainer,
   TypeSubContainer,
@@ -22,6 +23,7 @@ import {
   TypeSubContainerText,
   WhyWeMainText,
   WhyWeSubText,
+  WhyWeWrapper,
 } from './Baners.styled';
 import { NavLink } from 'react-router-dom';
 import { BackArrow } from '../Services.styled';
@@ -39,10 +41,101 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Baners = () => {
   const [sidebarSwitcher, setSidebarSwitcher] = useState(false); // Стейт для управления состоянием меню
+  const leftTextRef = useRef(null);
+  const secondTextRef = useRef(null);
+  const imageRefs = useRef([]);
+  const wrapperRef = useRef(null);
+  const textRef = useRef(null);
 
+  // Переключение состояния меню
   const onClickGood = () => {
-    setSidebarSwitcher(prevState => !prevState); // Переключение состояния меню
+    setSidebarSwitcher(prevState => !prevState);
   };
+
+  useEffect(() => {
+    const chars = textRef.current.textContent.split('');
+    textRef.current.textContent = '';
+    chars.forEach((char, index) => {
+      setTimeout(() => {
+        textRef.current.textContent += char;
+      }, index * 70);
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    imageRefs.current.forEach(image => {
+      gsap.fromTo(
+        image,
+        { opacity: 0, scale: 0.8, y: 100 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 80%',
+            end: 'top 60%',
+            scrub: 1,
+            once: true,
+          },
+        }
+      );
+    });
+
+    gsap.fromTo(
+      leftTextRef.current,
+      { opacity: 0, x: -200 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: leftTextRef.current,
+          start: 'top 80%',
+          end: 'top 60%',
+          scrub: 1,
+          once: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      secondTextRef.current,
+      { opacity: 0, x: -200 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: secondTextRef.current,
+          start: 'top 80%',
+          end: 'top 60%',
+          scrub: 1,
+          once: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      wrapperRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: wrapperRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
 
   const firstList = [
     'Привертання уваги та підвищення впізнаваності бренду.',
@@ -73,8 +166,9 @@ const Baners = () => {
       </NavLink>
       <SideBarMenu isOpen={sidebarSwitcher} />
       <BanersPageContainer>
-        <BanersMainTitle>Рекламні банери</BanersMainTitle>
+        <BanersMainTitle ref={textRef}>Рекламні банери</BanersMainTitle>
         <TwoExamplesBanners />
+
         <BanersSubTitle>
           Що таке рекламні банери та їх призначення.
         </BanersSubTitle>
@@ -90,7 +184,11 @@ const Baners = () => {
             <BanersFormatsContainerItemText>
               Онлайн банери
             </BanersFormatsContainerItemText>
-            <BanersFormatsContainerItemImg src={banner_one} alt="banner_one" />
+            <BanersFormatsContainerItemImg
+              ref={el => (imageRefs.current[0] = el)}
+              src={banner_one}
+              alt="banner_one"
+            />
             <BanersFormatsContainerItemSubText>
               для сайтів / соцмереж / додатків.
             </BanersFormatsContainerItemSubText>
@@ -99,16 +197,23 @@ const Baners = () => {
             <BanersFormatsContainerItemText>
               Офлайн банери
             </BanersFormatsContainerItemText>
-            <BanersFormatsContainerItemImg src={banner_two} alt="banner_two" />
+            <BanersFormatsContainerItemImg
+              ref={el => (imageRefs.current[1] = el)}
+              src={banner_two}
+              alt="banner_two"
+            />
             <BanersFormatsContainerItemSubText>
               зовнішня реклама (білборди, брендмауери).
             </BanersFormatsContainerItemSubText>
           </BanersFormatsContainerItem>
         </BanersFormatsContainer>
-        <ServicesList
-          title={'Переваги використання рекламних банерів'}
-          data={firstList}
-        />
+        <ListWrapper ref={leftTextRef}>
+          <ServicesList
+            title={'Переваги використання рекламних банерів'}
+            data={firstList}
+          />
+        </ListWrapper>
+
         <BanersSubTitle>Види рекламних банерів</BanersSubTitle>
         <TypeMainContainer>
           <TypeSubContainer>
@@ -117,15 +222,23 @@ const Baners = () => {
               зображення з текстом.
             </TypeSubContainerSubText>
             <TypeSubContainerImage>
-              <img src={banner_tree} alt="banner_tree" />
+              <img
+                ref={el => (imageRefs.current[2] = el)}
+                src={banner_tree}
+                alt="banner_tree"
+              />
             </TypeSubContainerImage>
           </TypeSubContainer>
           <TypeSubContainer>
             <TypeSubContainerText>Анімовані</TypeSubContainerText>
             <TypeSubContainerSubText>GIF, HTML5. </TypeSubContainerSubText>
             <TypeSubContainerImage>
-              <img src={banner_tree} alt="banner_tree" />
-            </TypeSubContainerImage>{' '}
+              <img
+                ref={el => (imageRefs.current[3] = el)}
+                src={banner_tree}
+                alt="banner_tree"
+              />
+            </TypeSubContainerImage>
           </TypeSubContainer>
           <TypeSubContainer>
             <TypeSubContainerText>Відео-банери</TypeSubContainerText>
@@ -133,12 +246,17 @@ const Baners = () => {
               привертають більше уваги завдяки динаміці.
             </TypeSubContainerSubText>
             <TypeSubContainerImage>
-              <img src={banner_tree} alt="banner_tree" />
-            </TypeSubContainerImage>{' '}
+              <img
+                ref={el => (imageRefs.current[4] = el)}
+                src={banner_tree}
+                alt="banner_tree"
+              />
+            </TypeSubContainerImage>
           </TypeSubContainer>
         </TypeMainContainer>
-        <ServicesList title={'Наші послуги'} data={secondList} />
-
+        <ListWrapper ref={secondTextRef}>
+          <ServicesList title={'Наші послуги'} data={secondList} />
+        </ListWrapper>
         <BanersSubTitle>Наші роботи та кейси</BanersSubTitle>
         <AdvantagesList>
           <AdvantagesListItem>
@@ -163,15 +281,14 @@ const Baners = () => {
             'Потрібні банери для бізнесу? Залишайте заявку для консультації та додаткових деталей. Ми створимо професійні банери, що спрацюють на ваш успіх!'
           }
         />
-
-        <WhyWeMainText>Чому варто обрати нас?</WhyWeMainText>
-        <WhyWeSubText>
-          Ми пропонуємо банери для бізнесу, включаючи банери для малого бізнесу.
-          Наші професійні банери підходять для будь-якої цільової аудиторії.
-        </WhyWeSubText>
-        {whyWeList.map(item => {
-          return <StarAndText text={item} />;
-        })}
+        <WhyWeWrapper ref={wrapperRef}>
+          <WhyWeMainText>Чому варто обрати нас?</WhyWeMainText>
+          <WhyWeSubText>
+            Ми створюємо банери, що ефективно привертають увагу до вашого
+            бренду.
+          </WhyWeSubText>
+          <ServicesList title={'Переваги співпраці з нами'} data={whyWeList} />
+        </WhyWeWrapper>
       </BanersPageContainer>
     </MainBannerContainer>
   );

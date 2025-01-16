@@ -18,10 +18,16 @@ import {
 import star from '../../image/Star.svg';
 import AttachIcon from '../../image/Vector66.svg';
 import Arrow from '../../image/Vector65.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactForm = ({ mainTitle, subTitle }) => {
+  const textRef = useRef(null);
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,43 +62,73 @@ const ContactForm = ({ mainTitle, subTitle }) => {
   };
 
   useEffect(() => {
-    // Устанавливаем начальное состояние меню (спрятано)
+    // Анимация вращения звезды
     gsap.to('.star', {
-      rotation: '+=360', // Постоянное увеличение угла вращения
+      rotation: '+=360',
       duration: 5,
-      repeat: -1, // Бесконечное повторение
-      ease: 'linear', // Линейное движение
+      repeat: -1,
+      ease: 'linear',
     });
+
+    // Анимация текста с использованием ScrollTrigger
+    gsap.fromTo(
+      textRef.current,
+      { x: '-100%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: 'top 80%', // Начинает анимацию, когда верх элемента достигает 80% окна
+        },
+      }
+    );
+
+    // Анимация формы с использованием ScrollTrigger
+    gsap.fromTo(
+      formRef.current,
+      { x: '100%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: 'top 80%', // Начинает анимацию, когда верх элемента достигает 80% окна
+        },
+      }
+    );
   }, []);
+
   return (
     <>
       <StarContainer>
         <Star src={star} className="star" />
       </StarContainer>
       <FormBlock>
-        <TextConteiner>
+        <TextConteiner ref={textRef}>
           <MainText>{mainTitle}</MainText>
           <SubText>{subTitle}</SubText>
         </TextConteiner>
-        <FormConteiner>
+        <FormConteiner ref={formRef}>
           <Form>
             <InputField
               type="text"
               name="name"
-              // placeholder="Ваше ім’я"
               value={formData.name}
               onChange={handleInputChange}
             />
             <InputField
               type="email"
               name="email"
-              // placeholder="Ваш email"
               value={formData.email}
               onChange={handleInputChange}
             />
             <TextAreaField
               name="message"
-              // placeholder="Ваше повідомлення"
               value={formData.message}
               onChange={handleInputChange}
             />
