@@ -43,6 +43,10 @@ export const BrandBookDefaultText = styled.p`
   letter-spacing: -0.02em;
   color: #ffffff;
   width: 1310px;
+
+  li {
+    padding-top: 15px;
+  }
 `;
 
 export const BrandBookSubTitle = styled.h2`

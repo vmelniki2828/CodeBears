@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import {
   AboutUsBigContainer,
   AboutUsGreenText,
@@ -12,11 +13,51 @@ import {
 } from './AboutUs.styled';
 import first_bear from '../../image/first_bear.png';
 import second_bear from '../../image/second_bear.png';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+  useEffect(() => {
+    gsap.fromTo(
+      '.about-us-sub-container:first-child',
+      { x: '100%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.about-us-sub-container:first-child',
+          start: 'top 80%',
+          end: 'bottom 60%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.about-us-sub-container:last-child',
+      { x: '-100%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.about-us-sub-container:last-child',
+          start: 'top 80%',
+          end: 'bottom 60%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
   return (
     <AboutUsMainContainer>
-      <AboutUsSubContainer>
+      <AboutUsSubContainer className="about-us-sub-container">
         <AboutUsBigContainer>
           <BearImg src={first_bear} alt="first_bear" />
         </AboutUsBigContainer>
@@ -44,7 +85,7 @@ const AboutUs = () => {
           </AboutUsSmallerContainer>
         </AboutUsSmallContainer>
       </AboutUsSubContainer>
-      <AboutUsSubContainer>
+      <AboutUsSubContainer className="about-us-sub-container">
         <AboutUsSmallContainer>
           <AboutUsSmallerContainer>
             <AboutUsGreenText>ШІ як інструмент</AboutUsGreenText>
