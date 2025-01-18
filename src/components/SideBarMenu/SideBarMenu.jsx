@@ -13,7 +13,7 @@ import {
   FixedBottomBlock,
   FixedBottomBlockText,
 } from './SideBarMenu.styled'; // Ваш стиль для сайдбара
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const SideBarMenu = ({ isOpen, onClickGood }) => {
   useEffect(() => {

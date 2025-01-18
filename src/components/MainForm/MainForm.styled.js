@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import AttachIcon from '../../image/Vector66.svg';
-export const FormContainer = styled.div`
+// import AttachIcon from '../../image/Vector66.svg';
+
+export const FormContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,9 +189,14 @@ export const AttachButton = styled.button`
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(102, 102, 102, 0.5), rgba(0, 0, 0, 0.5)); /* Тусклый градиент */
+    background: linear-gradient(
+      135deg,
+      rgba(102, 102, 102, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ); /* Тусклый градиент */
     padding: 0.5px; /* Толщина рамки */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -202,7 +208,11 @@ export const AttachButton = styled.button`
     color: white;
 
     &::before {
-      background: linear-gradient(135deg, rgba(87, 255, 154, 0.7), rgba(57, 200, 134, 0.7)); /* Плавный яркий градиент */
+      background: linear-gradient(
+        135deg,
+        rgba(87, 255, 154, 0.7),
+        rgba(57, 200, 134, 0.7)
+      ); /* Плавный яркий градиент */
     }
   }
 `;
@@ -240,7 +250,6 @@ export const SendButton = styled.button`
     box-shadow: 0px 0px 10px #57ff9a;
   }
 
-
   &::before {
     content: '';
     position: absolute;
@@ -248,10 +257,15 @@ export const SendButton = styled.button`
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius:  53px;
-    background: linear-gradient(135deg, rgba(102, 102, 102, 0.5), rgba(0, 0, 0, 0.5)); /* Тусклый градиент */
+    border-radius: 53px;
+    background: linear-gradient(
+      135deg,
+      rgba(102, 102, 102, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ); /* Тусклый градиент */
     padding: 0.5px; /* Толщина рамки */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;

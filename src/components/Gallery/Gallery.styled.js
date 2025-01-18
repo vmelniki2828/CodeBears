@@ -3,7 +3,7 @@ import group from '../../image/Group76.png';
 
 
 
-export const GalleryContainer = styled.div`
+export const GalleryContainer = styled.section `
 height:845px;
 width: 100%;
 z-index: 9;

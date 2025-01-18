@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterConteiner = styled.div`
+export const FooterConteiner = styled.footer`
   width: 100%;
   height: 300px;
   background: linear-gradient(280.55deg, #031013 -3.51%, #0a0a0a 92.5%);
@@ -9,6 +9,8 @@ export const FooterConteiner = styled.div`
   align-items: center;
   justify-content: space-around;
 `;
+
+export const AddressList = styled.address``;
 
 export const LinkList = styled.ul`
   list-style: none;

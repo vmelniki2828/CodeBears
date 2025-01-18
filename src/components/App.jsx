@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
 import { Suspense, lazy } from 'react';
-import { Link, Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Load, CustomLoader } from './App.styled';
 
 import ScrollToTop from 'addition/ScrollToTop/ScrollToTop';
-
 
 const MainPage = lazy(() => import('Pages/MainPage/MainPage'));
 const PortfolioPage = lazy(() => import('Pages/PortfolioPage/PortfolioPage'));
@@ -13,13 +11,19 @@ const ServicesPage = lazy(() => import('Pages/ServicesPage/ServicesPage'));
 const BanersPage = lazy(() =>
   import('Pages/ServicesPage/BanersPage/BanersPage')
 );
-const MotionDesignPage = lazy(()=>import('Pages/ServicesPage/MotionDesignPage/MotionDesignPage'))
-const WebAnaliticsPage = lazy(()=>import('Pages/ServicesPage/WebAnaliticsPage/WebAnaliticsPage'))
-const BrandBookPage = lazy(()=>import('Pages/ServicesPage/BrandBookPage/BrandBookPage'))
+const MotionDesignPage = lazy(() =>
+  import('Pages/ServicesPage/MotionDesignPage/MotionDesignPage')
+);
+const WebAnaliticsPage = lazy(() =>
+  import('Pages/ServicesPage/WebAnaliticsPage/WebAnaliticsPage')
+);
+const BrandBookPage = lazy(() =>
+  import('Pages/ServicesPage/BrandBookPage/BrandBookPage')
+);
 
 export const App = () => {
   return (
-    <div>
+    <>
       <Suspense
         fallback={
           <Load>
@@ -39,6 +43,6 @@ export const App = () => {
           <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
       </Suspense>
-    </div>
+    </>
   );
 };

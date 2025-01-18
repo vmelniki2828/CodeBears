@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled.section `
     width: 100%;
     height:100%;
     display: flex;
@@ -42,9 +42,9 @@ export const HeroSubText = styled.p`
     margin: 50px 0 0 0;
   `;
 
-export const MoonImg = styled.img`
-    filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.5));
-  `;
+// export const MoonImg = styled.img`
+//     filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.5));
+//   `;
 
 export const StartContainer = styled.div`
     display: flex;

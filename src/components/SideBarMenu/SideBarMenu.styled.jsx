@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SideBarContainer = styled.div`
+export const SideBarContainer = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
@@ -94,12 +94,10 @@ export const SideBarListLeftItem = styled.p`
   }
 `;
 
-
 export const FixedBottomBlock = styled.div`
   width: 100vw;
   height: 150px;
-background: 
-  linear-gradient(to right, #3ADF7C 42vw, #162C3B 42vw);
+  background: linear-gradient(to right, #3adf7c 42vw, #162c3b 42vw);
   color: white;
   font-size: 24px;
   border: none;
@@ -125,9 +123,5 @@ export const FixedBottomBlockText = styled.p`
   text-align: center;
   background-clip: text;
   -webkit-background-clip: text; /* For older WebKit browsers */
-  background-image: linear-gradient(to right, #0B1323 42vw, #3ADF7C 42vw);
+  background-image: linear-gradient(to right, #0b1323 42vw, #3adf7c 42vw);
 `;
-
-
-
-
