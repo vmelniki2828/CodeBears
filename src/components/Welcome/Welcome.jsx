@@ -2,12 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
     Body,
     BurgerIcon,
-    SideBarContainer,
     Span,
-    Stars,
-    Stars2,
-    Stars3,
-    StarsWrapper,
     TextContainer,
     Title,
     WelcomeContainer,

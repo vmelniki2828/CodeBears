@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
+  AddressList,
   FooterContCardSvg,
   FooterConteiner,
   FooterLink,
@@ -39,20 +40,22 @@ const Footer = () => {
 
   return (
     <FooterConteiner className="footer-container">
-      <LinkList>
-        <LinkItem>
-          <FooterContCardSvg src={gmail} className="footer-cont-card-svg" />
-          <FooterLink className="footer-link">codebear@gmail.com</FooterLink>
-        </LinkItem>
-        <LinkItem>
-          <FooterContCardSvg src={inst} className="footer-cont-card-svg" />
-          <FooterLink className="footer-link">@codebearit</FooterLink>
-        </LinkItem>
-        <LinkItem>
-          <FooterContCardSvg src={contact} className="footer-cont-card-svg" />
-          <FooterLink className="footer-link">@codebearmanager</FooterLink>
-        </LinkItem>
-      </LinkList>
+      <AddressList>
+        <LinkList>
+          <LinkItem>
+            <FooterContCardSvg src={gmail} className="footer-cont-card-svg" />
+            <FooterLink className="footer-link">codebear@gmail.com</FooterLink>
+          </LinkItem>
+          <LinkItem>
+            <FooterContCardSvg src={inst} className="footer-cont-card-svg" />
+            <FooterLink className="footer-link">@codebearit</FooterLink>
+          </LinkItem>
+          <LinkItem>
+            <FooterContCardSvg src={contact} className="footer-cont-card-svg" />
+            <FooterLink className="footer-link">@codebearmanager</FooterLink>
+          </LinkItem>
+        </LinkList>
+      </AddressList>
       <LogoText className="logo-text">CODEBEAR.</LogoText>
       <LinkList>
         <LinkLegalInformationItem>

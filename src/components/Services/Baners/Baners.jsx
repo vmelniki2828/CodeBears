@@ -35,7 +35,6 @@ import banner_tree from '../../../image/banner_tree.png';
 import TwoExamplesBanners from '../../../addition/TwoExamplesBanners/TwoExamplesBanners';
 import ServicesList from 'addition/ServicesList/ServicesList';
 import ContactForm from 'addition/ContactForm/ContactForm';
-import StarAndText from 'addition/StarAndText/StarAndText';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

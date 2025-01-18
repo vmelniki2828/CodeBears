@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const WhyWeContainer = styled.div`
+export const WhyWeContainer = styled.section `
     height: 100%;
     transform : translate(0px, 0px);
     color: #fff;

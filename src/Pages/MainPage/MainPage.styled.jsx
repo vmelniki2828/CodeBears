@@ -36,6 +36,8 @@ export const StarsWrapper = styled.div`
   background: radial-gradient(ellipse at bottom, #0f1a26 0%, #050608 100%);
 `;
 
+export const MainConteiner = styled.main``;
+
 // Stars layers
 export const Stars = styled.div`
   position: absolute;
@@ -99,4 +101,3 @@ export const Stars3 = styled.div`
     box-shadow: ${shadowsBig};
   }
 `;
-

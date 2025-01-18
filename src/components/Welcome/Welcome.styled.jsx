@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-export const WelcomeContainer = styled.div`
+export const WelcomeContainer = styled.section `
   display: flex;
   height: 100vh;
 `;

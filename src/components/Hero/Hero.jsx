@@ -4,11 +4,9 @@ import {
   HeroContainer,
   HeroMainText,
   HeroSubText,
-  MoonImg,
   StarImg,
   StartContainer,
 } from './Hero.styled';
-import moon from '../../image/moon.png';
 import star from '../../image/Star.svg';
 import { useEffect } from 'react';
 import gsap from 'gsap';
@@ -152,7 +150,6 @@ const Hero = () => {
           <ButtonItem>ПОСЛУГИ</ButtonItem>
         </NavLink>
       </ButtonsContainer>
-      {/* <MoonImg src={moon} className="moon" /> */}
     </HeroContainer>
   );
 };
