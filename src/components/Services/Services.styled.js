@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { FiArrowUpLeft } from "react-icons/fi";
+import { FiArrowUpLeft } from 'react-icons/fi';
 
-
-export const ServicesContainer = styled.div`
-background: radial-gradient(145.11% 101.78% at 50% 50%, #06050A 0%, #0F1924 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-width:100%;
-`
+export const ServicesContainer = styled.main`
+  background: radial-gradient(
+      145.11% 101.78% at 50% 50%,
+      #06050a 0%,
+      #0f1924 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  width: 100%;
+`;
 
 export const BackArrow = styled(FiArrowUpLeft)`
   width: 25px;
@@ -22,51 +26,54 @@ export const BackArrow = styled(FiArrowUpLeft)`
   }
 `;
 
-export const ServicesMainContainer = styled.div`
+export const ServicesMainContainer = styled.section`
   padding: 120px 100px 150px 100px;
   color: #fff;
   display: flex;
   justify-content: space-around;
-  gap:150px;
-`
+  gap: 150px;
+`;
 
 export const ServicesLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap:70px;
-`
+  gap: 70px;
+`;
 
 export const ServicesLeftTopContainer = styled.div`
   border-top: 1px solid white; /* белая верхняя граница */
-`
+`;
 
 export const ServicesLeftTopTitle = styled.h2`
-font-family: 'Gunterz', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 86.5%;
-/* identical to box height, or 19px */
-letter-spacing: -0.02em;
-color: #FFFFFF;
-margin: 15px 0 30px 0;
+  font-family: 'Gunterz', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 86.5%;
+  /* identical to box height, or 19px */
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 15px 0 30px 0;
   text-transform: uppercase;
-
-`
+`;
 
 export const MainListContainer = styled.div`
-  display:flex;
-  gap:30px;
-`
+  display: flex;
+  gap: 30px;
+`;
 
-export const ListContainer = styled.div`
-  display:flex;
-  flex-direction:column;
-  width:261px;
-  gap:25px;
-`
+export const ListContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 261px;
+  gap: 25px;
 
-export const MainListItem = styled.p`
+  list-style: none;
+
+  padding: 0;
+`;
+
+export const MainListItem = styled.li`
   font-family: 'Freigeist', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -74,27 +81,26 @@ export const MainListItem = styled.p`
   line-height: 104%;
   letter-spacing: -0.02em;
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
 
   text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.68);
   margin: 0;
 
   /* Добавляем стиль при наведении */
   &:hover {
-    color: #3ADF7C; /* Например, золотой цвет */
-    text-shadow: 0px 4px 16px #3ADF7C; /* Увеличиваем яркость тени */
+    color: #3adf7c; /* Например, золотой цвет */
+    text-shadow: 0px 4px 16px #3adf7c; /* Увеличиваем яркость тени */
   }
 `;
 
 export const ServicesLeftBottomContainer = styled.div`
   border-top: 1px solid white; /* белая верхняя граница */
-`
-
+`;
 
 export const ServicesRightContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const ServicesMainTitle = styled.h2`
   font-family: 'Freigeist', sans-serif;
@@ -112,8 +118,8 @@ export const ServicesMainTitle = styled.h2`
   background-clip:  text;
   text-fill-color: transparent;
   height:74px;
-`
+`;
 
 export const ServicesRightBottomContainer = styled.div`
   border-top: 1px solid white;
-`
+`;

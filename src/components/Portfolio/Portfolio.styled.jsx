@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PortfolioContainer = styled.div`
+export const PortfolioContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -10,6 +10,8 @@ export const PortfolioContainer = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const SectionItemBlock = styled.section``;
 
 export const PortfolioMainTitle = styled.h2`
   font-family: 'Freigeist', sans-serif;
@@ -41,7 +43,7 @@ export const PortfolioSubTitle = styled.p`
   padding: 0 65px 60px 65px;
 `;
 
-export const PortfolioImagesContainer = styled.div`
+export const PortfolioImagesContainer = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -116,5 +118,5 @@ export const ArrowLinkPortfolio = styled.img`
   height: 26px;
   margin-left: 18px;
   margin-top: 8px;
-  fill: #FFF;
+  fill: #fff;
 `;
