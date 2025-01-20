@@ -14,6 +14,7 @@ export const MotionPageContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   padding-bottom: 150px;
+  overflow: hidden;
 `;
 
 export const MotionMainTitle = styled.h1`
