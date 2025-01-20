@@ -7,6 +7,7 @@ export const WelcomeContainer = styled.section `
   height: 100vh;
 `;
 
+
 export const BurgerIcon = styled(HiMenu)`
   width: 25px;
   height: 25px;
