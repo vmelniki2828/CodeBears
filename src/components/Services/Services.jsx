@@ -125,7 +125,7 @@ const Services = () => {
                 <MainListItem>Веб дизайн</MainListItem>
                 <MainListItem>UX/UI дизайн </MainListItem>
                 <MainListItem>Іллюстрації та іконографіка</MainListItem>
-                <MainListItem>3D моделювання і визуалізація</MainListItem>
+                <MainListItem>3D моделювання і візуалізація</MainListItem>
                 <MainListItem>Інфографіка</MainListItem>
               </ListContainer>
               <ListContainer>
@@ -143,4 +143,5 @@ const Services = () => {
     </ServicesContainer>
   );
 };
+
 export default Services;
