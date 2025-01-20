@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainBrandBookContainer = styled.div`
+export const MainBrandBookContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -16,6 +16,8 @@ export const BrandBookPageContainer = styled.div`
   padding-bottom: 150px;
   overflow: hidden;
 `;
+
+export const SectionItemBlock = styled.section``;
 
 export const BrandBookMainTitle = styled.h1`
   font-family: 'Freigeist';

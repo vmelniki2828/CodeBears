@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainWebAnaliticsContainer = styled.div`
+export const MainWebAnaliticsContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -16,6 +16,8 @@ export const WebAnaliticsPageContainer = styled.div`
   padding-bottom: 150px;
   overflow: hidden;
 `;
+
+export const SectionItemBlock = styled.section``;
 
 export const WebAnaliticsMainTitle = styled.h1`
   font-family: 'Freigeist';

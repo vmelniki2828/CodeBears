@@ -16,6 +16,7 @@ import {
   ExapmlesContainer,
   ListWrapper,
   MainBannerContainer,
+  SectionItemBlock,
   TypeMainContainer,
   TypeSubContainer,
   TypeSubContainerImage,
@@ -165,129 +166,152 @@ const Baners = () => {
       </NavLink>
       <SideBarMenu isOpen={sidebarSwitcher} />
       <BanersPageContainer>
-        <BanersMainTitle ref={textRef}>Рекламні банери</BanersMainTitle>
-        <TwoExamplesBanners />
+        <SectionItemBlock>
+          <BanersMainTitle ref={textRef}>Рекламні банери</BanersMainTitle>
+          <TwoExamplesBanners />
+        </SectionItemBlock>
 
-        <BanersSubTitle>
-          Що таке рекламні банери та їх призначення.
-        </BanersSubTitle>
-        <BanersDefaultText>
-          Рекламні банери — це графічні об’єкти, що використовуються для
-          привертання уваги клієнтів та просування брендів, товарів або послуг.
-          Вони спрямовані на виконання певних завдань, таких як збільшення
-          продажів, формування позитивного іміджу та залучення нових клієнтів.
-        </BanersDefaultText>
-        <BanersFormatsText>Основні формати:</BanersFormatsText>
-        <BanersFormatsContainer>
-          <BanersFormatsContainerItem>
-            <BanersFormatsContainerItemText>
-              Онлайн банери
-            </BanersFormatsContainerItemText>
-            <BanersFormatsContainerItemImg
-              ref={el => (imageRefs.current[0] = el)}
-              src={banner_one}
-              alt="banner_one"
+        <SectionItemBlock>
+          <BanersSubTitle>
+            Що таке рекламні банери та їх призначення.
+          </BanersSubTitle>
+          <BanersDefaultText>
+            Рекламні банери — це графічні об’єкти, що використовуються для
+            привертання уваги клієнтів та просування брендів, товарів або
+            послуг. Вони спрямовані на виконання певних завдань, таких як
+            збільшення продажів, формування позитивного іміджу та залучення
+            нових клієнтів.
+          </BanersDefaultText>
+          <BanersFormatsText>Основні формати:</BanersFormatsText>
+          <BanersFormatsContainer>
+            <BanersFormatsContainerItem>
+              <BanersFormatsContainerItemText>
+                Онлайн банери
+              </BanersFormatsContainerItemText>
+              <BanersFormatsContainerItemImg
+                ref={el => (imageRefs.current[0] = el)}
+                src={banner_one}
+                alt="banner_one"
+              />
+              <BanersFormatsContainerItemSubText>
+                для сайтів / соцмереж / додатків.
+              </BanersFormatsContainerItemSubText>
+            </BanersFormatsContainerItem>
+            <BanersFormatsContainerItem>
+              <BanersFormatsContainerItemText>
+                Офлайн банери
+              </BanersFormatsContainerItemText>
+              <BanersFormatsContainerItemImg
+                ref={el => (imageRefs.current[1] = el)}
+                src={banner_two}
+                alt="banner_two"
+              />
+              <BanersFormatsContainerItemSubText>
+                зовнішня реклама (білборди, брендмауери).
+              </BanersFormatsContainerItemSubText>
+            </BanersFormatsContainerItem>
+          </BanersFormatsContainer>
+        </SectionItemBlock>
+        <SectionItemBlock>
+          <ListWrapper ref={leftTextRef}>
+            <ServicesList
+              title={'Переваги використання рекламних банерів'}
+              data={firstList}
             />
-            <BanersFormatsContainerItemSubText>
-              для сайтів / соцмереж / додатків.
-            </BanersFormatsContainerItemSubText>
-          </BanersFormatsContainerItem>
-          <BanersFormatsContainerItem>
-            <BanersFormatsContainerItemText>
-              Офлайн банери
-            </BanersFormatsContainerItemText>
-            <BanersFormatsContainerItemImg
-              ref={el => (imageRefs.current[1] = el)}
-              src={banner_two}
-              alt="banner_two"
-            />
-            <BanersFormatsContainerItemSubText>
-              зовнішня реклама (білборди, брендмауери).
-            </BanersFormatsContainerItemSubText>
-          </BanersFormatsContainerItem>
-        </BanersFormatsContainer>
-        <ListWrapper ref={leftTextRef}>
-          <ServicesList
-            title={'Переваги використання рекламних банерів'}
-            data={firstList}
+          </ListWrapper>
+        </SectionItemBlock>
+        <SectionItemBlock>
+          <BanersSubTitle>Види рекламних банерів</BanersSubTitle>
+          <TypeMainContainer>
+            <TypeSubContainer>
+              <TypeSubContainerText>Статичні</TypeSubContainerText>
+              <TypeSubContainerSubText>
+                зображення з текстом.
+              </TypeSubContainerSubText>
+              <TypeSubContainerImage>
+                <img
+                  ref={el => (imageRefs.current[2] = el)}
+                  src={banner_tree}
+                  alt="banner_tree"
+                />
+              </TypeSubContainerImage>
+            </TypeSubContainer>
+            <TypeSubContainer>
+              <TypeSubContainerText>Анімовані</TypeSubContainerText>
+              <TypeSubContainerSubText>GIF, HTML5. </TypeSubContainerSubText>
+              <TypeSubContainerImage>
+                <img
+                  ref={el => (imageRefs.current[3] = el)}
+                  src={banner_tree}
+                  alt="banner_tree"
+                />
+              </TypeSubContainerImage>
+            </TypeSubContainer>
+            <TypeSubContainer>
+              <TypeSubContainerText>Відео-банери</TypeSubContainerText>
+              <TypeSubContainerSubText>
+                привертають більше уваги завдяки динаміці.
+              </TypeSubContainerSubText>
+              <TypeSubContainerImage>
+                <img
+                  ref={el => (imageRefs.current[4] = el)}
+                  src={banner_tree}
+                  alt="banner_tree"
+                />
+              </TypeSubContainerImage>
+            </TypeSubContainer>
+          </TypeMainContainer>
+        </SectionItemBlock>
+
+        <SectionItemBlock>
+          <ListWrapper ref={secondTextRef}>
+            <ServicesList title={'Наші послуги'} data={secondList} />
+          </ListWrapper>
+        </SectionItemBlock>
+
+        <SectionItemBlock>
+          <BanersSubTitle>Наші роботи та кейси</BanersSubTitle>
+          <AdvantagesList>
+            <AdvantagesListItem>
+              Розробка унікального дизайну банерів "під ключ".
+            </AdvantagesListItem>
+            <ExapmlesContainer>
+              <TwoExamplesBanners />
+
+              <TwoExamplesBanners />
+            </ExapmlesContainer>
+            <AdvantagesListItem>
+              Адаптація банерів для різних платформ (соцмережі, сайти, Google
+              Ads).
+            </AdvantagesListItem>
+            <AdaptContainer>
+              <TwoExamplesBanners />
+            </AdaptContainer>
+          </AdvantagesList>
+        </SectionItemBlock>
+
+        <SectionItemBlock>
+          <ContactForm
+            mainTitle={'Замовте рекламні банери вже зараз!'}
+            subTitle={
+              'Потрібні банери для бізнесу? Залишайте заявку для консультації та додаткових деталей. Ми створимо професійні банери, що спрацюють на ваш успіх!'
+            }
           />
-        </ListWrapper>
+        </SectionItemBlock>
 
-        <BanersSubTitle>Види рекламних банерів</BanersSubTitle>
-        <TypeMainContainer>
-          <TypeSubContainer>
-            <TypeSubContainerText>Статичні</TypeSubContainerText>
-            <TypeSubContainerSubText>
-              зображення з текстом.
-            </TypeSubContainerSubText>
-            <TypeSubContainerImage>
-              <img
-                ref={el => (imageRefs.current[2] = el)}
-                src={banner_tree}
-                alt="banner_tree"
-              />
-            </TypeSubContainerImage>
-          </TypeSubContainer>
-          <TypeSubContainer>
-            <TypeSubContainerText>Анімовані</TypeSubContainerText>
-            <TypeSubContainerSubText>GIF, HTML5. </TypeSubContainerSubText>
-            <TypeSubContainerImage>
-              <img
-                ref={el => (imageRefs.current[3] = el)}
-                src={banner_tree}
-                alt="banner_tree"
-              />
-            </TypeSubContainerImage>
-          </TypeSubContainer>
-          <TypeSubContainer>
-            <TypeSubContainerText>Відео-банери</TypeSubContainerText>
-            <TypeSubContainerSubText>
-              привертають більше уваги завдяки динаміці.
-            </TypeSubContainerSubText>
-            <TypeSubContainerImage>
-              <img
-                ref={el => (imageRefs.current[4] = el)}
-                src={banner_tree}
-                alt="banner_tree"
-              />
-            </TypeSubContainerImage>
-          </TypeSubContainer>
-        </TypeMainContainer>
-        <ListWrapper ref={secondTextRef}>
-          <ServicesList title={'Наші послуги'} data={secondList} />
-        </ListWrapper>
-        <BanersSubTitle>Наші роботи та кейси</BanersSubTitle>
-        <AdvantagesList>
-          <AdvantagesListItem>
-            Розробка унікального дизайну банерів "під ключ".
-          </AdvantagesListItem>
-          <ExapmlesContainer>
-            <TwoExamplesBanners />
-
-            <TwoExamplesBanners />
-          </ExapmlesContainer>
-          <AdvantagesListItem>
-            Адаптація банерів для різних платформ (соцмережі, сайти, Google
-            Ads).
-          </AdvantagesListItem>
-          <AdaptContainer>
-            <TwoExamplesBanners />
-          </AdaptContainer>
-        </AdvantagesList>
-        <ContactForm
-          mainTitle={'Замовте рекламні банери вже зараз!'}
-          subTitle={
-            'Потрібні банери для бізнесу? Залишайте заявку для консультації та додаткових деталей. Ми створимо професійні банери, що спрацюють на ваш успіх!'
-          }
-        />
-        <WhyWeWrapper ref={wrapperRef}>
-          <WhyWeMainText>Чому варто обрати нас?</WhyWeMainText>
-          <WhyWeSubText>
-            Ми створюємо банери, що ефективно привертають увагу до вашого
-            бренду.
-          </WhyWeSubText>
-          <ServicesList title={'Переваги співпраці з нами'} data={whyWeList} />
-        </WhyWeWrapper>
+        <SectionItemBlock>
+          <WhyWeWrapper ref={wrapperRef}>
+            <WhyWeMainText>Чому варто обрати нас?</WhyWeMainText>
+            <WhyWeSubText>
+              Ми створюємо банери, що ефективно привертають увагу до вашого
+              бренду.
+            </WhyWeSubText>
+            <ServicesList
+              title={'Переваги співпраці з нами'}
+              data={whyWeList}
+            />
+          </WhyWeWrapper>
+        </SectionItemBlock>
       </BanersPageContainer>
     </MainBannerContainer>
   );

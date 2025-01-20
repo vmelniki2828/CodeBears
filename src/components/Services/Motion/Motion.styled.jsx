@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainMotionContainer = styled.div`
+export const MainMotionContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -16,6 +16,8 @@ export const MotionPageContainer = styled.div`
   padding-bottom: 150px;
   overflow: hidden;
 `;
+
+export const SectionItemBlock = styled.section``;
 
 export const MotionMainTitle = styled.h1`
   font-family: 'Freigeist';
