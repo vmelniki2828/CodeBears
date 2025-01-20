@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Load, CustomLoader } from './App.styled';
 
 import ScrollToTop from 'addition/ScrollToTop/ScrollToTop';
+import TryPage from 'Pages/TryPage/TryPage';
 
 const MainPage = lazy(() => import('Pages/MainPage/MainPage'));
 const PortfolioPage = lazy(() => import('Pages/PortfolioPage/PortfolioPage'));
@@ -41,6 +42,7 @@ export const App = () => {
           <Route path="/services/webAnalitics" element={<WebAnaliticsPage />} />
           <Route path="/services/brandBook" element={<BrandBookPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/TryPage" element={<TryPage />} />
         </Routes>
       </Suspense>
     </>
