@@ -25,6 +25,7 @@ export const HeroMainText = styled.p`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    padding-top:20px;
 
     text-shadow: 0px 0px 19.3px rgba(87, 255, 154, 0.2),
       0px 0px 71.9px rgba(69, 174, 177, 0.42);

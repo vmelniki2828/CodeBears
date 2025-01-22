@@ -51,10 +51,10 @@ const Services = () => {
                 <MainListItem>API розробка </MainListItem>
                 <MainListItem>Big Data та аналітика </MainListItem>
                 <MainListItem>
-                  Автоматизація та оптимізація бізнес-процесів{' '}
+                  Автоматизація та оптимізація бізнес-процесів
                 </MainListItem>
                 <MainListItem>
-                  Розробка електронних журналов і систем обліку{' '}
+                  Розробка електронних журналов і систем обліку
                 </MainListItem>
                 <MainListItem>Платформи для онлайн-освіти</MainListItem>
               </ListContainer>
@@ -64,7 +64,7 @@ const Services = () => {
                 <MainListItem>Корпоративні сайти </MainListItem>
                 <MainListItem>Інтернет-магазини </MainListItem>
                 <MainListItem>
-                  Односторінкові сайти (landing page){' '}
+                  Односторінкові сайти (landing page)
                 </MainListItem>
                 <MainListItem>Мобільні додатки </MainListItem>
                 <MainListItem>ШІ </MainListItem>

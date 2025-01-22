@@ -21,25 +21,46 @@ const moveToTarget = (startX, startY, endX, endY) => keyframes`
 const Dot = styled.div`
   width: 10px;
   height: 10px;
-  background-color: #f39c12;
+  background-color: white;
   border-radius: 50%;
   position: absolute;
   animation: ${props =>
       moveToTarget(props.startX, props.startY, props.endX, props.endY)}
     2s ease-out forwards;
+
+  /* Glow effect */
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.7), 
+
+ 
 `;
+
 
 // Генерация сетки точек для каждой буквы
 const generateLetter = (xOffset, yOffset, pattern) => {
   const dots = [];
+  const lines = [];
   pattern.forEach((row, rowIndex) => {
     row.forEach((dot, colIndex) => {
       if (dot === 1) {
-        dots.push({ x: xOffset + colIndex * 20, y: yOffset + rowIndex * 20 });
+        const dotPosition = {
+          x: xOffset + colIndex * 20,
+          y: yOffset + rowIndex * 20,
+        };
+        dots.push(dotPosition);
+
+        // Соединение с предыдущей точкой в строке
+        if (colIndex > 0 && pattern[rowIndex][colIndex - 1] === 1) {
+          lines.push([dotPosition, { x: xOffset + (colIndex - 1) * 20, y: yOffset + rowIndex * 20 }]);
+        }
+
+        // Соединение с точкой сверху
+        if (rowIndex > 0 && pattern[rowIndex - 1][colIndex] === 1) {
+          lines.push([dotPosition, { x: xOffset + colIndex * 20, y: yOffset + (rowIndex - 1) * 20 }]);
+        }
       }
     });
   });
-  return dots;
+  return { dots, lines };
 };
 
 // Паттерны для букв
@@ -105,33 +126,43 @@ const letterPatterns = {
 // Генерация координат для слова
 const generateWord = (word, startX, startY) => {
   let xOffset = startX;
-  const dots = [];
+  const allDots = [];
+  const allLines = [];
   word.split('').forEach(char => {
     if (letterPatterns[char]) {
-      dots.push(...generateLetter(xOffset, startY, letterPatterns[char]));
+      const { dots, lines } = generateLetter(xOffset, startY, letterPatterns[char]);
+      allDots.push(...dots);
+      allLines.push(...lines);
       xOffset += 120; // Увеличенный отступ между буквами
     }
   });
-  return dots;
+  return { dots: allDots, lines: allLines };
 };
 
-// Координаты для слова "CONSTELLCODE"
-const wordDots = generateWord('CONSTELLCODE', 0, 0);
-
 const TryPage = () => {
+  const word = "CONSTELLCODE"; // Ваше слово
+  const { dots: wordDots, lines: wordLines } = generateWord(word, 0, 0);
+
   const [randomDots, setRandomDots] = useState([]);
+  const [lineAppearStates, setLineAppearStates] = useState(Array(wordLines.length).fill(false));
 
   useEffect(() => {
-    // Генерация случайных позиций для точек
     const initialDots = wordDots.map(() => getRandomPosition());
     setRandomDots(initialDots);
+
+    // Set timeout to fade in lines after all dots have animated
+    const timer = setTimeout(() => {
+      setLineAppearStates(Array(wordLines.length).fill(true));
+    }, 2000); // Adjust time as needed
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
       style={{
-        backgroundColor: 'black',
+        backgroundColor: 'transparent',
         height: '100vh',
+        width: '100vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -142,7 +173,7 @@ const TryPage = () => {
       <div
         style={{
           position: 'relative',
-          width: `${120 * 'CONSTELLCODE'.length}px`,
+          width: `${120 * word.length}px`,
           height: '200px',
         }}
       >
@@ -154,6 +185,32 @@ const TryPage = () => {
             endX={wordDots[index].x}
             endY={wordDots[index].y}
           />
+        ))}
+        {wordLines.map(([start, end], index) => (
+          <svg
+            style={{
+              position: 'absolute',
+              top: "5px",
+              left: "5px",
+              width: '100%',
+              height: '100%',
+              overflow: 'visible',
+            }}
+            key={index}
+          >
+            <line
+              x1={start.x}
+              y1={start.y}
+              x2={end.x}
+              y2={end.y}
+              stroke="white"
+              strokeWidth="1"
+              opacity={lineAppearStates[index] ? 1 : 0}
+              style={{
+                transition: 'opacity 0.5s ease-out',
+              }}
+            />
+          </svg>
         ))}
       </div>
     </div>

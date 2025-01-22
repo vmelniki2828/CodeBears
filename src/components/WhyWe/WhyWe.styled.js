@@ -17,6 +17,7 @@ font-style: normal;
 font-weight: 500;
 font-size: 262px;
 line-height: 100%;
+padding-top:5px;
 
 background: linear-gradient(123.73deg, #FFFFFF -44.77%, #45AEB1 302.21%);
 -webkit-background-clip: text;

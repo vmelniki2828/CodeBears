@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MdOutlineAttachFile } from 'react-icons/md';
 
-export const PWAContainer = styled.div`
+export const PWAContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -137,7 +137,7 @@ export const PWAStarContainer = styled.div`
 
 export const PWAStarImg = styled.img``;
 
-export const FormBlock = styled.div`
+export const FormBlock = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,5 +343,5 @@ export const ArrowLinkPWA = styled.img`
   height: 26px;
   margin-left: 18px;
   margin-top: 8px;
-  fill: #FFF;
+  fill: #fff;
 `;

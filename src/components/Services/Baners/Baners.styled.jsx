@@ -9,7 +9,7 @@ export const BanersPageContainer = styled.div`
   overflow: hidden;
 `;
 
-export const MainBannerContainer = styled.div`
+export const MainBannerContainer = styled.main`
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
       #06050a 0%,
@@ -17,6 +17,7 @@ export const MainBannerContainer = styled.div`
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 `;
+export const SectionItemBlock = styled.section``;
 
 export const BanersMainTitle = styled.h1`
   font-family: 'Freigeist';
