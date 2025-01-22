@@ -1,12 +1,38 @@
 import styled, { keyframes } from 'styled-components';
 
-// Animation for stars
+// Animation for stars' movement
 const animStar = keyframes`
   from {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(-1000px);
+  }
+`;
+
+// Fade-in animation for stars (appearing)
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+// Fade-out animation for stars (disappearing)
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 `;
 
@@ -38,7 +64,7 @@ export const StarsWrapper = styled.div`
 
 export const MainConteiner = styled.main``;
 
-// Stars layers
+// Stars layers with fade-in and fade-out effects for each cycle
 export const Stars = styled.div`
   position: absolute;
   top: 0;
@@ -47,7 +73,9 @@ export const Stars = styled.div`
   height: 1px;
   background: transparent;
   box-shadow: ${shadowsSmall};
-  animation: ${animStar} 50s linear infinite;
+  animation: ${animStar} 50s linear infinite, ${fadeIn} 50s ease-in-out infinite,
+    ${fadeOut} 50s ease-in-out infinite;
+  z-index: 1; /* Чтобы звезды располагались ниже блока с картинками */
 
   &:after {
     content: ' ';
@@ -68,7 +96,9 @@ export const Stars2 = styled.div`
   height: 2px;
   background: transparent;
   box-shadow: ${shadowsMedium};
-  animation: ${animStar} 100s linear infinite;
+  animation: ${animStar} 100s linear infinite,
+    ${fadeIn} 100s ease-in-out infinite, ${fadeOut} 100s ease-in-out infinite;
+  z-index: 2;
 
   &:after {
     content: ' ';
@@ -89,7 +119,95 @@ export const Stars3 = styled.div`
   height: 3px;
   background: transparent;
   box-shadow: ${shadowsBig};
-  animation: ${animStar} 150s linear infinite;
+  animation: ${animStar} 150s linear infinite,
+    ${fadeIn} 150s ease-in-out infinite, ${fadeOut} 150s ease-in-out infinite;
+  z-index: 3;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: ${shadowsBig};
+  }
+`;
+
+export const StaticStars = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: ${shadowsSmall};
+`;
+
+export const StaticStars2 = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: ${shadowsMedium};
+`;
+
+export const MovingStars = styled.div`
+  position: absolute;
+  top: 1800px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: ${shadowsSmall};
+  animation: ${animStar} 50s linear infinite, ${fadeIn} 50s ease-in-out infinite,
+    ${fadeOut} 50s ease-in-out infinite;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: ${shadowsSmall};
+  }
+`;
+
+export const MovingStars2 = styled.div`
+  position: absolute;
+  top: 1500px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: ${shadowsMedium};
+  animation: ${animStar} 100s linear infinite,
+    ${fadeIn} 100s ease-in-out infinite, ${fadeOut} 100s ease-in-out infinite;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: ${shadowsMedium};
+  }
+`;
+
+export const MovingStars3 = styled.div`
+  position: absolute;
+  top: 1200px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: ${shadowsBig};
+  animation: ${animStar} 150s linear infinite,
+    ${fadeIn} 150s ease-in-out infinite, ${fadeOut} 150s ease-in-out infinite;
 
   &:after {
     content: ' ';
