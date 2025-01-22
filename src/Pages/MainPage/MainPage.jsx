@@ -3,10 +3,16 @@ import Hero from 'components/Hero/Hero';
 import Welcome from 'components/Welcome/Welcome';
 import {
   MainConteiner,
+  MovingStars,
+  MovingStars2,
+  MovingStars3,
   Stars,
   Stars2,
   Stars3,
   StarsWrapper,
+  StaticStars,
+  StaticStars2,
+  StaticStars3,
 } from './MainPage.styled';
 import WhyWe from 'components/WhyWe/WhyWe';
 import Gallery from 'components/Gallery/Gallery';
@@ -25,6 +31,15 @@ const MainPage = () => {
       <Stars id="stars" />
       <Stars2 id="stars2" />
       <Stars3 id="stars3" />
+
+      {/* Статичные звезды */}
+      {/* <StaticStars />
+      <StaticStars2 /> */}
+
+      {/* Динамичные звезды */}
+      <MovingStars />
+      <MovingStars2 />
+      <MovingStars3 />
       <MainConteiner>
         <Welcome />
         <Hero />

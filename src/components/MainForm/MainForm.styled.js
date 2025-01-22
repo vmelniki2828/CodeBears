@@ -6,6 +6,8 @@ export const FormContainer = styled.section`
   flex-direction: column;
   align-items: center;
   height: 1550px;
+  position: relative;
+  z-index: 8;
 
   background: radial-gradient(
       145.11% 101.78% at 50% 50%,
