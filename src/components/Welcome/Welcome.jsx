@@ -11,6 +11,7 @@ import gsap from 'gsap';
 import bez_glaz from '../../image/bez_glaz.svg';
 import glaza from '../../image/gla3a.svg';
 import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
+import TryPage from 'Pages/TryPage/TryPage';
 
 const Welcome = () => {
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -79,41 +80,44 @@ const Welcome = () => {
         <WelcomeContainer>
             <BurgerIcon onClick={onClickGood} className="good" />
             <SideBarMenu isOpen={sidebarSwitcher} onClickGood={onClickGood} />
-
-            <Title
-                id="title"
-                className="face-container title"
-                ref={titleRef} // Привязываем реф к контейнеру
-            >
-                <img
-                    src={bez_glaz}
-                    alt="Face"
-                    style={{
-                        display: 'block',
-                    }}
-                />
-                {/* Глаза */}
-                <img
-                    src={glaza}
-                    alt="Eyes"
-                    style={{
-                        position: 'absolute',
-                        transform: `translate(0, 0) translate(${offset.x}px, ${offset.y}px)`,
-                        transition: 'transform 0.15s ease-out',
-                    }}
-                />
-                <Body style={{ position: 'absolute' }}>
-                    <TextContainer>
-                        {text.split('').map((char, index) => (
-                            <Span key={index} angle={index * (360 / text.length)}>
-                                {char}
-                            </Span>
-                        ))}
-                    </TextContainer>
-                </Body>
-            </Title>
+            <TryPage />
+            
         </WelcomeContainer>
     );
 };
 
 export default Welcome;
+
+
+//<Title
+            //     id="title"
+            //     className="face-container title"
+            //     ref={titleRef} // Привязываем реф к контейнеру
+            // >
+            //     <img
+            //         src={bez_glaz}
+            //         alt="Face"
+            //         style={{
+            //             display: 'block',
+            //         }}
+            //     />
+            //     {/* Глаза */}
+            //     <img
+            //         src={glaza}
+            //         alt="Eyes"
+            //         style={{
+            //             position: 'absolute',
+            //             transform: `translate(0, 0) translate(${offset.x}px, ${offset.y}px)`,
+            //             transition: 'transform 0.15s ease-out',
+            //         }}
+            //     />
+            //     <Body style={{ position: 'absolute' }}>
+            //         <TextContainer>
+            //             {text.split('').map((char, index) => (
+            //                 <Span key={index} angle={index * (360 / text.length)}>
+            //                     {char}
+            //                 </Span>
+            //             ))}
+            //         </TextContainer>
+            //     </Body>
+            // </Title>
