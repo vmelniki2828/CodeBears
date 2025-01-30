@@ -10,26 +10,24 @@ const animStar = keyframes`
   }
 `;
 
-// Fade-in animation for stars (appearing)
 const fadeIn = keyframes`
   0% {
     opacity: 0;
   }
-  10% {
-    opacity: 1;
+  50% {
+    opacity: 0.5; /* Половина пути */
   }
   100% {
     opacity: 1;
   }
 `;
 
-// Fade-out animation for stars (disappearing)
 const fadeOut = keyframes`
   0% {
     opacity: 1;
   }
   90% {
-    opacity: 1;
+    opacity: 0.5; /* Половина пути */
   }
   100% {
     opacity: 0;
