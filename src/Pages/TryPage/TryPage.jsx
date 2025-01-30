@@ -10,17 +10,17 @@ const getRandomPosition = () => ({
 // Анимация движения точки
 const moveToTarget = (startX, startY, endX, endY) => keyframes`
   from {
-    transform: translate(${startX}px, ${startY}px);
+    transform: translate(${startX}px, ${startY}px) scale(0.1);
   }
   to {
-    transform: translate(${endX}px, ${endY}px);
+    transform: translate(${endX}px, ${endY}px) scale(1);
   }
 `;
 
 // Styled-component для точки
 const Dot = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: white;
   border-radius: 50%;
   position: absolute;
@@ -29,11 +29,8 @@ const Dot = styled.div`
     2s ease-out forwards;
 
   /* Glow effect */
-  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.7), 
-
- 
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.7);
 `;
-
 
 // Генерация сетки точек для каждой буквы
 const generateLetter = (xOffset, yOffset, pattern) => {
@@ -50,12 +47,18 @@ const generateLetter = (xOffset, yOffset, pattern) => {
 
         // Соединение с предыдущей точкой в строке
         if (colIndex > 0 && pattern[rowIndex][colIndex - 1] === 1) {
-          lines.push([dotPosition, { x: xOffset + (colIndex - 1) * 20, y: yOffset + rowIndex * 20 }]);
+          lines.push([
+            dotPosition,
+            { x: xOffset + (colIndex - 1) * 20, y: yOffset + rowIndex * 20 },
+          ]);
         }
 
         // Соединение с точкой сверху
         if (rowIndex > 0 && pattern[rowIndex - 1][colIndex] === 1) {
-          lines.push([dotPosition, { x: xOffset + colIndex * 20, y: yOffset + (rowIndex - 1) * 20 }]);
+          lines.push([
+            dotPosition,
+            { x: xOffset + colIndex * 20, y: yOffset + (rowIndex - 1) * 20 },
+          ]);
         }
       }
     });
@@ -130,7 +133,11 @@ const generateWord = (word, startX, startY) => {
   const allLines = [];
   word.split('').forEach(char => {
     if (letterPatterns[char]) {
-      const { dots, lines } = generateLetter(xOffset, startY, letterPatterns[char]);
+      const { dots, lines } = generateLetter(
+        xOffset,
+        startY,
+        letterPatterns[char]
+      );
       allDots.push(...dots);
       allLines.push(...lines);
       xOffset += 120; // Увеличенный отступ между буквами
@@ -140,11 +147,13 @@ const generateWord = (word, startX, startY) => {
 };
 
 const TryPage = () => {
-  const word = "CONSTELLCODE"; // Ваше слово
+  const word = 'CONSTELLCODE'; // Ваше слово
   const { dots: wordDots, lines: wordLines } = generateWord(word, 0, 0);
 
   const [randomDots, setRandomDots] = useState([]);
-  const [lineAppearStates, setLineAppearStates] = useState(Array(wordLines.length).fill(false));
+  const [lineAppearStates, setLineAppearStates] = useState(
+    Array(wordLines.length).fill(false)
+  );
 
   useEffect(() => {
     const initialDots = wordDots.map(() => getRandomPosition());
@@ -190,8 +199,8 @@ const TryPage = () => {
           <svg
             style={{
               position: 'absolute',
-              top: "5px",
-              left: "5px",
+              top: '2.5px',
+              left: '2.5px',
               width: '100%',
               height: '100%',
               overflow: 'visible',

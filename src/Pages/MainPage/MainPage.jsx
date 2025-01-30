@@ -40,6 +40,7 @@ const MainPage = () => {
       <MovingStars />
       <MovingStars2 />
       <MovingStars3 />
+
       <MainConteiner>
         <Welcome />
         <Hero />
