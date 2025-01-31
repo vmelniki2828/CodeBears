@@ -29,7 +29,7 @@ const Dot = styled.div`
     2s ease-out forwards;
 
   /* Glow effect */
-  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.7);
 `;
 
 // Генерация сетки точек для каждой буквы
@@ -199,8 +199,8 @@ const TryPage = () => {
           <svg
             style={{
               position: 'absolute',
-              top: '2.5px',
-              left: '2.5px',
+              top: '2px',
+              left: '2px',
               width: '100%',
               height: '100%',
               overflow: 'visible',
