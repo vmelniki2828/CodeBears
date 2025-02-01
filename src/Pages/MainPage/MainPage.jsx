@@ -37,9 +37,9 @@ const MainPage = () => {
       <StaticStars2 /> */}
 
       {/* Динамичные звезды */}
-      <MovingStars />
+      {/* <MovingStars />
       <MovingStars2 />
-      <MovingStars3 />
+      <MovingStars3 /> */}
 
       <MainConteiner>
         <Welcome />
