@@ -7,12 +7,18 @@ import {
   FormBlock,
   FormConteiner,
   InputField,
+  InputLabel,
+  InputLine,
+  InputWrapper,
   MainText,
   Star,
   StarContainer,
   SubmitButton,
   SubText,
+  TextArea,
   TextAreaField,
+  TextAreaLabel,
+  TextAreaWrapper,
   TextConteiner,
 } from './ContactForm.styled';
 import star from '../../image/Star.svg';
@@ -115,23 +121,49 @@ const ContactForm = ({ mainTitle, subTitle }) => {
         </TextConteiner>
         <FormConteiner ref={formRef}>
           <Form>
-            <InputField
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
-            <InputField
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <TextAreaField
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-            />
+            <InputWrapper>
+              <InputLine
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder=" "
+              />
+              <InputLabel isActive={formData.name !== ''}>Ваше ім'я</InputLabel>
+            </InputWrapper>
+
+            <InputWrapper>
+              <InputLine
+                type="email"
+                name="contact"
+                value={formData.contact}
+                onChange={handleInputChange}
+                placeholder=" "
+              />
+              <InputLabel isActive={formData.email !== ''}>Email</InputLabel>
+            </InputWrapper>
+            <TextAreaWrapper>
+              <TextArea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                onFocus={() =>
+                  setFormData(prev => ({ ...prev, isMessageFocused: true }))
+                }
+                onBlur={() =>
+                  setFormData(prev => ({
+                    ...prev,
+                    isMessageFocused: prev.message !== '',
+                  }))
+                }
+                placeholder=" "
+              />
+              <TextAreaLabel
+                isActive={formData.isMessageFocused || formData.message !== ''}
+              >
+                Ваші побажання
+              </TextAreaLabel>
+            </TextAreaWrapper>
           </Form>
           <ButtonsContainer>
             <FileInputButton>

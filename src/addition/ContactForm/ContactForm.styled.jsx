@@ -53,7 +53,7 @@ export const Form = styled.form`
   box-sizing: border-box;
   width: 469px;
   height: 404px;
-  background: rgba(10, 10, 10, 0.69);
+  background: rgba(10, 10, 10);
   backdrop-filter: blur(10.55px);
   border-radius: 20px;
   flex-direction: column;
@@ -89,31 +89,108 @@ export const Form = styled.form`
   }
 `;
 
-export const InputField = styled.input`
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 396px;
+  margin-top: 35px;
+`;
+
+export const InputLabel = styled.label`
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 16px;
+  color: #d9d9d9;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-family: 'Freigeist', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+
+  ${({ isActive }) =>
+    isActive &&
+    `
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #00f5b3;
+  `}
+`;
+
+export const InputLine = styled.input`
   background: none;
   border: none;
   border-bottom: 1px solid #d9d9d9;
   outline: none;
   color: #fff;
   font-size: 16px;
-  margin-top: 50px;
-  width: 360px;
-  height: 20px;
-  &:focus {
-    border-bottom: 1px solid #00f5b3;
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  caret-color: #fff; /* Цвет курсора */
+
+  &:focus + ${InputLabel}, &:not(:placeholder-shown) + ${InputLabel} {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #00f5b3;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    box-shadow: 0 0 0px 1000px rgba(10, 10, 10) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff !important;
   }
 `;
 
-export const TextAreaField = styled.textarea`
+export const TextAreaWrapper = styled.div`
+  position: relative;
+  margin-top: 30px;
+`;
+
+export const TextAreaLabel = styled.label`
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  font-size: 16px;
+  color: #d9d9d9;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-family: 'Freigeist', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  background-color: rgba(10, 10, 10);
+  padding: 2px 8px;
+
+  z-index: 3;
+
+  ${({ isActive }) =>
+    isActive &&
+    `
+    transform: translateY(-25px);
+    font-size: 14px;
+    color: #00f5b3;
+  `}
+`;
+
+export const TextArea = styled.textarea`
   width: 396px;
   height: 155px;
-  background: linear-gradient(99.81deg, #090a0c -15.86%, #131518 147.26%);
+  background-color: rgba(10, 10, 10);
   border-radius: 20px;
-  margin-top: 60px;
   color: #fff;
   outline: none;
-  padding: 10px;
+  padding: 15px 10px 10px;
   resize: none;
+  font-size: 16px;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  z-index: 1;
+
+  &:focus {
+    border: 1px solid #00f5b3;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -185,7 +262,6 @@ export const SubmitButton = styled.a`
     border-color: #57ff9a;
     box-shadow: 0px 0px 10px #57ff9a;
   }
-
 `;
 
 export const ArrowContLink = styled.img`

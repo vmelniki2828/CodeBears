@@ -18,6 +18,11 @@ import {
   AttachButton,
   SendButton,
   Attach,
+  InputWrapper,
+  InputLabel,
+  TextAreaLabel,
+  TextAreaWrapper,
+  TextAreaOverlay,
 } from './MainForm.styled';
 import AttachIcon from '../../image/Vector66.svg';
 import { ArrowLink } from 'components/AboutUs/AboutUs.styled';
@@ -139,24 +144,49 @@ const MainForm = () => {
         </FormWrapText>
         <Form className="form" onSubmit={handleSubmit}>
           <Con>
-            <InputLine
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <InputLine
-              type="text"
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-            />
-            <TextArea
-              type="text"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-            />
+            <InputWrapper>
+              <InputLine
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder=" "
+              />
+              <InputLabel isActive={formData.name !== ''}>Ваше ім'я</InputLabel>
+            </InputWrapper>
+
+            <InputWrapper>
+              <InputLine
+                type="email"
+                name="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                placeholder=" "
+              />
+              <InputLabel isActive={formData.contact !== ''}>Email</InputLabel>
+            </InputWrapper>
+            <TextAreaWrapper>
+              <TextArea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                onFocus={() =>
+                  setFormData(prev => ({ ...prev, isMessageFocused: true }))
+                }
+                onBlur={() =>
+                  setFormData(prev => ({
+                    ...prev,
+                    isMessageFocused: prev.message !== '',
+                  }))
+                }
+                placeholder=" "
+              />
+              <TextAreaLabel
+                isActive={formData.isMessageFocused || formData.message !== ''}
+              >
+                Ваші побажання
+              </TextAreaLabel>
+            </TextAreaWrapper>
           </Con>
           <ButtonGroup>
             <AttachButton>
