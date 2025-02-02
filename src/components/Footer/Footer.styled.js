@@ -10,6 +10,8 @@ export const FooterConteiner = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
+  z-index: 8;
 `;
 
 export const AddressList = styled.address``;
